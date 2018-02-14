@@ -4,7 +4,8 @@
   "description": "Boilerplate project for creating Content Station Digital Editor components.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/WoodWing/csde-components-boilerplate/issues"
   },
-  "homepage": "https://github.com/WoodWing/csde-components-boilerplate#readme"
+  "homepage": "https://github.com/WoodWing/csde-components-boilerplate#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-zip": "^4.1.0",
+    "yargs": "^11.0.0"
+  }
 }
