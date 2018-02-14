@@ -2,7 +2,7 @@
 Boilerplate project for creating Content Station Digital Editor components.
 
 ## Setup
-Install (NodeJS 8)[https://nodejs.org/] or higher.
+Install [NodeJS 8](https://nodejs.org/) or higher.
 
 Next, in this folder run:
 
