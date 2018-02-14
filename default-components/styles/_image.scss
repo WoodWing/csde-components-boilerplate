@@ -1,0 +1,139 @@
+/* Image component style */
+.image {
+    margin: 12px auto;
+    position: relative;
+    clear: both;
+
+    &.full-screen {
+        position: relative !important;
+        height: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        > div {
+            height: 100%;
+        }
+    }
+
+    &._option1 > div {
+        border-radius: 25px;
+    }
+    div {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        background-size: cover;
+        background-position: center center;
+        > a {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+    > figcaption {
+        color: #000000;
+        margin-top: 4px;
+        margin-bottom: 2px;
+    }
+
+    %caption-shared {
+        position: absolute;
+        padding: 8px 12px;
+        background-color: rgba(255, 255, 255, 0.8);
+        font-weight: 400;
+        color: #3F3E3E;
+        margin: 0;
+        /* before represents the placeholder text*/
+        &::before {
+            color: #3F3E3E;
+        }
+    }
+
+    /* class styles for the captions properties of the image component */
+    &._caption-inside {
+        > figcaption {
+            @extend %caption-shared;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &._caption-none {
+        > figcaption {
+            display: none;
+        }
+    }
+    &._caption-top {
+        > figcaption {
+            @extend %caption-shared;
+            right: 0;
+            top: 0;
+            left: 0;
+        }
+    }
+    &._caption-top-left {
+        > figcaption {
+            @extend %caption-shared;
+            right: 0;
+            top: 0;
+            left: 0;
+            width: 30%;
+        }
+    }
+    &._caption-top-right {
+        > figcaption {
+            @extend %caption-shared;
+            right: 0;
+            top: 0;
+            width: 30%;
+        }
+    }
+    &._caption-bottom-left {
+        > figcaption {
+            @extend %caption-shared;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 30%;
+        }
+    }
+    &._caption-bottom-right {
+        > figcaption {
+            @extend %caption-shared;
+            right: 0;
+            bottom: 0;
+            width: 30%;
+        }
+    }
+    /* class styles for the position properties of the image component */
+    &._left {
+        float: left;
+        clear: left;
+        width: calc(41% - 15px);
+        margin-right: 15px;
+        z-index: 1;
+    }
+    &._right {
+        float: right;
+        clear: right;
+        width: calc(60% - 15px);
+        margin-left: 15px;
+        z-index: 1;
+    }
+
+    @media only screen and (max-width: $phone-max-width) {
+        &._right,
+        &._left {
+            float: none;
+            clear: both;
+            width: 100%;
+        }
+        &._right {
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,824 @@
+{
+    "description": "Content Station Digital Editor components",
+
+    "version": "1.0.0",
+
+    "components":[
+        {
+            "name": "body",
+            "label": "{{ 'BODY_EDITOR_LABEL' | translate }}",
+            "icon": "icons/body.svg",
+            "properties":[
+                "drop-capital",
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ],
+            "countStatistics": true
+        },
+        {
+            "name": "container",
+            "icon": "icons/container.svg",
+            "allowNesting": "one-level",
+            "label": "{{ 'DESIGN_COMPONENT_CONTAINER_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "position",
+                "background-color",
+                "parallax"
+            ]
+        },
+        {
+            "name": "product",
+            "icon": "icons/product.svg",
+            "label": "{{ 'DESIGN_COMPONENT_PRODUCT_LABEL' | translate }}",
+            "properties": [
+                "position",
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "image",
+            "icon": "icons/image.svg",
+            "label": "{{ 'IMAGE_EDITOR_LABEL' | translate }}",
+            "properties": [
+                "fitting",
+                "position",
+                "style",
+                "inside-caption",
+                "disable-fullscreen",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "embed",
+            "icon": "icons/embed.svg",
+            "label": "{{ 'DESIGN_COMPONENT_EMBED_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "parallax"
+            ]
+        },
+        {
+            "name": "slideshow",
+            "icon": "icons/slideshow.svg",
+            "label": "{{ 'DESIGN_COMPONENT_SLIDESHOW_LABEL' | translate }}",
+            "properties": [
+                "fitting",
+                "slideshow-inside-caption",
+                "slideshow-play-orientation",
+                "slideshow-autoplay",
+                "slideshow-filmstrip",
+                "disable-fullscreen",
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ],
+            "restrictChildren": {
+                "image": { "withContent": "image" }
+            }
+        },
+        {
+            "name": "author",
+            "icon": "icons/author.svg",
+            "label": "{{ 'DESIGN_COMPONENT_AUTHOR_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "crosshead",
+            "icon": "icons/crosshead.svg",
+            "label": "{{ 'CROSS_HEAD_EDITOR_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "footer",
+            "icon": "icons/footer.svg",
+            "label": "{{ 'FOOTER_EDITOR_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "intro",
+            "label": "{{ 'INTRO_EDITOR_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "quote",
+            "icon": "icons/quote.svg",
+            "label": "{{ 'DESIGN_COMPONENT_QUOTE_LABEL' | translate }}",
+            "properties": [
+                "position",
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "headline",
+            "icon": "icons/headline.svg",
+            "label": "{{ 'DESIGN_COMPONENT_HEADLINE_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "separator",
+            "icon": "icons/separator.svg",
+            "label": "{{ 'DESIGN_COMPONENT_SEPARATOR_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "parallax"
+            ]
+        },
+        {
+            "name": "hero",
+            "icon": "icons/hero.svg",
+            "label": "{{ 'HERO_EDITOR_LABEL' | translate }}",
+            "allowNesting": "no",
+            "properties": [
+                "fixed-background",
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "subtitle",
+            "icon": "icons/subtitle.svg",
+            "label": "{{ 'SUB_TITLE_EDITOR_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "title",
+            "icon": "icons/title.svg",
+            "label": "{{ 'STORIES_TITLE_LABEL' | translate }}",
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                "parallax"
+            ]
+        },
+        {
+            "name": "social-media",
+            "icon": "icons/social-media.svg",
+            "label": "{{ 'DESIGN_COMPONENT_SOCIAL_MEDIA_LABEL' | translate }}",
+            "properties": [
+                "social-url",
+                "include-caption",
+                "include-media",
+                "position",
+                "style",
+                "parallax"
+            ]
+        },
+        {
+            "name": "video",
+            "icon": "icons/video.svg",
+            "label": "{{ 'DESIGN_COMPONENT_VIDEO_LABEL' | translate }}",
+            "properties": [
+                "video-url",
+                "start-time",
+                "position",
+                "style",
+                "parallax"
+            ]
+        }
+    ],
+
+    "groups": [
+        {
+            "label": "{{ \"STORIES_TITLE_LABEL\" | translate }}",
+            "name": "title",
+            "components": [
+                "title",
+                "subtitle",
+                "headline",
+                "hero"
+            ]
+        },
+        {
+            "label": "{{ \"DESIGN_GROUP_TEXT_LABEL\" | translate }}",
+            "name": "text",
+            "components": [
+                "intro",
+                "body",
+                "footer",
+                "quote",
+                "separator",
+                "crosshead",
+                "author"
+            ]
+        },
+        {
+            "label": "{{ \"DESIGN_GROUP_MEDIA_LABEL\" | translate }}",
+            "name": "media",
+            "components": [
+                "slideshow",
+                "image",
+                "embed",
+                "product",
+                "social-media",
+                "video"
+            ]
+        },
+        {
+            "label": "{{ \"DESIGN_GROUP_LAYOUT_LABEL\" | translate }}",
+            "name": "layout",
+            "components": [
+                "container"
+            ]
+        }
+    ],
+
+    "componentProperties": [
+        {
+            "name": "position",
+            "label": "{{ 'DESIGN_PROPERTY_POSITION_LABEL' | translate }}",
+            "control": "select",
+            "dataType": "styles",
+            "options": [
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}",
+                    "value": "_left"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
+                    "value": "_right"
+                }
+            ]
+        },
+        {
+            "name": "social-url",
+            "label": "{{ 'DESIGN_PROPERTY_POST_URL_LABEL' | translate }}",
+            "control": "text",
+            "dataType": "media",
+            "dataProperty": "social-url",
+            "value": "",
+            "valueType": "string",
+            "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
+        },
+        {
+            "name": "video-url",
+            "label": "{{ 'DESIGN_PROPERTY_VIDEO_URL_LABEL' | translate }}",
+            "control": "text",
+            "dataType": "media",
+            "dataProperty": "video-url",
+            "value": "",
+            "valueType": "string",
+            "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
+        },
+        {
+            "name": "start-time",
+            "label": "{{ 'DESIGN_PROPERTY_START_VIDEO_AT_LABEL' | translate }}",
+            "control": "time",
+            "value": "",
+            "inputPlaceholder": "{{ 'DESIGN_PROPERTY_START_VIDEO_AT_PLACEHOLDER' | translate }}"
+        },
+        {
+            "name": "include-caption",
+            "label": "{{ 'DESIGN_PROPERTY_MEDIA_INSTAGRAM_INCLUDE_CAPTION_LABEL' | translate }}",
+            "control": "checkbox",
+            "dataType": "media",
+            "dataProperty": "include-caption",
+            "value": "false"
+        },
+        {
+            "name": "include-media",
+            "label": "{{ 'DESIGN_PROPERTY_MEDIA_TWITTER_INCLUDE_MEDIA_LABEL' | translate }}",
+            "control": "checkbox",
+            "dataType": "media",
+            "dataProperty": "include-media",
+            "value": "false"
+        },
+        {
+            "name": "letter-spacing",
+            "label": "{{ 'DESIGN_PROPERTY_LETTER_SPACING' | translate }}",
+            "control": "text",
+            "dataType": "inlineStyles",
+            "valueType": "string",
+            "pattern": "^(([+-]{0,1})([0-9]|[0-9][.][0-9]{1,}|[0-9]{2}|[0-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
+            "defaultValue": "",
+            "unit": "em",
+            "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER",
+            "selector": "[doc-editable]"
+        },
+        {
+            "name": "line-height",
+            "label": "{{ 'DESIGN_PROPERTY_LINE_HEIGHT' | translate }}",
+            "control": "text",
+            "dataType": "inlineStyles",
+            "valueType": "string",
+            "pattern": "^(([+]{0,1})([0-9]|[0-9][.][0-9]{1,}|[1-9]{2}|[1-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
+            "defaultValue": "",
+            "unit": "em",
+            "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER",
+            "selector": "[doc-editable]"
+        },
+        {
+            "name": "inside-caption",
+            "label": "{{ 'STORY_METADATA_FIELD_CAPTION_LABEL' | translate }}",
+            "control": "select",
+            "options": [
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_OUTSIDE' | translate }}"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_NONE' | translate }}",
+                    "value": "_caption-none"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM' | translate }}",
+                    "value": "_caption-inside"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP' | translate }}",
+                    "value": "_caption-top"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_LEFT' | translate }}",
+                    "value": "_caption-top-left"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_RIGHT' | translate }}",
+                    "value": "_caption-top-right"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_LEFT' | translate }}",
+                    "value": "_caption-bottom-left"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_RIGHT' | translate }}",
+                    "value": "_caption-bottom-right"
+                }
+            ]
+        },
+        {
+            "name": "fixed-background",
+            "label": "{{ 'DESIGN_PROPERTY_FIXED_BACKGROUND_LABEL' | translate }}",
+            "control": "checkbox",
+            "dataType": "styles",
+            "value": "_fixed-background"
+        },
+        {
+            "name": "drop-capital",
+            "label": "{{ 'DESIGN_PROPERTY_DROP_LABEL_LABEL' | translate }}",
+            "type": "data"
+        },
+        {
+            "name": "text-align",
+            "label": "{{ 'DESIGN_PROPERTY_TEXT_ALIGN' | translate }}",
+            "control": "select",
+            "options": [
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}",
+                    "value": "_align-middle"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
+                    "value": "_align-right"
+                }
+            ]
+        },
+        {
+            "name": "style",
+            "label": "{{ 'DESIGN_PROPERTY_VARIANT_LABEL' | translate }}",
+            "control": "select",
+            "options": [
+                {
+                    "caption": "{{ 'DESIGN_STYLES_DEFAULT_LABEL' | translate }}"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 1",
+                    "value": "_option1"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 2",
+                    "value": "_option2"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 3",
+                    "value": "_option3"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 4",
+                    "value": "_option4"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 5",
+                    "value": "_option5"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 6",
+                    "value": "_option6"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 7",
+                    "value": "_option7"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 8",
+                    "value": "_option8"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 9",
+                    "value": "_option9"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 10",
+                    "value": "_option10"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 11",
+                    "value": "_option11"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 12",
+                    "value": "_option12"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 13",
+                    "value": "_option13"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 14",
+                    "value": "_option14"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 15",
+                    "value": "_option15"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 16",
+                    "value": "_option16"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 17",
+                    "value": "_option17"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 18",
+                    "value": "_option18"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 19",
+                    "value": "_option19"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 20",
+                    "value": "_option20"
+                }
+            ]
+        },
+        {
+            "name": "fitting",
+            "label": "{{ 'DESIGN_PROPERTY_FITTING_LABEL' | translate }}",
+            "control": "select",
+            "options": [
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_FITTING_CONTENT_TO_FRAME_LABEL' | translate }}"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_FITTING_FRAME_TO_CONTENT_LABEL' | translate }}",
+                    "value": "_fit-frame-to-content"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_FITTING_FRAME_HEIGHT_TO_CONTENT_LABEL' | translate }}",
+                    "value": "_fit-frame-height-to-content"
+                }
+            ]
+        },
+        {
+            "name": "slideshow-inside-caption",
+            "label": "{{ 'STORY_METADATA_FIELD_CAPTION_LABEL' | translate }}",
+            "control": "select",
+            "options": [
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_OUTSIDE' | translate }}"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_NONE' | translate }}",
+                    "value": "_caption-none"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM' | translate }}",
+                    "value": "_caption-inside"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP' | translate }}",
+                    "value": "_caption-top"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_LEFT' | translate }}",
+                    "value": "_caption-top-left"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_RIGHT' | translate }}",
+                    "value": "_caption-top-right"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_LEFT' | translate }}",
+                    "value": "_caption-bottom-left"
+                },
+                {
+                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_RIGHT' | translate }}",
+                    "value": "_caption-bottom-right"
+                }
+            ]
+        },
+        {
+            "name": "slideshow-play-orientation",
+            "label": "{{ 'DESIGN_PROPERTY_SLIDESHOW_PLAY_ORIENTATION_LABEL' | translate }}",
+            "control": "select",
+            "options": [
+                {
+                    "caption": "{{ 'BTN_PREVIEW_HORIZONTAL_LABEL' | translate }}"
+                },
+                {
+                    "caption": "{{ 'BTN_PREVIEW_VERTICAL_LABEL' | translate }}",
+                    "value": "_vertical"
+                }
+            ]
+        },
+        {
+            "name": "slideshow-autoplay",
+            "label": "{{ 'DESIGN_PROPERTY_SLIDESHOW_AUTO_PLAY_LABEL' | translate }}",
+            "control": "option",
+            "value": "_auto-play"
+        },
+        {
+            "name": "slideshow-filmstrip",
+            "label": "{{ 'DESIGN_PROPERTY_SLIDESHOW_FILMSTRIP_LABEL' | translate }}",
+            "control": "option",
+            "value": "_filmstrip"
+        },
+        {
+            "name": "disable-fullscreen",
+            "label": "{{ 'DESIGN_PROPERTY_DISABLE_FULLSCREEN_LABEL' | translate }}",
+            "control": "option",
+            "value": "_disable-fullscreen"
+        },
+        {
+            "name": "background-color",
+            "label": "{{ 'DESIGN_PROPERTY_BACKGROUND_COLOR_LABEL' | translate }}",
+            "control": "colorPicker",
+            "valueType": "color",
+            "options": {
+                "opacity": true
+            }
+        },
+        {
+            "name": "parallax",
+            "label": "{{ 'DESIGN_PROPERTY_PARALLAX_LABEL' | translate }}",
+            "control": "checkbox",
+            "type": "data",
+            "group": "applenews"
+        }
+    ],
+
+    "conversionRules": {
+        "body": {
+            "title": "auto",
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
+            "intro": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "author": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "description": "text"
+                }
+            }
+        },
+        "title": {
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
+            "intro": "auto",
+            "body": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "text"
+                }
+            }
+        },
+        "subtitle": {
+            "title": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "title"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "title"
+                }
+            },
+            "intro": "auto",
+            "body": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "title"
+                }
+            }
+        },
+        "headline": {
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "title": "title",
+                    "subtitle": "subtitle",
+                    "author": "section"
+                }
+            }
+        },
+        "intro": {
+            "title": "auto",
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "body": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "text"
+                }
+            }
+        },
+        "footer": {
+            "title": "auto",
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "intro": "auto",
+            "body": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "text"
+                }
+            }
+        },
+        "crosshead": {
+            "title": "auto",
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "intro": "auto",
+            "body": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "text"
+                }
+            }
+        },
+        "slideshow": {
+            "image": {
+                "type": "from-container",
+                "container": "slideshow"
+            }
+        },
+        "image": {
+            "hero": "auto",
+            "author": "auto",
+            "slideshow": {
+                "type": "to-container",
+                "container": "slideshow"
+            },
+            "product": "auto"
+        }
+    }
+}

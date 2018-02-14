@@ -1,0 +1,47 @@
+/* Interactive component style */
+.interactive {
+  margin: 12px auto;
+  position: relative;
+  clear: both;
+  div {
+    position: relative; // forces components to render beneath each other
+    overflow: hidden;
+    padding: 0;
+
+    iframe {
+      width: 100%;
+      height: 1em; // initial height
+      border: 0;
+    }
+  }
+
+
+  &._left {
+    float: left;
+    clear: left;
+    width: calc(41% - 15px);
+    margin-right: 15px;
+    z-index: 1;
+  }
+
+  &._right {
+    float: right;
+    clear: right;
+    width: calc(60% - 15px);
+    margin-left: 15px;
+    z-index: 1;
+  }
+  
+  @media only screen and (max-width: $phone-max-width) {
+    &._right,
+    &._left {
+      float: none;
+      clear: both;
+      width: 100%;
+    }
+    &._right {
+      margin-left: 0;
+    }
+  }
+}
+

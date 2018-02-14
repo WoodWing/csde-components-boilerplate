@@ -1,0 +1,52 @@
+/* Container component style*/
+.container {
+    margin: 20px 0;
+    clear: both;
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    /* class styles for the options properties of the container component */
+    &._option1 {
+        background-color: #141414;
+        .title,
+        .subtitle,
+        .intro,
+        .body,
+        .footer,
+        blockquote {
+            color: #ffffff;
+        }
+    }
+    &._option2 {
+        background-color: #f2c43d;
+    }
+    &._option3 {
+        background-color: #c191d6;
+    }
+    * {
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    /* media query */
+    @media (min-width: 800px) {
+        &._left {
+            float: left;
+            clear: left;
+            width: 40%;
+            z-index: 1;
+        }
+        &._right {
+            float: right;
+            clear: right;
+            width: 60%;
+            z-index: 1;
+        }
+    }
+}

@@ -1,0 +1,96 @@
+/* Product component style */
+.product {
+    clear: both;
+    margin: 30px auto;
+    max-width: 452px;
+    /* display-flex and webkit-prefix mixin are defined in the global style file (_common.scss) */
+    @include display-flex();
+    @include webkit-prefix(flex-direction, column);
+    .product-image-part {
+        /* ie fix */
+        flex-shrink: 0;
+    }
+    figure {
+        margin: 0 0 10px 0;
+        img {
+            width: 100%;
+        }
+    }
+    h1 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.05;
+    }
+    h2 {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.46;
+        font-style: italic;
+        font-weight: bold;
+        display: inline-block;
+        &:not(:empty) {
+            margin-right: 5px;
+            padding-right: 5px;
+            background-position: right;
+            background-size: 1px 80%;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(to bottom, #000000, #000000) !important;
+        }
+    }
+    h3 {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.36;
+        font-style: italic;
+        font-weight: bold;
+        display: inline;
+    }
+    p {
+        padding: 3px 0;
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.36;
+    }
+    a {
+        color: #000000;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    /* class styles for the position properties of the image component */
+    &._left {
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    &._right {
+        float: right;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    @media only screen and (max-width: $phone-max-width) {
+        &._right,
+        &._left {
+            float: none;
+            clear: both;
+            width: 100%;
+            max-width: none;
+        }
+        &._right {
+            margin-left: 0;
+        }
+    }
+
+    /* styles */
+    &._option1 {
+        /* webkit-prefix mixin is defined in the global style file (_common.scss) */
+        @include webkit-prefix(flex-direction, column-reverse);
+        figure {
+            margin: 10px 0 0 0;
+        }
+    }
+}

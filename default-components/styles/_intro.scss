@@ -1,0 +1,18 @@
+/* Intro component style */
+.intro {
+    font-weight: 400;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6;
+    color: #4c4c4c;
+    margin: 24px auto 16px auto;
+
+    /*
+    * media query
+    * $screen-sm-max constant is defined in the global style file (_common.scss)
+    */
+    @media (max-width: $screen-sm-max) {
+        font-size: 18px;
+        line-height: 1.66;
+    }
+}

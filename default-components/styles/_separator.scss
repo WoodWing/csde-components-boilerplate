@@ -1,0 +1,23 @@
+.separator {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    margin-top: 26px;
+    margin-top: 1.44444rem;
+    padding-top: 52px;
+    padding-top: 2.88889rem;
+    padding-bottom: 52px;
+    padding-bottom: 2.88889rem;
+    margin-bottom: 26px;
+    margin-bottom: 1.44444rem;
+    border: none;
+    height: 1px;
+    clear: both;
+    &::before {
+        content: '';
+        display: block;
+        margin-left: 43.10345%;
+        margin-right: 43.10345%;
+        border-top: 1px solid #333333;
+    }
+}

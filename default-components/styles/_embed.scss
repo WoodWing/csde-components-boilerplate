@@ -1,0 +1,38 @@
+/* Embed component style */
+.embed {
+    margin: 12px auto;
+    position: relative;
+    clear: both;
+    > div {
+        position: relative;
+        padding-bottom: 56.25%; /* default: 16:9 -> (9/16 = 0.5625 or 56.25%) */
+        overflow: hidden;
+    }
+
+    iframe, embed, object, video {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* class styles for the options properties of the embed component */
+    &._option1 {
+        > div {
+            padding-bottom: 66%; /* 3:2 -> (2/3 = 0.67 or 67%) */
+        }
+    }
+    &._option2 {
+        > div {
+            padding-bottom: 75%; /* 4:3 -> (3/4 = 0.75 or 75%) */
+        }
+    }
+    &._option3 {
+        > div {
+            padding-bottom: 100%; /* 1:1 -> (1/1 = 1 or 100%) */
+        }
+    }
+}

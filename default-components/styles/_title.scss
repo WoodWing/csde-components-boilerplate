@@ -1,0 +1,16 @@
+/* Title component style */
+.title {
+    font-size: 49px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin: 40px auto 20px auto;
+
+    /*
+    * media query
+    * $screen-sm-max constant is defined in the global style file (_common.scss)
+    */
+    @media (max-width: $screen-sm-max) {
+        font-size: 32px;
+        line-height: 1.19;
+    }
+}

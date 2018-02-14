@@ -1,0 +1,321 @@
+/* Slideshow component style.
+   This component is based on the jssor library. http://jssor.com/
+ */
+
+// Change the following two variables to adjust the max width and or height of
+// the slideshow. The jssor library will automatically scale the slideshow
+// for smaller sizes.
+$slideshowMaxWidth: $max-width;
+$slideshowMaxHeight: 500px;
+
+// The max height of the thumb navigator when the filmstrip option is enabled.
+$slideshowThumbNavigatorMaxHeight: 100px;
+
+.slideshow {
+    clear: both;
+    margin: 12px 0;
+
+    &.full-screen {
+        margin: 0;
+        padding: 0;
+    }
+
+    .slideshow-container {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        height: $slideshowMaxHeight;
+        border: 0 none;
+        .slides {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -($slideshowMaxWidth / 2);
+            width: $slideshowMaxWidth;
+            height: $slideshowMaxHeight;
+            overflow: hidden;
+            .image {
+                float: none;
+                clear: none;
+                @include display-flex();
+                @include webkit-prefix(flex-direction, column);
+                margin: 0;
+                width: 100%;
+                > div {
+                    height: $slideshowMaxHeight;
+                    width: $slideshowMaxWidth;
+                }
+                figcaption {
+                    /* Transform is added as inline-style to the caption by Jssor library.
+                       This results in blurry font rendering on Safari. */
+                    -webkit-transform: none !important;
+                    @include webkit-prefix(flex-shrink, 0);
+                }
+            }
+        }
+        .arrow {
+            width: 50px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            margin: -50px 0 0 0;
+            cursor: pointer;
+            display: none;
+            &::before {
+                width: 30px;
+                height: 30px;
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                margin: -15px 0 0 0;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.8);
+                transition-property: background-color;
+                transition-timing-function: linear;
+                transition-duration: $speed;
+            }
+            &::after {
+                width: 11px;
+                height: 10px;
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -5px 0 0 -5px;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            &._left {
+                left: 0;
+                &::after {
+                    background-image: url('img/slideshow-left-arrow.svg');
+                }
+            }
+            &._right {
+                right: 0;
+                &::after {
+                    background-image: url('img/slideshow-right-arrow.svg');
+                }
+            }
+            &:hover {
+                &::before {
+                    background-color: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+    }
+    &._vertical {
+        .slideshow-container {
+            .arrow {
+                height: 80px;
+                width: 80px;
+                top: 50%;
+                right: 0;
+                &::before {
+                    left: auto;
+                    right: 10px;
+                    margin: 0;
+                }
+                &::after {
+                    width: 10px;
+                    height: 11px;
+                    right: 20px;
+                    left: auto;
+                    margin: 0;
+                }
+                &._left {
+                    left: auto;
+                    margin: -80px 0 0 0;
+                    &::before {
+                        top: auto;
+                        bottom: 5px;
+                    }
+                    &::after {
+                        top: auto;
+                        bottom: 15px;
+                        background-image: url('img/slideshow-up-arrow.svg');
+                    }
+                }
+                &._right {
+                    margin: 0;
+                    &::before {
+                        top: 5px;
+                    }
+                    &::after {
+                        top: 15px;
+                        background-image: url('img/slideshow-down-arrow.svg');
+                    }
+                }
+            }
+        }
+    }
+    &._initiated {
+        .slideshow-container {
+            width: $slideshowMaxWidth;
+            .arrow {
+                display: block;
+            }
+        }
+    }
+
+    .thumbnavigator {
+        display: none;
+        position: absolute;
+        /* size of thumbnail navigator container */
+        width: $slideshowMaxWidth;
+        height: $slideshowThumbNavigatorMaxHeight;
+        left: 0;
+        bottom: 0;
+        background-color: #3a3f4e;
+        .thumbslides {
+            cursor: default;
+        }
+        .thumbproto {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 72px;
+            height: 72px;
+            &:hover,
+            &.thumbprotoav {
+                .thumb-c {
+                    top: 0px;
+                    left: 0px;
+                    width: 70px;
+                    height: 70px;
+                    border: #0086ca 1px solid;
+                }
+            }
+        }
+        .thumb-t {
+            div {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+        .thumb-w {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+        .thumb-c {
+            position: absolute;
+            box-sizing: content-box;
+        }
+    }
+
+    &._filmstrip {
+        .thumbnavigator {
+            display: block;
+        }
+        .slideshow-container {
+            .slides {
+                height: $slideshowMaxHeight - $slideshowThumbNavigatorMaxHeight;
+                .image {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    > div {
+                        height: $slideshowMaxHeight - $slideshowThumbNavigatorMaxHeight;
+                    }
+                }
+            }
+        }
+    }
+
+    /* an example how to hide the filmstrip on iPod and iPhone */
+    &._filmstrip {
+        @media (max-width: 480px) {
+            .thumbnavigator {
+                display: none;
+            }
+            .slideshow-container {
+                .slides {
+                    height: $slideshowMaxHeight;
+                    .image {
+                        > div {
+                            height: $slideshowMaxHeight;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slideshow {
+
+    &._fit-frame-to-content,
+    &._fit-frame-height-to-content {
+
+        .slideshow-container {
+            .slides {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin-left: 0;
+                width: auto;
+                height: auto;
+                .image {
+                    > div {
+                        height: auto;
+                        width: auto;
+                        background-repeat: no-repeat;
+                        @include webkit-prefix(flex-grow, 1);
+                    }
+                }
+            }
+        }
+
+        &._filmstrip {
+            padding-bottom: $slideshowThumbNavigatorMaxHeight;
+
+            .thumbnavigator {
+                bottom: -$slideshowThumbNavigatorMaxHeight;
+                width: auto;
+                right: 0;
+            }
+
+            .slideshow-container {
+                .slides {
+                    .image {
+                        > div {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        &._filmstrip {
+            @media (max-width: 480px) {
+                padding-bottom: 0;
+
+                .slideshow-container {
+                    .slides {
+                        height: auto;
+                        .image {
+                            > div {
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}

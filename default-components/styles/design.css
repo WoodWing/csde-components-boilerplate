@@ -1,0 +1,1082 @@
+@charset "UTF-8";
+/* Constants */
+/* Mixin's helpers, more info: http://sass-lang.com/guide#topic-6*/
+/* Font embeds, examples see: https://www.google.com/fonts */
+/* Imports the style from the google fonts cdn */
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+/* Article view style */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lato";
+  color: #000000;
+  background-color: #ffffff;
+  font-weight: 300;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-overflow-scrolling: touch; }
+  html :focus,
+  body :focus {
+    outline: none; }
+
+body {
+  max-width: 860px;
+  padding: 0 5px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden; }
+  body::after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* Set link color */
+span[data-text-edit-color] a {
+  color: inherit; }
+
+/* Components style */
+/* Shared style for text related components: title, subtitle, intro, body and footer */
+.text {
+  display: block;
+  margin: 34px auto;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0; }
+
+/* Full screen wrapper overlay style (e.g. slideshow, images) */
+.fullscreen-wrapper {
+  position: fixed;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  overflow: hidden;
+  z-index: 100; }
+
+/* media query */
+@media (max-width: 991px) {
+  .text {
+    font-size: 17px;
+    line-height: 1.65; } }
+
+/* Woodwing Inception internal style.
+ * Class for the hero component in the iOS devices.
+ * Please don't change this style class
+ */
+.hero-js {
+  height: 100%; }
+  .hero-js body {
+    height: 100%; }
+  .hero-js ._hero-bg-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden; }
+    .hero-js ._hero-bg-box ._hero-bg-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0;
+      transition-property: opacity;
+      transition-timing-function: linear;
+      transition-duration: 0.4s; }
+      .hero-js ._hero-bg-box ._hero-bg-item._current {
+        opacity: 1; }
+  .hero-js ._hero-content-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto; }
+    .hero-js ._hero-content-box ._hero-content-wrapper {
+      background-color: #ffffff; }
+      .hero-js ._hero-content-box ._hero-content-wrapper ._hero-content-body {
+        max-width: 860px;
+        padding: 0 5px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-x: hidden; }
+        .hero-js ._hero-content-box ._hero-content-wrapper ._hero-content-body::after {
+          content: " ";
+          display: block;
+          clear: both; }
+  .hero-js.hero-js-android body {
+    max-width: none; }
+  .hero-js.hero-js-android ._hero-bg-box {
+    position: fixed; }
+  .hero-js.hero-js-android ._hero-content-box {
+    position: relative;
+    margin: 0 -5px;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto; }
+
+@keyframes kf-triple-blinking-spans {
+  0% {
+    opacity: .2; }
+  20% {
+    opacity: 1; }
+  100% {
+    opacity: .2; } }
+
+/**
+ Let three child spans blink.
+ Use:
+ <div>Loading<span>.</span><span>.</span><span>.</span></div>
+ div {
+  @include triple-blinking-spans();
+ }
+ */
+/**
+ Additional styles for .social and .video components
+ */
+/* Body component style */
+.body {
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.6;
+  color: #606060;
+  margin: 12px auto;
+  /* class style for the DropCap property of the body component */
+  /*
+     * media query
+     * $screen-sm-max constant is defined in the global style file (_common.scss)
+     */ }
+  .body._drop-cap:not(.doc-empty):not(.doc-component-highlight) {
+    min-height: 80px; }
+    .body._drop-cap:not(.doc-empty):not(.doc-component-highlight)::first-letter {
+      font-size: 300%;
+      text-transform: uppercase;
+      line-height: 0.8;
+      float: left;
+      margin: 4px 6px 0 -2px; }
+  @media (max-width: 991px) {
+    .body {
+      font-size: 17px;
+      line-height: 1.65; } }
+
+/* Title component style */
+.title {
+  font-size: 49px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 40px auto 20px auto;
+  /*
+    * media query
+    * $screen-sm-max constant is defined in the global style file (_common.scss)
+    */ }
+  @media (max-width: 991px) {
+    .title {
+      font-size: 32px;
+      line-height: 1.19; } }
+
+/* Sub-title component style */
+.subtitle {
+  font-weight: 600;
+  font-size: 23px;
+  color: #1a1a1a;
+  margin: 16px auto;
+  /*
+    * media query
+    * $screen-sm-max constant is defined in the global style file (_common.scss)
+    */ }
+  @media (max-width: 991px) {
+    .subtitle {
+      font-size: 26px;
+      line-height: 1.45; } }
+
+/* Intro component style */
+.intro {
+  font-weight: 400;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #4c4c4c;
+  margin: 24px auto 16px auto;
+  /*
+    * media query
+    * $screen-sm-max constant is defined in the global style file (_common.scss)
+    */ }
+  @media (max-width: 991px) {
+    .intro {
+      font-size: 18px;
+      line-height: 1.66; } }
+
+/* Footer component style */
+.footer {
+  font-weight: 400;
+  font-size: 18px;
+  font-style: italic;
+  color: #7f7f7f;
+  /*
+     * media query
+     * $screen-sm-max constant is defined in the global style file (_common.scss)
+     */ }
+  @media (max-width: 991px) {
+    .footer {
+      font-size: 17px;
+      line-height: 1.65; } }
+
+/* Crosshead component style */
+.crosshead {
+  font-weight: bold; }
+
+/* Headline component style */
+.headline .section {
+  font-size: 23px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 40px auto 20px auto; }
+
+.headline .title {
+  font-size: 49px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 40px auto 20px auto; }
+
+.headline .subtitle {
+  font-weight: 600;
+  font-size: 23px;
+  color: #1a1a1a;
+  margin: 16px auto; }
+
+/* Author component style */
+.author {
+  height: 65px;
+  margin: 12px auto;
+  padding: 0 0 0 88px;
+  position: relative;
+  clear: both; }
+  .author .author-image {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 30px; }
+    .author .author-image > div {
+      width: 65px;
+      height: 65px;
+      background-size: cover;
+      background-position: center center; }
+  .author .info-block {
+    padding-top: 8px; }
+    .author .info-block .author-row {
+      white-space: nowrap; }
+    .author .info-block .name {
+      color: #0085CD;
+      font-weight: bold;
+      font-size: 19px;
+      max-width: calc(60% - 10px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block; }
+    .author .info-block .sep_name_loc {
+      display: inline-block;
+      width: 20px;
+      vertical-align: top; }
+      .author .info-block .sep_name_loc::after {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        color: #0085CD;
+        font-weight: bold;
+        font-size: 19px;
+        content: "·"; }
+    .author .info-block .location {
+      color: #339DD7;
+      font-weight: bold;
+      font-size: 19px;
+      max-width: calc(40% - 10px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block; }
+    .author .info-block .link {
+      color: #999999;
+      font-size: 16px;
+      text-decoration: none;
+      margin-top: 0;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+
+/* Image component style */
+.image {
+  margin: 12px auto;
+  position: relative;
+  clear: both;
+  /* class styles for the captions properties of the image component */
+  /* class styles for the position properties of the image component */ }
+  .image.full-screen {
+    position: relative !important;
+    height: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important; }
+    .image.full-screen > div {
+      height: 100%; }
+  .image._option1 > div {
+    border-radius: 25px; }
+  .image div {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center center; }
+    .image div > a {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0; }
+  .image > figcaption {
+    color: #000000;
+    margin-top: 4px;
+    margin-bottom: 2px; }
+  .image._caption-inside > figcaption, .image._caption-top > figcaption, .image._caption-top-left > figcaption, .image._caption-top-right > figcaption, .image._caption-bottom-left > figcaption, .image._caption-bottom-right > figcaption {
+    position: absolute;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    color: #3F3E3E;
+    margin: 0;
+    /* before represents the placeholder text*/ }
+    .image._caption-inside > figcaption::before, .image._caption-top > figcaption::before, .image._caption-top-left > figcaption::before, .image._caption-top-right > figcaption::before, .image._caption-bottom-left > figcaption::before, .image._caption-bottom-right > figcaption::before {
+      color: #3F3E3E; }
+  .image._caption-inside > figcaption {
+    right: 0;
+    bottom: 0;
+    left: 0; }
+  .image._caption-none > figcaption {
+    display: none; }
+  .image._caption-top > figcaption {
+    right: 0;
+    top: 0;
+    left: 0; }
+  .image._caption-top-left > figcaption {
+    right: 0;
+    top: 0;
+    left: 0;
+    width: 30%; }
+  .image._caption-top-right > figcaption {
+    right: 0;
+    top: 0;
+    width: 30%; }
+  .image._caption-bottom-left > figcaption {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%; }
+  .image._caption-bottom-right > figcaption {
+    right: 0;
+    bottom: 0;
+    width: 30%; }
+  .image._left {
+    float: left;
+    clear: left;
+    width: calc(41% - 15px);
+    margin-right: 15px;
+    z-index: 1; }
+  .image._right {
+    float: right;
+    clear: right;
+    width: calc(60% - 15px);
+    margin-left: 15px;
+    z-index: 1; }
+  @media only screen and (max-width: 481px) {
+    .image._right, .image._left {
+      float: none;
+      clear: both;
+      width: 100%; }
+    .image._right {
+      margin-left: 0; } }
+
+/* Hero component style.
+   A hero image is a large banner image, prominently placed on a web page, generally in the front and center.
+   http://en.wikipedia.org/wiki/Hero_image */
+.hero {
+  margin: 0px auto;
+  clear: both; }
+  .hero > figure {
+    margin: auto 50%; }
+    .hero > figure > div {
+      margin-left: -50vw;
+      width: 100vw;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      overflow: hidden; }
+      .hero > figure > div > div {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        margin: 0 auto;
+        max-width: 860px; }
+        .hero > figure > div > div::after {
+          content: " ";
+          display: block;
+          clear: both; }
+        .hero > figure > div > div > figcaption {
+          display: block;
+          vertical-align: middle;
+          color: white;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+          width: 100%; }
+  .hero h1 {
+    margin: 0.5em 0;
+    font-size: 6rem;
+    line-height: 6.7778rem; }
+  .hero h2 {
+    margin: 0.8em 0;
+    font-size: 3rem;
+    line-height: 3.58889rem; }
+  .hero h3 {
+    font-size: 1rem; }
+  .hero._fixed-background > figure > div {
+    background-attachment: scroll; }
+  .hero._js-fixed-scroll > figure > div {
+    background-attachment: scroll; }
+
+blockquote {
+  margin: 52px 0;
+  padding: 0;
+  color: #666666;
+  position: relative;
+  font-weight: 400;
+  z-index: 1;
+  width: 100%;
+  float: none;
+  clear: both;
+  /* media query */ }
+  blockquote .quotation-mark::before {
+    content: "“";
+    font-size: 5.77778rem;
+    line-height: 33px;
+    float: left;
+    position: relative;
+    top: 1.3rem;
+    left: -0.1ch;
+    padding-right: 0.1ch; }
+  blockquote .quote {
+    display: block; }
+  blockquote p {
+    margin: 0 0 13px 0;
+    padding: 0;
+    font-size: 26px;
+    line-height: 1.26;
+    font-style: italic; }
+  blockquote footer {
+    position: relative;
+    padding-left: 2ch;
+    font-size: 16px; }
+    blockquote footer::after {
+      content: '\2014';
+      position: absolute;
+      left: 0;
+      top: 0; }
+    blockquote footer:empty {
+      padding-left: 0; }
+      blockquote footer:empty::after {
+        display: none; }
+  @media (min-width: 800px) {
+    blockquote {
+      /* class styles for the position properties of the image component in the current media query breakpoint */ }
+      blockquote._left {
+        float: left;
+        clear: left;
+        width: calc(41% - 15px);
+        margin-right: 15px;
+        z-index: 1; }
+      blockquote._right {
+        float: right;
+        clear: right;
+        width: calc(60% - 15px);
+        margin-left: 15px;
+        z-index: 1; } }
+
+.separator {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  margin-top: 26px;
+  margin-top: 1.44444rem;
+  padding-top: 52px;
+  padding-top: 2.88889rem;
+  padding-bottom: 52px;
+  padding-bottom: 2.88889rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.44444rem;
+  border: none;
+  height: 1px;
+  clear: both; }
+  .separator::before {
+    content: '';
+    display: block;
+    margin-left: 43.10345%;
+    margin-right: 43.10345%;
+    border-top: 1px solid #333333; }
+
+/* Container component style*/
+.container {
+  margin: 20px 0;
+  clear: both;
+  /* class styles for the options properties of the container component */
+  /* media query */ }
+  .container::after {
+    content: "";
+    display: block;
+    clear: both; }
+  .container._option1 {
+    background-color: #141414; }
+    .container._option1 .title,
+    .container._option1 .subtitle,
+    .container._option1 .intro,
+    .container._option1 .body,
+    .container._option1 .footer,
+    .container._option1 blockquote {
+      color: #ffffff; }
+  .container._option2 {
+    background-color: #f2c43d; }
+  .container._option3 {
+    background-color: #c191d6; }
+  .container *:first-child {
+    margin-top: 0; }
+  .container *:last-child {
+    margin-bottom: 0; }
+  @media (min-width: 800px) {
+    .container._left {
+      float: left;
+      clear: left;
+      width: 40%;
+      z-index: 1; }
+    .container._right {
+      float: right;
+      clear: right;
+      width: 60%;
+      z-index: 1; } }
+
+/* Slideshow component style.
+   This component is based on the jssor library. http://jssor.com/
+ */
+.slideshow {
+  clear: both;
+  margin: 12px 0;
+  /* an example how to hide the filmstrip on iPod and iPhone */ }
+  .slideshow.full-screen {
+    margin: 0;
+    padding: 0; }
+  .slideshow .slideshow-container {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    height: 500px;
+    border: 0 none; }
+    .slideshow .slideshow-container .slides {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -430px;
+      width: 860px;
+      height: 500px;
+      overflow: hidden; }
+      .slideshow .slideshow-container .slides .image {
+        float: none;
+        clear: none;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        margin: 0;
+        width: 100%; }
+        .slideshow .slideshow-container .slides .image > div {
+          height: 500px;
+          width: 860px; }
+        .slideshow .slideshow-container .slides .image figcaption {
+          /* Transform is added as inline-style to the caption by Jssor library.
+                       This results in blurry font rendering on Safari. */
+          -webkit-transform: none !important;
+          -webkit-flex-shrink: 0;
+          flex-shrink: 0; }
+    .slideshow .slideshow-container .arrow {
+      width: 50px;
+      height: 100px;
+      position: absolute;
+      top: 50%;
+      margin: -50px 0 0 0;
+      cursor: pointer;
+      display: none; }
+      .slideshow .slideshow-container .arrow::before {
+        width: 30px;
+        height: 30px;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        margin: -15px 0 0 0;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition-property: background-color;
+        transition-timing-function: linear;
+        transition-duration: 0.2s; }
+      .slideshow .slideshow-container .arrow::after {
+        width: 11px;
+        height: 10px;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -5px 0 0 -5px;
+        background-repeat: no-repeat;
+        background-position: center center; }
+      .slideshow .slideshow-container .arrow._left {
+        left: 0; }
+        .slideshow .slideshow-container .arrow._left::after {
+          background-image: url("img/slideshow-left-arrow.svg"); }
+      .slideshow .slideshow-container .arrow._right {
+        right: 0; }
+        .slideshow .slideshow-container .arrow._right::after {
+          background-image: url("img/slideshow-right-arrow.svg"); }
+      .slideshow .slideshow-container .arrow:hover::before {
+        background-color: white; }
+  .slideshow._vertical .slideshow-container .arrow {
+    height: 80px;
+    width: 80px;
+    top: 50%;
+    right: 0; }
+    .slideshow._vertical .slideshow-container .arrow::before {
+      left: auto;
+      right: 10px;
+      margin: 0; }
+    .slideshow._vertical .slideshow-container .arrow::after {
+      width: 10px;
+      height: 11px;
+      right: 20px;
+      left: auto;
+      margin: 0; }
+    .slideshow._vertical .slideshow-container .arrow._left {
+      left: auto;
+      margin: -80px 0 0 0; }
+      .slideshow._vertical .slideshow-container .arrow._left::before {
+        top: auto;
+        bottom: 5px; }
+      .slideshow._vertical .slideshow-container .arrow._left::after {
+        top: auto;
+        bottom: 15px;
+        background-image: url("img/slideshow-up-arrow.svg"); }
+    .slideshow._vertical .slideshow-container .arrow._right {
+      margin: 0; }
+      .slideshow._vertical .slideshow-container .arrow._right::before {
+        top: 5px; }
+      .slideshow._vertical .slideshow-container .arrow._right::after {
+        top: 15px;
+        background-image: url("img/slideshow-down-arrow.svg"); }
+  .slideshow._initiated .slideshow-container {
+    width: 860px; }
+    .slideshow._initiated .slideshow-container .arrow {
+      display: block; }
+  .slideshow .thumbnavigator {
+    display: none;
+    position: absolute;
+    /* size of thumbnail navigator container */
+    width: 860px;
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    background-color: #3a3f4e; }
+    .slideshow .thumbnavigator .thumbslides {
+      cursor: default; }
+    .slideshow .thumbnavigator .thumbproto {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 72px;
+      height: 72px; }
+      .slideshow .thumbnavigator .thumbproto:hover .thumb-c, .slideshow .thumbnavigator .thumbproto.thumbprotoav .thumb-c {
+        top: 0px;
+        left: 0px;
+        width: 70px;
+        height: 70px;
+        border: #0086ca 1px solid; }
+    .slideshow .thumbnavigator .thumb-t div {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat; }
+    .slideshow .thumbnavigator .thumb-w {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%; }
+    .slideshow .thumbnavigator .thumb-c {
+      position: absolute;
+      box-sizing: content-box; }
+  .slideshow._filmstrip .thumbnavigator {
+    display: block; }
+  .slideshow._filmstrip .slideshow-container .slides {
+    height: 400px; }
+    .slideshow._filmstrip .slideshow-container .slides .image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+      .slideshow._filmstrip .slideshow-container .slides .image > div {
+        height: 400px; }
+  @media (max-width: 480px) {
+    .slideshow._filmstrip .thumbnavigator {
+      display: none; }
+    .slideshow._filmstrip .slideshow-container .slides {
+      height: 500px; }
+      .slideshow._filmstrip .slideshow-container .slides .image > div {
+        height: 500px; } }
+
+.slideshow._fit-frame-to-content .slideshow-container .slides, .slideshow._fit-frame-height-to-content .slideshow-container .slides {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 0;
+  width: auto;
+  height: auto; }
+  .slideshow._fit-frame-to-content .slideshow-container .slides .image > div, .slideshow._fit-frame-height-to-content .slideshow-container .slides .image > div {
+    height: auto;
+    width: auto;
+    background-repeat: no-repeat;
+    -webkit-flex-grow: 1;
+    flex-grow: 1; }
+
+.slideshow._fit-frame-to-content._filmstrip, .slideshow._fit-frame-height-to-content._filmstrip {
+  padding-bottom: 100px; }
+  .slideshow._fit-frame-to-content._filmstrip .thumbnavigator, .slideshow._fit-frame-height-to-content._filmstrip .thumbnavigator {
+    bottom: -100px;
+    width: auto;
+    right: 0; }
+  .slideshow._fit-frame-to-content._filmstrip .slideshow-container .slides .image > div, .slideshow._fit-frame-height-to-content._filmstrip .slideshow-container .slides .image > div {
+    height: auto; }
+
+@media (max-width: 480px) {
+  .slideshow._fit-frame-to-content._filmstrip, .slideshow._fit-frame-height-to-content._filmstrip {
+    padding-bottom: 0; }
+    .slideshow._fit-frame-to-content._filmstrip .slideshow-container .slides, .slideshow._fit-frame-height-to-content._filmstrip .slideshow-container .slides {
+      height: auto; }
+      .slideshow._fit-frame-to-content._filmstrip .slideshow-container .slides .image > div, .slideshow._fit-frame-height-to-content._filmstrip .slideshow-container .slides .image > div {
+        height: auto; } }
+
+/* Embed component style */
+.embed {
+  margin: 12px auto;
+  position: relative;
+  clear: both;
+  /* class styles for the options properties of the embed component */ }
+  .embed > div {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* default: 16:9 -> (9/16 = 0.5625 or 56.25%) */
+    overflow: hidden; }
+  .embed iframe, .embed embed, .embed object, .embed video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; }
+  .embed._option1 > div {
+    padding-bottom: 66%;
+    /* 3:2 -> (2/3 = 0.67 or 67%) */ }
+  .embed._option2 > div {
+    padding-bottom: 75%;
+    /* 4:3 -> (3/4 = 0.75 or 75%) */ }
+  .embed._option3 > div {
+    padding-bottom: 100%;
+    /* 1:1 -> (1/1 = 1 or 100%) */ }
+
+/* Product component style */
+.product {
+  clear: both;
+  margin: 30px auto;
+  max-width: 452px;
+  /* display-flex and webkit-prefix mixin are defined in the global style file (_common.scss) */
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  /* class styles for the position properties of the image component */
+  /* styles */ }
+  .product .product-image-part {
+    /* ie fix */
+    flex-shrink: 0; }
+  .product figure {
+    margin: 0 0 10px 0; }
+    .product figure img {
+      width: 100%; }
+  .product h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.05; }
+  .product h2 {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.46;
+    font-style: italic;
+    font-weight: bold;
+    display: inline-block; }
+    .product h2:not(:empty) {
+      margin-right: 5px;
+      padding-right: 5px;
+      background-position: right;
+      background-size: 1px 80%;
+      background-repeat: no-repeat;
+      background-image: linear-gradient(to bottom, #000000, #000000) !important; }
+  .product h3 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.36;
+    font-style: italic;
+    font-weight: bold;
+    display: inline; }
+  .product p {
+    padding: 3px 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.36; }
+  .product a {
+    color: #000000;
+    text-decoration: none; }
+    .product a:hover {
+      text-decoration: underline; }
+  .product._left {
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+  .product._right {
+    float: right;
+    margin-left: 0;
+    margin-right: 0; }
+  @media only screen and (max-width: 481px) {
+    .product._right, .product._left {
+      float: none;
+      clear: both;
+      width: 100%;
+      max-width: none; }
+    .product._right {
+      margin-left: 0; } }
+  .product._option1 {
+    /* webkit-prefix mixin is defined in the global style file (_common.scss) */
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse; }
+    .product._option1 figure {
+      margin: 10px 0 0 0; }
+
+/* Video component style */
+.video {
+  margin: 12px auto;
+  position: relative;
+  clear: both; }
+  .video > div {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* default: 16:9 -> (9/16 = 0.5625 or 56.25%) */
+    overflow: hidden; }
+  .video iframe, .video embed, .video object, .video video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; }
+  .video._left {
+    float: left;
+    clear: left;
+    width: calc(41% - 15px);
+    margin-right: 15px;
+    z-index: 1; }
+  .video._right {
+    float: right;
+    clear: right;
+    width: calc(60% - 15px);
+    margin-left: 15px;
+    z-index: 1; }
+  .video.loading, .video.error {
+    font-weight: 300;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.6;
+    padding: .5em; }
+  .video.loading {
+    color: #888888;
+    background-color: #fcfcfc;
+    text-transform: lowercase; }
+    .video.loading span {
+      animation-name: kf-triple-blinking-spans;
+      animation-duration: 1.4s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both; }
+    .video.loading span:nth-child(2) {
+      animation-delay: .2s; }
+    .video.loading span:nth-child(3) {
+      animation-delay: .4s; }
+    .video.loading span {
+      padding-left: .2em;
+      font-weight: bold;
+      color: #666666; }
+  .video.error {
+    background-color: rgba(169, 68, 66, 0.05);
+    color: rgba(169, 68, 66, 0.8); }
+    .video.error > div {
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      align-items: center; }
+      .video.error > div div:first-child {
+        display: inline-block;
+        flex: 1 auto;
+        color: rgba(169, 68, 66, 0.5);
+        font-size: 30px;
+        padding: 0 40px 0 40px; }
+      .video.error > div > div:last-child {
+        display: inline-block;
+        flex: 1 100%; }
+  @media only screen and (max-width: 481px) {
+    .video._right, .video._left {
+      float: none;
+      clear: both;
+      width: 100%; }
+    .video._right {
+      margin-left: 0; } }
+
+/* Social component style */
+.social-media {
+  margin: 12px auto;
+  position: relative;
+  clear: both; }
+  .social-media > div {
+    position: relative; }
+  .social-media._left {
+    float: left;
+    clear: left;
+    width: calc(41% - 15px);
+    margin-right: 15px;
+    z-index: 1; }
+  .social-media._right {
+    float: right;
+    clear: right;
+    width: calc(60% - 15px);
+    margin-left: 15px;
+    z-index: 1; }
+  .social-media.loading, .social-media.error {
+    font-weight: 300;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.6;
+    padding: .5em; }
+  .social-media.loading {
+    color: #888888;
+    background-color: #fcfcfc;
+    text-transform: lowercase; }
+    .social-media.loading span {
+      animation-name: kf-triple-blinking-spans;
+      animation-duration: 1.4s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both; }
+    .social-media.loading span:nth-child(2) {
+      animation-delay: .2s; }
+    .social-media.loading span:nth-child(3) {
+      animation-delay: .4s; }
+    .social-media.loading span {
+      padding-left: .2em;
+      font-weight: bold;
+      color: #666666; }
+  .social-media.error {
+    background-color: rgba(169, 68, 66, 0.05);
+    color: rgba(169, 68, 66, 0.8); }
+    .social-media.error > div {
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      align-items: center; }
+      .social-media.error > div div:first-child {
+        display: inline-block;
+        flex: 1 auto;
+        color: rgba(169, 68, 66, 0.5);
+        font-size: 30px;
+        padding: 0 40px 0 40px; }
+      .social-media.error > div > div:last-child {
+        display: inline-block;
+        flex: 1 100%; }
+  @media only screen and (max-width: 481px) {
+    .social-media._right, .social-media._left {
+      float: none;
+      clear: both;
+      width: 100%; }
+    .social-media._right {
+      margin-left: 0; } }
+
+.instagram-media-rendered,
+.twitter-timeline-rendered,
+.twitter-tweet-rendered {
+  margin: 0 auto !important; }
+
+/* Interactive component style */
+.interactive {
+  margin: 12px auto;
+  position: relative;
+  clear: both; }
+  .interactive div {
+    position: relative;
+    overflow: hidden;
+    padding: 0; }
+    .interactive div iframe {
+      width: 100%;
+      height: 1em;
+      border: 0; }
+  .interactive._left {
+    float: left;
+    clear: left;
+    width: calc(41% - 15px);
+    margin-right: 15px;
+    z-index: 1; }
+  .interactive._right {
+    float: right;
+    clear: right;
+    width: calc(60% - 15px);
+    margin-left: 15px;
+    z-index: 1; }
+  @media only screen and (max-width: 481px) {
+    .interactive._right, .interactive._left {
+      float: none;
+      clear: both;
+      width: 100%; }
+    .interactive._right {
+      margin-left: 0; } }
