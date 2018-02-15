@@ -1,0 +1,16 @@
+/* Footer component style */
+.footer {
+    font-weight: 400;
+    font-size: 18px;
+    font-style: italic;
+    color: #7f7f7f;
+
+    /*
+     * media query
+     * $screen-sm-max constant is defined in the global style file (_common.scss)
+     */
+    @media (max-width: $screen-sm-max) {
+        font-size: 17px;
+        line-height: 1.65;
+    }
+}

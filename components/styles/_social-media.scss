@@ -1,0 +1,46 @@
+/* Social component style */
+.social-media {
+    margin: 12px auto;
+    position: relative;
+    clear: both;
+    > div {
+        position: relative; // forces components to render beneath each other
+    }
+    &._left {
+        float: left;
+        clear: left;
+        width: calc(41% - 15px);
+        margin-right: 15px;
+        z-index: 1;
+    }
+
+    &._right {
+        float: right;
+        clear: right;
+        width: calc(60% - 15px);
+        margin-left: 15px;
+        z-index: 1;
+    }
+
+    @include media-component-states();
+
+    @media only screen and (max-width: $phone-max-width) {
+        &._right,
+        &._left {
+            float: none;
+            clear: both;
+            width: 100%;
+        }
+        &._right {
+            margin-left: 0;
+        }
+    }
+}
+
+// Hack alert: Twitter and Instagram have a margin set which doesn't play nice with our effort
+// to center the component in the content and to have our own margin at top and bottom.
+.instagram-media-rendered,
+.twitter-timeline-rendered,
+.twitter-tweet-rendered {
+    margin: 0 auto !important;
+}

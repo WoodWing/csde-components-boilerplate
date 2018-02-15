@@ -1,0 +1,263 @@
+/* Constants */
+$bodyBackground: #ffffff;
+$textColor: #000000;
+$fontName: "Lato";
+$defaultFontSize: 14px;
+$defaultFontWeight: 300;
+$screen-sm-max: 991px;
+$speed: 0.2s;
+$img-dir: 'img/';
+$max-width: 860px;
+$phone-max-width: 481px;
+
+/* Mixin's helpers, more info: http://sass-lang.com/guide#topic-6*/
+@mixin display-flex() {
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin webkit-prefix($property, $value) {
+    -webkit-#{$property}: $value;
+    #{$property}: $value;
+}
+
+/* Font embeds, examples see: https://www.google.com/fonts */
+/* Imports the style from the google fonts cdn */
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+/* Article view style */
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font: $defaultFontSize $fontName;
+    color: $textColor;
+    background-color: $bodyBackground;
+    font-weight: $defaultFontWeight;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    -webkit-overflow-scrolling: touch;
+    :focus {
+        outline: none;
+    }
+}
+
+body {
+    max-width: $max-width;
+    padding: 0 5px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    &::after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+}
+
+/* Set link color */
+span[data-text-edit-color] {
+    a {
+        color: inherit;
+    }
+}
+
+/* Components style */
+/* Shared style for text related components: title, subtitle, intro, body and footer */
+.text {
+    display: block;
+    margin: 34px auto;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0;
+}
+
+/* Full screen wrapper overlay style (e.g. slideshow, images) */
+.fullscreen-wrapper {
+    position: fixed;
+    @include display-flex();
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    z-index: 100;
+}
+
+/* media query */
+@media (max-width: $screen-sm-max) {
+    .text {
+        font-size: 17px;
+        line-height: 1.65;
+    }
+}
+
+/* Woodwing Inception internal style.
+ * Class for the hero component in the iOS devices.
+ * Please don't change this style class
+ */
+.hero-js {
+    height: 100%;
+    body {
+        height: 100%;
+    }
+    ._hero-bg-box {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        overflow: hidden;
+        ._hero-bg-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0;
+            transition-property: opacity;
+            transition-timing-function: linear;
+            transition-duration: $speed * 2;
+            &._current {
+                opacity: 1;
+            }
+        }
+    }
+    ._hero-content-box {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        ._hero-content-wrapper {
+            background-color: $bodyBackground;
+            ._hero-content-body {
+                max-width: $max-width;
+                padding: 0 5px;
+                margin-left: auto;
+                margin-right: auto;
+                overflow-x: hidden;
+                &::after {
+                    content: " ";
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+    }
+    &.hero-js-android {
+        body {
+            max-width: none;
+        }
+        ._hero-bg-box {
+            position: fixed;
+        }
+        ._hero-content-box {
+            position: relative;
+            margin: 0 -5px;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            left: auto;
+        }
+    }
+}
+
+// Keyframes, see mixin triple-blinking-spans()
+@keyframes kf-triple-blinking-spans {
+    0% {
+        opacity: .2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .2;
+    }
+}
+
+/**
+ Let three child spans blink.
+ Use:
+ <div>Loading<span>.</span><span>.</span><span>.</span></div>
+ div {
+  @include triple-blinking-spans();
+ }
+ */
+@mixin triple-blinking-spans() {
+    // blink the dots after the label
+    span {
+        animation-name: kf-triple-blinking-spans;
+        animation-duration: 1.4s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+    }
+    span:nth-child(2) {
+        animation-delay: .2s;
+    }
+    span:nth-child(3) {
+        animation-delay: .4s;
+    }
+}
+
+
+/**
+ Additional styles for .social and .video components
+ */
+@mixin media-component-states() {
+    &.loading, &.error {
+        font-weight: 300;
+        font-size: $defaultFontSize;
+        font-style: italic;
+        line-height: 1.6;
+        padding: .5em;
+    }
+    &.loading {
+        color: #888888;
+        background-color: rgb(252, 252, 252);
+        text-transform: lowercase;
+
+        @include triple-blinking-spans();
+        span {
+            padding-left: .2em;
+            font-weight: bold;
+            color: #666666;
+        }
+    }
+    &.error {
+        background-color: rgba(169, 68, 66, 0.05);
+        color: rgba(169, 68, 66, 0.8);
+
+        > div {
+            display: flex;
+            -webkit-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            align-items: center;
+
+            div:first-child {
+                display: inline-block;
+                flex: 1 auto;
+                color: rgba(169, 68, 66, 0.5);
+                // horizontally align and size the icon to equal the drop icon of the hero component
+                font-size: 30px;
+                padding: 0 40px 0 40px;
+            }
+
+            > div:last-child {
+                display: inline-block;
+                flex: 1 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+/* Author component style */
+.author {
+    height: 65px;
+    margin: 12px auto;
+    padding: 0 0 0 88px;
+    position: relative;
+    clear: both;
+
+    .author-image {
+        width: 65px;
+        height: 65px;
+        position: absolute;
+        top: 0;
+        left: 5px;
+        overflow: hidden;
+        margin: 0;
+        border-radius: 30px;
+        > div {
+            width: 65px;
+            height: 65px;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+    .info-block {
+        padding-top: 8px;
+        .author-row {
+            white-space: nowrap;
+        }
+        .name {
+            color: #0085CD;
+            font-weight: bold;
+            font-size: 19px;
+            max-width: calc(60% - 10px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+        .sep_name_loc {
+            display: inline-block;
+            width: 20px;
+            vertical-align: top;
+            &::after {
+                position: relative;
+                display: inline-block;
+                text-align: center;
+                width: 100%;
+                color: #0085CD;
+                font-weight: bold;
+                font-size: 19px;
+                content: "·";
+            }
+        }
+        .location {
+            color: #339DD7;
+            font-weight: bold;
+            font-size: 19px;
+            max-width: calc(40% - 10px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+        .link {
+            color: #999999;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

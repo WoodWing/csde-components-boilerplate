@@ -1,0 +1,64 @@
+/* Hero component style.
+   A hero image is a large banner image, prominently placed on a web page, generally in the front and center.
+   http://en.wikipedia.org/wiki/Hero_image */
+.hero {
+    margin: 0px auto;
+    clear: both;
+    > figure {
+        margin: auto 50%;
+        > div {
+            margin-left: -50vw;
+            width: 100vw;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            overflow: hidden;
+            > div {
+                display: flex;
+                align-items: center;
+                height: 100vh;
+                margin: 0 auto;
+                max-width: $max-width;
+                &::after {
+                    content: " ";
+                    display: block;
+                    clear: both;
+                }
+                > figcaption {
+                    display: block;
+                    vertical-align: middle;
+                    color: white;
+                    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                    width: 100%;
+                }
+            }
+        }
+    }
+    h1 {
+        margin: 0.5em 0;
+        font-size: 6rem;
+        line-height: 6.7778rem;
+    }
+    h2 {
+        margin: 0.8em 0;
+        font-size: 3rem;
+        line-height: 3.58889rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    &._fixed-background {
+        > figure {
+            > div {
+                background-attachment: scroll;
+            }
+        }
+    }
+    &._js-fixed-scroll {
+        > figure {
+            > div {
+                background-attachment: scroll;
+            }
+        }
+    }
+}

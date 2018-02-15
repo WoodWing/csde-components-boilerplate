@@ -1,0 +1,69 @@
+blockquote {
+    margin: 52px 0;
+    padding: 0;
+    color: #666666;
+    position: relative;
+    font-weight: 400;
+    z-index: 1;
+    width: 100%;
+    float: none;
+    clear: both;
+    .quotation-mark::before {
+        content: "“";
+        font-size: 5.77778rem;
+        line-height: 33px;
+        float: left;
+        position: relative;
+        top: 1.3rem;
+        left: -0.1ch;
+        padding-right: 0.1ch;
+    }
+    .quote {
+        display: block;
+    }
+    p {
+        margin: 0 0 13px 0;
+        padding: 0;
+        font-size: 26px;
+        line-height: 1.26;
+        font-style: italic;
+    }
+
+    footer {
+        position: relative;
+        padding-left: 2ch;
+        font-size: 16px;
+        &::after {
+            content: '\2014';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        &:empty {
+            padding-left: 0;
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    /* media query */
+    @media (min-width: 800px) {
+    /* class styles for the position properties of the image component in the current media query breakpoint */
+        &._left {
+            float: left;
+            clear: left;
+            width: calc(41% - 15px);
+            margin-right: 15px;
+            z-index: 1;
+        }
+        &._right {
+            float: right;
+            clear: right;
+            width: calc(60% - 15px);
+            margin-left: 15px;
+            z-index: 1;
+        }
+    }
+
+}

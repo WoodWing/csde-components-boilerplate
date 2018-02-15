@@ -1,0 +1,16 @@
+/* Sub-title component style */
+.subtitle {
+    font-weight: 600;
+    font-size: 23px;
+    color: #1a1a1a;
+    margin: 16px auto;
+
+    /*
+    * media query
+    * $screen-sm-max constant is defined in the global style file (_common.scss)
+    */
+    @media (max-width: $screen-sm-max) {
+        font-size: 26px;
+        line-height: 1.45;
+    }
+}

@@ -1,0 +1,17 @@
+<header>
+    <!-- The header image shown inside your article -->
+    <figure doc-if="content.image">
+        <img doc-image="image" />
+    </figure>
+
+       <!-- The title and subtitle shown in your article -->
+    <h1 doc-if="content.title" doc-editable="title"></h1>
+
+    <h1 doc-if="content.subtitle" doc-editable="subtitle"></h1>
+
+    <!-- A kicker for your article -->
+    <!-- h3 class="op-kicker">${introduction}</h3 -->
+
+    <!-- The author of your article -->
+    <address doc-if="content.author" doc-editable="author"></address>
+</header>

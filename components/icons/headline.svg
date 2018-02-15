@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 19 17" enable-background="new 0 0 19 17" xml:space="preserve">
+<g>
+	<g>
+		<rect x="0.4" y="16" fill="#E3E3E3" width="18.3" height="0.6"/>
+		<rect x="0.4" y="9.3" fill="#E3E3E3" width="18.3" height="0.6"/>
+		<rect x="0.4" y="11.5" fill="#E3E3E3" width="18.3" height="0.6"/>
+		<rect x="0.4" y="13.8" fill="#E3E3E3" width="18.3" height="0.6"/>
+		<g>
+			<rect x="0.4" y="0.4" fill="#F8B558" width="18.3" height="4.8"/>
+		</g>
+		<rect x="0.4" y="5.8" fill="#F8B558" width="18.3" height="1.9"/>
+	</g>
+</g>
+</svg>

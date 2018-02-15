@@ -1,0 +1,25 @@
+{
+  "name": "csde-components-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate project for creating Content Station Digital Editor components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WoodWing/csde-components-boilerplate.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/WoodWing/csde-components-boilerplate/issues"
+  },
+  "homepage": "https://github.com/WoodWing/csde-components-boilerplate#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-zip": "^4.1.0",
+    "yargs": "^11.0.0"
+  }
+}
