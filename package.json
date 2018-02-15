@@ -12,7 +12,7 @@
     "url": "git+https://github.com/WoodWing/csde-components-boilerplate.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/WoodWing/csde-components-boilerplate/issues"
   },
