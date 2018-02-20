@@ -2,6 +2,7 @@
     "name": "default-components",
     "description": "Content Station Digital Editor components",
     "version": "1.0.0",
+    "defaultComponentOnEnter": "body",
 
     "components":[
         {

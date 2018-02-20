@@ -8,6 +8,19 @@ Next, in this folder run:
 
 ```npm install```
 
+## Developing a component package
+Download, clone or fork this repository.
+
+Follow the setup instructions in the new folder.
+
+Next run:
+
+```npm run dev```
+
+This will watch for any changes in the components folder and run the validation logic.
+
+TBD documentation components model.
+
 ## Package
 To create a components package, run:
 
