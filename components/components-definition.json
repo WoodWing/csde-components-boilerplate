@@ -127,6 +127,7 @@
         },
         {
             "name": "intro",
+            "icon": "icons/intro.svg",
             "label": "{{ 'INTRO_EDITOR_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -284,349 +285,404 @@
         {
             "name": "position",
             "label": "{{ 'DESIGN_PROPERTY_POSITION_LABEL' | translate }}",
-            "control": "select",
-            "dataType": "styles",
-            "options": [
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}",
-                    "value": "_left"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
-                    "value": "_right"
-                }
-            ]
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}",
+                        "value": "_left"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
+                        "value": "_right"
+                    }
+                ]
+            },
+            "dataType": "styles"
         },
         {
             "name": "social-url",
             "label": "{{ 'DESIGN_PROPERTY_POST_URL_LABEL' | translate }}",
-            "control": "text",
-            "dataType": "media",
-            "dataProperty": "social-url",
-            "value": "",
-            "valueType": "string",
-            "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
+            "control": {
+                "type": "text",
+                "value": "",
+                "valueType": "string",
+                "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
+            },
+            "dataType": "doc-media",
+            "dataProperty": "social-url"
         },
         {
             "name": "video-url",
             "label": "{{ 'DESIGN_PROPERTY_VIDEO_URL_LABEL' | translate }}",
-            "control": "text",
-            "dataType": "media",
-            "dataProperty": "video-url",
-            "value": "",
-            "valueType": "string",
-            "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
+            "control": {
+                "type": "text",
+                "value": "",
+                "valueType": "string",
+                "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
+            },
+            "dataType": "doc-media",
+            "dataProperty": "video-url"
         },
         {
             "name": "start-time",
             "label": "{{ 'DESIGN_PROPERTY_START_VIDEO_AT_LABEL' | translate }}",
-            "control": "time",
-            "value": "",
-            "inputPlaceholder": "{{ 'DESIGN_PROPERTY_START_VIDEO_AT_PLACEHOLDER' | translate }}"
+            "control": {
+                "type": "time",
+                "value": "",
+                "inputPlaceholder": "{{ 'DESIGN_PROPERTY_START_VIDEO_AT_PLACEHOLDER' | translate }}"
+            },
+            "dataType": "doc-media",
+            "dataProperty": "start-time"
         },
         {
             "name": "include-caption",
             "label": "{{ 'DESIGN_PROPERTY_MEDIA_INSTAGRAM_INCLUDE_CAPTION_LABEL' | translate }}",
-            "control": "checkbox",
-            "dataType": "media",
-            "dataProperty": "include-caption",
-            "value": "false"
+            "control": {
+                "type": "checkbox",
+                "value": "false"
+            },
+            "dataType": "doc-media",
+            "dataProperty": "include-caption"
         },
         {
             "name": "include-media",
             "label": "{{ 'DESIGN_PROPERTY_MEDIA_TWITTER_INCLUDE_MEDIA_LABEL' | translate }}",
-            "control": "checkbox",
-            "dataType": "media",
-            "dataProperty": "include-media",
-            "value": "false"
+            "control": {
+                "type": "checkbox",
+                "value": "false"
+            },
+            "dataType": "doc-media",
+            "dataProperty": "include-media"
         },
         {
             "name": "letter-spacing",
             "label": "{{ 'DESIGN_PROPERTY_LETTER_SPACING' | translate }}",
-            "control": "text",
-            "dataType": "inlineStyles",
-            "valueType": "string",
-            "pattern": "^(([+-]{0,1})([0-9]|[0-9][.][0-9]{1,}|[0-9]{2}|[0-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
-            "defaultValue": "",
-            "unit": "em",
-            "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER",
-            "selector": "[doc-editable]"
+            "control": {
+                "control": "text",
+                "valueType": "string",
+                "pattern": "^(([+-]{0,1})([0-9]|[0-9][.][0-9]{1,}|[0-9]{2}|[0-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
+                "defaultValue": "",
+                "unit": "em",
+                "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER",
+                "selector": "[doc-editable]"
+            },
+            "dataType": "inlineStyles"
         },
         {
             "name": "line-height",
             "label": "{{ 'DESIGN_PROPERTY_LINE_HEIGHT' | translate }}",
-            "control": "text",
-            "dataType": "inlineStyles",
-            "valueType": "string",
-            "pattern": "^(([+]{0,1})([0-9]|[0-9][.][0-9]{1,}|[1-9]{2}|[1-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
-            "defaultValue": "",
-            "unit": "em",
-            "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER",
-            "selector": "[doc-editable]"
+            "control": {
+                "type": "text",
+                "valueType": "string",
+                "pattern": "^(([+]{0,1})([0-9]|[0-9][.][0-9]{1,}|[1-9]{2}|[1-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
+                "defaultValue": "",
+                "unit": "em",
+                "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER",
+                "selector": "[doc-editable]"
+            },
+            "dataType": "inlineStyles"
         },
         {
             "name": "inside-caption",
             "label": "{{ 'STORY_METADATA_FIELD_CAPTION_LABEL' | translate }}",
-            "control": "select",
-            "options": [
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_OUTSIDE' | translate }}"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_NONE' | translate }}",
-                    "value": "_caption-none"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM' | translate }}",
-                    "value": "_caption-inside"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP' | translate }}",
-                    "value": "_caption-top"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_LEFT' | translate }}",
-                    "value": "_caption-top-left"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_RIGHT' | translate }}",
-                    "value": "_caption-top-right"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_LEFT' | translate }}",
-                    "value": "_caption-bottom-left"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_RIGHT' | translate }}",
-                    "value": "_caption-bottom-right"
-                }
-            ]
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_OUTSIDE' | translate }}"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_NONE' | translate }}",
+                        "value": "_caption-none"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM' | translate }}",
+                        "value": "_caption-inside"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP' | translate }}",
+                        "value": "_caption-top"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_LEFT' | translate }}",
+                        "value": "_caption-top-left"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_RIGHT' | translate }}",
+                        "value": "_caption-top-right"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_LEFT' | translate }}",
+                        "value": "_caption-bottom-left"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_RIGHT' | translate }}",
+                        "value": "_caption-bottom-right"
+                    }
+                ]
+            },
+            "dataType": "styles"
         },
         {
             "name": "fixed-background",
             "label": "{{ 'DESIGN_PROPERTY_FIXED_BACKGROUND_LABEL' | translate }}",
-            "control": "checkbox",
-            "dataType": "styles",
-            "value": "_fixed-background"
+            "control": {
+                "type": "checkbox",
+                "value": "_fixed-background"
+            },
+            "dataType": "styles"
         },
         {
             "name": "drop-capital",
             "label": "{{ 'DESIGN_PROPERTY_DROP_LABEL_LABEL' | translate }}",
-            "type": "data"
+            "control": {
+                "type": "checkbox"
+            },
+            "dataType": "data"
         },
         {
             "name": "text-align",
             "label": "{{ 'DESIGN_PROPERTY_TEXT_ALIGN' | translate }}",
-            "control": "select",
-            "options": [
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}",
-                    "value": "_align-middle"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
-                    "value": "_align-right"
-                }
-            ]
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}",
+                        "value": "_align-middle"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
+                        "value": "_align-right"
+                    }
+                ]
+            },
+            "dataType": "styles"
         },
         {
             "name": "style",
             "label": "{{ 'DESIGN_PROPERTY_VARIANT_LABEL' | translate }}",
-            "control": "select",
-            "options": [
-                {
-                    "caption": "{{ 'DESIGN_STYLES_DEFAULT_LABEL' | translate }}"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 1",
-                    "value": "_option1"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 2",
-                    "value": "_option2"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 3",
-                    "value": "_option3"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 4",
-                    "value": "_option4"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 5",
-                    "value": "_option5"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 6",
-                    "value": "_option6"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 7",
-                    "value": "_option7"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 8",
-                    "value": "_option8"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 9",
-                    "value": "_option9"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 10",
-                    "value": "_option10"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 11",
-                    "value": "_option11"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 12",
-                    "value": "_option12"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 13",
-                    "value": "_option13"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 14",
-                    "value": "_option14"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 15",
-                    "value": "_option15"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 16",
-                    "value": "_option16"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 17",
-                    "value": "_option17"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 18",
-                    "value": "_option18"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 19",
-                    "value": "_option19"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 20",
-                    "value": "_option20"
-                }
-            ]
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": "{{ 'DESIGN_STYLES_DEFAULT_LABEL' | translate }}"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 1",
+                        "value": "_option1"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 2",
+                        "value": "_option2"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 3",
+                        "value": "_option3"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 4",
+                        "value": "_option4"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 5",
+                        "value": "_option5"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 6",
+                        "value": "_option6"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 7",
+                        "value": "_option7"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 8",
+                        "value": "_option8"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 9",
+                        "value": "_option9"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 10",
+                        "value": "_option10"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 11",
+                        "value": "_option11"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 12",
+                        "value": "_option12"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 13",
+                        "value": "_option13"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 14",
+                        "value": "_option14"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 15",
+                        "value": "_option15"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 16",
+                        "value": "_option16"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 17",
+                        "value": "_option17"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 18",
+                        "value": "_option18"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 19",
+                        "value": "_option19"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 20",
+                        "value": "_option20"
+                    }
+                ]
+            },
+            "dataType": "styles"
         },
         {
             "name": "fitting",
             "label": "{{ 'DESIGN_PROPERTY_FITTING_LABEL' | translate }}",
-            "control": "select",
-            "options": [
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_FITTING_CONTENT_TO_FRAME_LABEL' | translate }}"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_FITTING_FRAME_TO_CONTENT_LABEL' | translate }}",
-                    "value": "_fit-frame-to-content"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_FITTING_FRAME_HEIGHT_TO_CONTENT_LABEL' | translate }}",
-                    "value": "_fit-frame-height-to-content"
-                }
-            ]
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_FITTING_CONTENT_TO_FRAME_LABEL' | translate }}"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_FITTING_FRAME_TO_CONTENT_LABEL' | translate }}",
+                        "value": "_fit-frame-to-content"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_FITTING_FRAME_HEIGHT_TO_CONTENT_LABEL' | translate }}",
+                        "value": "_fit-frame-height-to-content"
+                    }
+                ]
+            },
+            "dataType": "styles"
         },
         {
             "name": "slideshow-inside-caption",
             "label": "{{ 'STORY_METADATA_FIELD_CAPTION_LABEL' | translate }}",
-            "control": "select",
-            "options": [
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_OUTSIDE' | translate }}"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_NONE' | translate }}",
-                    "value": "_caption-none"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM' | translate }}",
-                    "value": "_caption-inside"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP' | translate }}",
-                    "value": "_caption-top"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_LEFT' | translate }}",
-                    "value": "_caption-top-left"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_RIGHT' | translate }}",
-                    "value": "_caption-top-right"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_LEFT' | translate }}",
-                    "value": "_caption-bottom-left"
-                },
-                {
-                    "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_RIGHT' | translate }}",
-                    "value": "_caption-bottom-right"
-                }
-            ]
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_OUTSIDE' | translate }}"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_NONE' | translate }}",
+                        "value": "_caption-none"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM' | translate }}",
+                        "value": "_caption-inside"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP' | translate }}",
+                        "value": "_caption-top"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_LEFT' | translate }}",
+                        "value": "_caption-top-left"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_RIGHT' | translate }}",
+                        "value": "_caption-top-right"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_LEFT' | translate }}",
+                        "value": "_caption-bottom-left"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_RIGHT' | translate }}",
+                        "value": "_caption-bottom-right"
+                    }
+                ]
+            },
+            "dataType": "styles"
         },
         {
             "name": "slideshow-play-orientation",
             "label": "{{ 'DESIGN_PROPERTY_SLIDESHOW_PLAY_ORIENTATION_LABEL' | translate }}",
-            "control": "select",
-            "options": [
-                {
-                    "caption": "{{ 'BTN_PREVIEW_HORIZONTAL_LABEL' | translate }}"
-                },
-                {
-                    "caption": "{{ 'BTN_PREVIEW_VERTICAL_LABEL' | translate }}",
-                    "value": "_vertical"
-                }
-            ]
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": "{{ 'BTN_PREVIEW_HORIZONTAL_LABEL' | translate }}"
+                    },
+                    {
+                        "caption": "{{ 'BTN_PREVIEW_VERTICAL_LABEL' | translate }}",
+                        "value": "_vertical"
+                    }
+                ]
+            },
+            "dataType": "styles"
         },
         {
             "name": "slideshow-autoplay",
             "label": "{{ 'DESIGN_PROPERTY_SLIDESHOW_AUTO_PLAY_LABEL' | translate }}",
-            "control": "option",
-            "value": "_auto-play"
+            "control": {
+                "type": "checkbox",
+                "value": "_auto-play"
+            },
+            "dataType": "styles"
         },
         {
             "name": "slideshow-filmstrip",
             "label": "{{ 'DESIGN_PROPERTY_SLIDESHOW_FILMSTRIP_LABEL' | translate }}",
-            "control": "option",
-            "value": "_filmstrip"
+            "control": {
+                "type": "checkbox",
+                "value": "_filmstrip"
+            },
+            "dataType": "styles"
         },
         {
             "name": "disable-fullscreen",
             "label": "{{ 'DESIGN_PROPERTY_DISABLE_FULLSCREEN_LABEL' | translate }}",
-            "control": "option",
-            "value": "_disable-fullscreen"
+            "control": {
+                "type": "checkbox",
+                "value": "_disable-fullscreen"
+            },
+            "dataType": "styles"
         },
         {
             "name": "background-color",
             "label": "{{ 'DESIGN_PROPERTY_BACKGROUND_COLOR_LABEL' | translate }}",
-            "control": "colorPicker",
-            "valueType": "color",
-            "options": {
-                "opacity": true
-            }
+            "control": {
+                "type": "colorPicker",
+                "options": {
+                    "opacity": true
+                }
+            },
+            "dataType": "inlineStyles"
         },
         {
             "name": "parallax",
             "label": "{{ 'DESIGN_PROPERTY_PARALLAX_LABEL' | translate }}",
-            "control": "checkbox",
-            "type": "data",
+            "control": {
+                "type": "checkbox",
+                "value": "true"
+            },
+            "dataType": "data",
             "group": "applenews"
         }
     ],

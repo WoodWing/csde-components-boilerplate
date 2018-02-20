@@ -14,3 +14,11 @@ gulp.task('default', async () => {
         .pipe(zip(`${name}.zip`))
         .pipe(gulp.dest('dist'));
 });
+
+gulp.task('dev', ['validate'], () => {
+    return gulp.watch('components/**/*', ['validate']);
+});
+
+gulp.task('validate', async () => {
+    await componentsValidator.validateFolder('./components');
+});
