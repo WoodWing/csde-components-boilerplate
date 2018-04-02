@@ -452,19 +452,23 @@
                 "type": "select",
                 "options": [
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}"
+                        "caption": "{{ 'DESIGN_STYLES_DEFAULT_LABEL' | translate }}"
+                    },
+                    {
+                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}",
+                        "value": "left"
                     },
                     {
                         "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}",
-                        "value": "_align-middle"
+                        "value": "center"
                     },
                     {
                         "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
-                        "value": "_align-right"
+                        "value": "right"
                     }
                 ]
             },
-            "dataType": "styles"
+            "dataType": "inlineStyles"
         },
         {
             "name": "style",
