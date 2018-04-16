@@ -309,8 +309,6 @@
             "label": "{{ 'DESIGN_PROPERTY_POST_URL_LABEL' | translate }}",
             "control": {
                 "type": "text",
-                "value": "",
-                "valueType": "string",
                 "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
             },
             "dataType": "doc-media",
@@ -321,8 +319,6 @@
             "label": "{{ 'DESIGN_PROPERTY_VIDEO_URL_LABEL' | translate }}",
             "control": {
                 "type": "text",
-                "value": "",
-                "valueType": "string",
                 "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
             },
             "dataType": "doc-media",
@@ -363,14 +359,13 @@
             "name": "letter-spacing",
             "label": "{{ 'DESIGN_PROPERTY_LETTER_SPACING' | translate }}",
             "control": {
-                "control": "text",
-                "valueType": "string",
+                "type": "text",
                 "pattern": "^(([+-]{0,1})([0-9]|[0-9][.][0-9]{1,}|[0-9]{2}|[0-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
                 "defaultValue": "",
                 "unit": "em",
-                "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER",
-                "selector": "[doc-editable]"
+                "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER"
             },
+            "selector": "[doc-editable]",
             "dataType": "inlineStyles"
         },
         {
@@ -378,13 +373,12 @@
             "label": "{{ 'DESIGN_PROPERTY_LINE_HEIGHT' | translate }}",
             "control": {
                 "type": "text",
-                "valueType": "string",
                 "pattern": "^(([+]{0,1})([0-9]|[0-9][.][0-9]{1,}|[1-9]{2}|[1-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
                 "defaultValue": "",
                 "unit": "em",
-                "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER",
-                "selector": "[doc-editable]"
+                "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER"
             },
+            "selector": "[doc-editable]",
             "dataType": "inlineStyles"
         },
         {
@@ -441,7 +435,8 @@
             "name": "drop-capital",
             "label": "{{ 'DESIGN_PROPERTY_DROP_LABEL_LABEL' | translate }}",
             "control": {
-                "type": "checkbox"
+                "type": "checkbox",
+                "value": ""
             },
             "dataType": "data"
         },
