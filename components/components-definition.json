@@ -665,9 +665,7 @@
             "label": "{{ 'DESIGN_PROPERTY_BACKGROUND_COLOR_LABEL' | translate }}",
             "control": {
                 "type": "colorPicker",
-                "options": {
-                    "opacity": true
-                }
+                "opacity": true
             },
             "dataType": "inlineStyles"
         },
