@@ -678,6 +678,15 @@
             },
             "dataType": "data",
             "group": "applenews"
+        },
+        {
+            "name": "edit-image",
+            "label": "Edit image",
+            "control": {
+                "type": "image-editor",
+                "focuspoint": true
+            },
+            "dataType": "doc-image"
         }
     ],
 
