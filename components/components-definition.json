@@ -444,17 +444,20 @@
             "name": "text-align",
             "label": "{{ 'DESIGN_PROPERTY_TEXT_ALIGN' | translate }}",
             "control": {
-                "type": "select",
+                "type": "radio",
                 "options": [
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}"
+                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}",
+                        "icon": "icons/properties/text-align-left.svg"
                     },
                     {
                         "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}",
+                        "icon": "icons/properties/text-align-middle.svg",
                         "value": "_align-middle"
                     },
                     {
                         "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
+                        "icon": "icons/properties/text-align-right.svg",
                         "value": "_align-right"
                     }
                 ]
