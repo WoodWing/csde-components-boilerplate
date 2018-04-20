@@ -57,7 +57,8 @@
                 "text-align",
                 "letter-spacing",
                 "line-height",
-                "parallax"
+                "parallax",
+                "edit-image:image"
             ]
         },
         {
@@ -183,7 +184,8 @@
                 "text-align",
                 "letter-spacing",
                 "line-height",
-                "parallax"
+                "parallax",
+                "edit-image:image"
             ]
         },
         {
@@ -681,6 +683,15 @@
             },
             "dataType": "data",
             "group": "applenews"
+        },
+        {
+            "name": "edit-image",
+            "label": "Edit image",
+            "control": {
+                "type": "image-editor",
+                "focuspoint": true
+            },
+            "dataType": "doc-image"
         }
     ],
 
