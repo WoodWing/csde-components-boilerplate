@@ -8,7 +8,7 @@
         {
             "name": "body",
             "label": "{{ 'BODY_EDITOR_LABEL' | translate }}",
-            "icon": "icons/body.svg",
+            "icon": "icons/components/body.svg",
             "properties":[
                 "drop-capital",
                 "style",
@@ -21,7 +21,7 @@
         },
         {
             "name": "container",
-            "icon": "icons/container.svg",
+            "icon": "icons/components/container.svg",
             "allowNesting": "one-level",
             "label": "{{ 'DESIGN_COMPONENT_CONTAINER_LABEL' | translate }}",
             "properties": [
@@ -33,7 +33,7 @@
         },
         {
             "name": "product",
-            "icon": "icons/product.svg",
+            "icon": "icons/components/product.svg",
             "label": "{{ 'DESIGN_COMPONENT_PRODUCT_LABEL' | translate }}",
             "properties": [
                 "position",
@@ -46,7 +46,7 @@
         },
         {
             "name": "image",
-            "icon": "icons/image.svg",
+            "icon": "icons/components/image.svg",
             "label": "{{ 'IMAGE_EDITOR_LABEL' | translate }}",
             "properties": [
                 "fitting",
@@ -63,7 +63,7 @@
         },
         {
             "name": "embed",
-            "icon": "icons/embed.svg",
+            "icon": "icons/components/embed.svg",
             "label": "{{ 'DESIGN_COMPONENT_EMBED_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -72,7 +72,7 @@
         },
         {
             "name": "slideshow",
-            "icon": "icons/slideshow.svg",
+            "icon": "icons/components/slideshow.svg",
             "label": "{{ 'DESIGN_COMPONENT_SLIDESHOW_LABEL' | translate }}",
             "properties": [
                 "fitting",
@@ -93,7 +93,7 @@
         },
         {
             "name": "author",
-            "icon": "icons/author.svg",
+            "icon": "icons/components/author.svg",
             "label": "{{ 'DESIGN_COMPONENT_AUTHOR_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -105,7 +105,7 @@
         },
         {
             "name": "crosshead",
-            "icon": "icons/crosshead.svg",
+            "icon": "icons/components/crosshead.svg",
             "label": "{{ 'CROSS_HEAD_EDITOR_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -117,7 +117,7 @@
         },
         {
             "name": "footer",
-            "icon": "icons/footer.svg",
+            "icon": "icons/components/footer.svg",
             "label": "{{ 'FOOTER_EDITOR_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -129,7 +129,7 @@
         },
         {
             "name": "intro",
-            "icon": "icons/intro.svg",
+            "icon": "icons/components/intro.svg",
             "label": "{{ 'INTRO_EDITOR_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -141,7 +141,7 @@
         },
         {
             "name": "quote",
-            "icon": "icons/quote.svg",
+            "icon": "icons/components/quote.svg",
             "label": "{{ 'DESIGN_COMPONENT_QUOTE_LABEL' | translate }}",
             "properties": [
                 "position",
@@ -154,7 +154,7 @@
         },
         {
             "name": "headline",
-            "icon": "icons/headline.svg",
+            "icon": "icons/components/headline.svg",
             "label": "{{ 'DESIGN_COMPONENT_HEADLINE_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -166,7 +166,7 @@
         },
         {
             "name": "separator",
-            "icon": "icons/separator.svg",
+            "icon": "icons/components/separator.svg",
             "label": "{{ 'DESIGN_COMPONENT_SEPARATOR_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -175,7 +175,7 @@
         },
         {
             "name": "hero",
-            "icon": "icons/hero.svg",
+            "icon": "icons/components/hero.svg",
             "label": "{{ 'HERO_EDITOR_LABEL' | translate }}",
             "allowNesting": "no",
             "properties": [
@@ -190,7 +190,7 @@
         },
         {
             "name": "subtitle",
-            "icon": "icons/subtitle.svg",
+            "icon": "icons/components/subtitle.svg",
             "label": "{{ 'SUB_TITLE_EDITOR_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -202,7 +202,7 @@
         },
         {
             "name": "title",
-            "icon": "icons/title.svg",
+            "icon": "icons/components/title.svg",
             "label": "{{ 'STORIES_TITLE_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -214,7 +214,7 @@
         },
         {
             "name": "social-media",
-            "icon": "icons/social-media.svg",
+            "icon": "icons/components/social-media.svg",
             "label": "{{ 'DESIGN_COMPONENT_SOCIAL_MEDIA_LABEL' | translate }}",
             "properties": [
                 "social-url",
@@ -227,7 +227,7 @@
         },
         {
             "name": "video",
-            "icon": "icons/video.svg",
+            "icon": "icons/components/video.svg",
             "label": "{{ 'DESIGN_COMPONENT_VIDEO_LABEL' | translate }}",
             "properties": [
                 "video-url",
@@ -446,17 +446,20 @@
             "name": "text-align",
             "label": "{{ 'DESIGN_PROPERTY_TEXT_ALIGN' | translate }}",
             "control": {
-                "type": "select",
+                "type": "radio",
                 "options": [
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}"
+                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}",
+                        "icon": "icons/properties/text-align-left.svg"
                     },
                     {
                         "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}",
+                        "icon": "icons/properties/text-align-middle.svg",
                         "value": "_align-middle"
                     },
                     {
                         "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
+                        "icon": "icons/properties/text-align-right.svg",
                         "value": "_align-right"
                     }
                 ]
