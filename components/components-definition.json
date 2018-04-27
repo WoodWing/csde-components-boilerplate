@@ -437,8 +437,7 @@
             "name": "drop-capital",
             "label": "{{ 'DESIGN_PROPERTY_DROP_LABEL_LABEL' | translate }}",
             "control": {
-                "type": "checkbox",
-                "value": ""
+                "type": "drop-capital"
             },
             "dataType": "data"
         },
