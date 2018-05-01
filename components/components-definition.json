@@ -22,6 +22,7 @@
         {
             "name": "container",
             "icon": "icons/components/container.svg",
+            "selectionMethod": "handle",
             "allowNesting": "one-level",
             "label": "{{ 'DESIGN_COMPONENT_CONTAINER_LABEL' | translate }}",
             "properties": [
@@ -64,6 +65,7 @@
         {
             "name": "embed",
             "icon": "icons/components/embed.svg",
+            "selectionMethod": "handle",
             "label": "{{ 'DESIGN_COMPONENT_EMBED_LABEL' | translate }}",
             "properties": [
                 "style",
@@ -216,6 +218,7 @@
             "name": "social-media",
             "icon": "icons/components/social-media.svg",
             "label": "{{ 'DESIGN_COMPONENT_SOCIAL_MEDIA_LABEL' | translate }}",
+            "selectionMethod": "handle",
             "properties": [
                 "social-url",
                 "include-caption",
@@ -229,6 +232,7 @@
             "name": "video",
             "icon": "icons/components/video.svg",
             "label": "{{ 'DESIGN_COMPONENT_VIDEO_LABEL' | translate }}",
+            "selectionMethod": "handle",
             "properties": [
                 "video-url",
                 "start-time",
