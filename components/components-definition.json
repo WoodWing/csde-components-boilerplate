@@ -220,9 +220,7 @@
             "label": "{{ 'DESIGN_COMPONENT_SOCIAL_MEDIA_LABEL' | translate }}",
             "selectionMethod": "handle",
             "properties": [
-                "social-url",
-                "include-caption",
-                "include-media",
+                "media-properties:media",
                 "position",
                 "style",
                 "parallax"
@@ -234,9 +232,7 @@
             "label": "{{ 'DESIGN_COMPONENT_VIDEO_LABEL' | translate }}",
             "selectionMethod": "handle",
             "properties": [
-                "video-url",
-                "start-time",
-                "position",
+                "media-properties:media",
                 "style",
                 "parallax"
             ]
@@ -309,57 +305,6 @@
                 ]
             },
             "dataType": "styles"
-        },
-        {
-            "name": "social-url",
-            "label": "{{ 'DESIGN_PROPERTY_POST_URL_LABEL' | translate }}",
-            "control": {
-                "type": "text",
-                "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
-            },
-            "dataType": "doc-media",
-            "dataProperty": "social-url"
-        },
-        {
-            "name": "video-url",
-            "label": "{{ 'DESIGN_PROPERTY_VIDEO_URL_LABEL' | translate }}",
-            "control": {
-                "type": "text",
-                "inputPlaceholder": "{{ 'DESIGN_PROPERTY_HYPERLINK_PLACEHOLDER' | translate }}"
-            },
-            "dataType": "doc-media",
-            "dataProperty": "video-url"
-        },
-        {
-            "name": "start-time",
-            "label": "{{ 'DESIGN_PROPERTY_START_VIDEO_AT_LABEL' | translate }}",
-            "control": {
-                "type": "time",
-                "value": "",
-                "inputPlaceholder": "{{ 'DESIGN_PROPERTY_START_VIDEO_AT_PLACEHOLDER' | translate }}"
-            },
-            "dataType": "doc-media",
-            "dataProperty": "start-time"
-        },
-        {
-            "name": "include-caption",
-            "label": "{{ 'DESIGN_PROPERTY_MEDIA_INSTAGRAM_INCLUDE_CAPTION_LABEL' | translate }}",
-            "control": {
-                "type": "checkbox",
-                "value": "false"
-            },
-            "dataType": "doc-media",
-            "dataProperty": "include-caption"
-        },
-        {
-            "name": "include-media",
-            "label": "{{ 'DESIGN_PROPERTY_MEDIA_TWITTER_INCLUDE_MEDIA_LABEL' | translate }}",
-            "control": {
-                "type": "checkbox",
-                "value": "false"
-            },
-            "dataType": "doc-media",
-            "dataProperty": "include-media"
         },
         {
             "name": "letter-spacing",
@@ -696,6 +641,14 @@
                 "focuspoint": true
             },
             "dataType": "doc-image"
+        },
+        {
+            "name": "media-properties",
+            "label": "Media Properties",
+            "control": {
+                "type": "media-properties"
+            },
+            "dataType": "doc-media"
         }
     ],
 
