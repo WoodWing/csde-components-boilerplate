@@ -386,8 +386,13 @@
             "name": "drop-capital",
             "label": "{{ 'DESIGN_PROPERTY_DROP_LABEL_LABEL' | translate }}",
             "control": {
-                "type": "checkbox",
-                "value": ""
+                "type": "drop-capital",
+                "charactersMinimum": 1,
+                "charactersDefault": 1,
+                "charactersMaximum": 10,
+                "linesMinimum": 1,
+                "linesDefault": 3,
+                "linesMaximum": 10
             },
             "dataType": "data"
         },
@@ -609,7 +614,7 @@
             "name": "disable-fullscreen",
             "label": "{{ 'DESIGN_PROPERTY_DISABLE_FULLSCREEN_LABEL' | translate }}",
             "control": {
-                "type": "checkbox",
+                "type": "disable-fullscreen-checkbox",
                 "value": "_disable-fullscreen"
             },
             "dataType": "styles"
