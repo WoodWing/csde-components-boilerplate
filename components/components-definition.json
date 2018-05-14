@@ -317,7 +317,8 @@
                 "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER"
             },
             "selector": "[doc-editable]",
-            "dataType": "inlineStyles"
+            "dataType": "inlineStyles",
+            "featureFlag": "ContentStation-LocalStyleOverrides"
         },
         {
             "name": "line-height",
@@ -330,7 +331,8 @@
                 "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER"
             },
             "selector": "[doc-editable]",
-            "dataType": "inlineStyles"
+            "dataType": "inlineStyles",
+            "featureFlag": "ContentStation-LocalStyleOverrides"
         },
         {
             "name": "inside-caption",
@@ -394,7 +396,8 @@
                 "linesDefault": 3,
                 "linesMaximum": 10
             },
-            "dataType": "data"
+            "dataType": "data",
+            "featureFlag": "ContentStation-LocalStyleOverrides"
         },
         {
             "name": "text-align",
@@ -418,7 +421,8 @@
                     }
                 ]
             },
-            "dataType": "styles"
+            "dataType": "styles",
+            "featureFlag": "ContentStation-LocalStyleOverrides"
         },
         {
             "name": "style",
