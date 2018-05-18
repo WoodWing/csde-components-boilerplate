@@ -521,20 +521,7 @@
             "name": "fitting",
             "label": "{{ 'DESIGN_PROPERTY_FITTING_LABEL' | translate }}",
             "control": {
-                "type": "select",
-                "options": [
-                    {
-                        "caption": "{{ 'DESIGN_PROPERTY_FITTING_CONTENT_TO_FRAME_LABEL' | translate }}"
-                    },
-                    {
-                        "caption": "{{ 'DESIGN_PROPERTY_FITTING_FRAME_TO_CONTENT_LABEL' | translate }}",
-                        "value": "_fit-frame-to-content"
-                    },
-                    {
-                        "caption": "{{ 'DESIGN_PROPERTY_FITTING_FRAME_HEIGHT_TO_CONTENT_LABEL' | translate }}",
-                        "value": "_fit-frame-height-to-content"
-                    }
-                ]
+                "type": "fitting"
             },
             "dataType": "styles"
         },
