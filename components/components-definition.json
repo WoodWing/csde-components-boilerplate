@@ -14,8 +14,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ],
             "countStatistics": true
         },
@@ -28,8 +27,7 @@
             "properties": [
                 "style",
                 "position",
-                "background-color",
-                "parallax"
+                "background-color"
             ]
         },
         {
@@ -41,8 +39,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ]
         },
         {
@@ -58,7 +55,6 @@
                 "text-align",
                 "letter-spacing",
                 "line-height",
-                "parallax",
                 "edit-image:image"
             ]
         },
@@ -68,8 +64,7 @@
             "selectionMethod": "handle",
             "label": "{{ 'DESIGN_COMPONENT_EMBED_LABEL' | translate }}",
             "properties": [
-                "style",
-                "parallax"
+                "style"
             ]
         },
         {
@@ -86,8 +81,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ],
             "restrictChildren": {
                 "image": { "withContent": "image" }
@@ -101,8 +95,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ]
         },
         {
@@ -113,8 +106,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ]
         },
         {
@@ -125,8 +117,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ]
         },
         {
@@ -137,8 +128,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ]
         },
         {
@@ -150,8 +140,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ]
         },
         {
@@ -162,8 +151,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ]
         },
         {
@@ -171,8 +159,7 @@
             "icon": "icons/components/separator.svg",
             "label": "{{ 'DESIGN_COMPONENT_SEPARATOR_LABEL' | translate }}",
             "properties": [
-                "style",
-                "parallax"
+                "style"
             ]
         },
         {
@@ -186,7 +173,6 @@
                 "text-align",
                 "letter-spacing",
                 "line-height",
-                "parallax",
                 "edit-image:image"
             ]
         },
@@ -198,8 +184,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ]
         },
         {
@@ -210,8 +195,7 @@
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height",
-                "parallax"
+                "line-height"
             ]
         },
         {
@@ -222,8 +206,7 @@
             "properties": [
                 "media-properties:media",
                 "position",
-                "style",
-                "parallax"
+                "style"
             ]
         },
         {
@@ -233,8 +216,7 @@
             "selectionMethod": "handle",
             "properties": [
                 "media-properties:media",
-                "style",
-                "parallax"
+                "style"
             ]
         }
     ],
@@ -631,16 +613,6 @@
                 "opacity": true
             },
             "dataType": "inlineStyles"
-        },
-        {
-            "name": "parallax",
-            "label": "{{ 'DESIGN_PROPERTY_PARALLAX_LABEL' | translate }}",
-            "control": {
-                "type": "checkbox",
-                "value": "true"
-            },
-            "dataType": "data",
-            "group": "applenews"
         },
         {
             "name": "edit-image",
