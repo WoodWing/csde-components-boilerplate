@@ -19,7 +19,7 @@ Next run:
 
 This will watch for any changes in the components folder and run the validation logic.
 
-TBD documentation components model.
+* [Documentation Components Model](docs/OVERVIEW.md)
 
 ## Package
 To create a components package, run:
