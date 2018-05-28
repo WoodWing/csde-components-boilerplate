@@ -17,7 +17,7 @@ The structure of a component set is defined as:
 
 ## components-definition.json
 
-Contains the configuration for components. Schema can be found [here](https://github.com/WoodWing/csde-components-validator/blob/master/lib/components-schema-v1_0_x.ts).
+Contains the configuration for components. For reference, the json schema can be found [here](https://github.com/WoodWing/csde-components-validator/blob/master/lib/components-schema-v1_0_x.ts).
 
 The root of this file is defined as:
 ```
