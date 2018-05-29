@@ -1,9 +1,19 @@
 # Component Conversion Rules
 
-Defines rules for converting one component type into another.
+Conversion rules define how one component type is converted into another component type.
 
-Conversion rules have two ways of converting. One option is to automatically map based on matching keys. For example, here a component with the ID `body` can be automatically mapped to `title`.
+![Change Component](./images/change-component.png)
 
+## `auto` conversion
+One option is to automatically map based on matching directive keys. Take the following two components `body` and `title` with these html templates:
+
+`body` having the template:
+```<p doc-editable="text"></p>```
+
+`title` having the template:
+```<h1 doc-editable="text"></h1>```
+
+With these samples, `body` and `title` can be automatically mapped based on the matching `text` content keys by defining a mapping with the type `auto`:
 ```
 "body": {
     "title": "auto",
@@ -12,19 +22,48 @@ Conversion rules have two ways of converting. One option is to automatically map
 
 Any matching content keys of directives are copied to the new component. Non matching directives are ignored and left empty.
 
-Another option is use explicit mapping:
+## `simple` conversion
+Another option is use explicit mapping. This can be used when the directive keys do not match, but you still want to create a mapping. Let's look at the `body` and `title` components again, except now with the following html templates:
+
+`body` having the template:
+```<p doc-editable="text"></p>```
+
+`title` having the template:
+```<h1 doc-editable="header-text"></h1>```
 
 ```
 "body": {
-    "headline": {
+    "title": {
         "type": "simple",
         "map": {
-            "title": "text",
+            "header-text": "text"
         }
     }
 }
 ```
 
-Here the field with key "text" is copied to the field "title" of the headline component.
+Here the field with key `text` is copied to the field `header-text` of the `title` component.
 
-The other two available types are `from-container` and `to-container`, which mostly serve the purpose of transforming an image into a slideshow or turning a slideshow into images.
+## `from-container` conversion
+This option can be used to turn a container type component into a regular component. It picks the first component of the container and discards the rest.
+
+```
+    "slideshow": {
+        "image": {
+            "type": "from-container",
+            "container": "slideshow"
+        }
+    }
+```
+
+## `to-container` conversion
+This option can be used to turn automatically place a component into a container like component.
+
+```
+    "image": {
+        "slideshow": {
+            "type": "to-container",
+            "container": "slideshow"
+        }
+    }
+```
