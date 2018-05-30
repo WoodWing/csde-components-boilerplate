@@ -19,7 +19,7 @@ Next run:
 
 This will watch for any changes in the components folder and run the validation logic.
 
-* [Documentation Components Model](docs/OVERVIEW.md)
+Please see the [Documentation Components Model](docs/OVERVIEW.md) for more details.
 
 ## Package
 To create a components package, run:
