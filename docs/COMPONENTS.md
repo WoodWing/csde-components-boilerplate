@@ -87,8 +87,10 @@ For example, the body component styling may look like:
 
 ## PSV Template
 Custom channels support the option to receive the rendered article in [PSV format](http://www.prismstandard.org/specifications/psv/1.0/PSV_specification_1.0.htm). When using this option, you must define a template for each component to have a PSV rendition.
+The component is skipped in the PSV output when it has no matching template.
 
 ## Facebook Instant Articles template
 Publishing to Facebook Instant Articles requires a html markup template for each component you wish to support.
 You should use the same directives to bind content to the template as used in the HTML template.
+The component is skipped in the Facebook output when it has no matching template.
 For more information please visit the [Facebook Instant Articles documentation](https://developers.facebook.com/docs/instant-articles/guides/format-overview).

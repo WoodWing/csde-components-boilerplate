@@ -35,8 +35,136 @@ The general definition of a property looks like:
 
 ## Data types
 
+The data type of a property defines how the data is stored within the component.
 
-## Generic Controls
+### `styles`
 
+Data added as a css class to the HTML of the component.
+This css class must be defined in the component style.
 
-## Specialized Controls
+### `inlineStyles`
+
+Data applied as inline styles to the HTML of the component.
+
+### `data`
+
+Free style data. Does not affect the rendering of the article in the editor.
+
+### `doc-<directive>`
+
+Stores directive data as part of the content object of the component.
+
+## Generic UI Controls
+
+### `select`
+
+Dropdown with options. Each option has a value that's applied
+to the dataType. One option must have an empty value, which is the default value.
+
+Example of `select` control:
+```
+    "control" {
+        "type": "select",
+        "options": [
+            {
+                "caption": "Default option"
+            },
+            {
+                "caption": "Option Label 1",
+                "value": "_value1"
+            },
+            {
+                "caption": "Option Label 2",
+                "value": "_value2"
+            }
+        ]
+    }
+```
+
+### `checkbox`
+
+Toggle between applying a value and not. Defaults to not having a value.
+
+Example of `checkbox` control:
+
+```
+    "control": {
+        "type": "checkbox",
+        "value": "_value"
+    }
+```
+
+### `radio`
+
+Adds radio buttons with options. One option must have an empty value, which is the default value. The radio buttons can be customized with icons.
+
+Example of `radio` control:
+```
+    "control": {
+        "type": "radio",
+        "options": [
+            {
+                "caption": "Default Option",
+                "icon": "icons/properties/property-default-icon.svg"
+            },
+            {
+                "caption": "Option 1",
+                "icon": "icons/properties/property-option1-icon.svg",
+                "value": "_value1"
+            },
+            {
+                "caption": "Option 2",
+                "icon": "icons/properties/property-option2-icon.svg",
+                "value": "_value2"
+            }
+        ]
+    }
+```
+
+### `text`
+
+Allows text input from user. Regular express can be defined to restrict input.
+
+Example of `text` control:
+
+```
+    "control": {
+        "type": "text",
+        "pattern": "^.*$",
+        "defaultValue": "",
+        "inputPlaceholder": "Placeholder text"
+    }
+```
+
+### `time`
+
+Allows time input in three number boxes with hours, minutes and seconds. The data is stored as a string in the format `<hours>h<minutes>m<seconds>s`.
+
+## Specialized UI Controls
+
+### `image-editor`
+
+Adds a button that opens the image editing tools. These tools can be used to change the focus point.
+
+Can only be used with doc-image directives and requires specifying the directive content key in the component properties list separated by a colon.
+
+### `drop-capital`
+
+Adds [drop cap](https://en.wiktionary.org/wiki/drop_cap) to all text in the component. This property is applied to all doc-editable directives in the component.
+
+### `media-properties`
+
+Adds social media or video properties to component. Can only be used with `dataType=doc-media`.
+This property dynamically initializes a sub properties list based on the type of media.
+
+Can only be used with doc-media directives and requires specifying the directive content key in the component properties list separated by a colon.
+
+### `disable-fullscreen-checkbox`
+
+Similar to `checkbox` control type, but is disabled when the component has doc-link directives with data.
+
+### `fitting`
+
+Enables the fitting option for doc-image directives in the component. These are pre-configured options that change the behavior of an image using inline-styling. Only works for images that use `background-image`.
+
+Can only be used with doc-image directives and requires specifying the directive content key in the component properties list separated by a colon.

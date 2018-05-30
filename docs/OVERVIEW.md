@@ -59,4 +59,4 @@ See the following sub sections for details:
 * [Components](COMPONENTS.md)
 * [Groups](GROUPS.md)
 * [Component Properties](PROPERTIES.md)
-* [Conversion Rules](CONVERSION_RULSE.md)
+* [Conversion Rules](CONVERSION_RULES.md)
