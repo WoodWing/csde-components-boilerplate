@@ -20,10 +20,10 @@ With these samples, `body` and `title` can be automatically mapped based on the 
 }
 ```
 
-Any matching content keys of directives are copied to the new component. Non matching directives are ignored and left empty.
+Any matching content keys of directives are copied to the new component. Non-matching directives are ignored and left empty.
 
 ## `simple` conversion
-Another option is use explicit mapping. This can be used when the directive keys do not match, but you still want to create a mapping. Let's look at the `body` and `title` components again, except now with the following html templates:
+Another option is to use explicit mapping. This can be used when the directive keys do not match, but you still want to create a mapping. Let's look at the `body` and `title` components again, except now with the following html templates:
 
 `body` having the template:
 ```<p doc-editable="text"></p>```
@@ -42,7 +42,7 @@ Another option is use explicit mapping. This can be used when the directive keys
 }
 ```
 
-Here the field with key `text` is copied to the field `header-text` of the `title` component.
+Here the field with key `text` is mapped to the field `header-text` of the `title` component.
 
 ## `from-container` conversion
 This option can be used to turn a container type component into a regular component. It picks the first component of the container and discards the rest.
@@ -57,7 +57,7 @@ This option can be used to turn a container type component into a regular compon
 ```
 
 ## `to-container` conversion
-This option can be used to turn automatically place a component into a container like component.
+This option can be used to automatically place a component into a container-like component.
 
 ```
     "image": {

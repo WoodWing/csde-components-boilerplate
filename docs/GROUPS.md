@@ -8,16 +8,16 @@ The component chooser allows inserting new components into the article.
 An example of a group definition looks like:
 ```
 {
-    // Name of group displayed in Component Chooser
+    // Name of group displayed in Component Chooser.
     "label": "MyComponents",
 
-    // Unique identifier of this group
+    // Unique identifier of this group.
     "name": 'group-identifier',
 
-    // List of Components, by id, to display in order they are defined
+    // List of Components, by id, to display in order they are defined.
     "components": [
         "my-component-1",
-        "my-component-1"
+        "my-component-2"
     ]
 }
 ```

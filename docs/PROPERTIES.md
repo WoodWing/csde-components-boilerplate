@@ -6,25 +6,25 @@ The general definition of a property looks like:
 
 ```
 {
-    // Property identifier
+    // Property identifier.
     "name": "property",
 
-    // Name displayed for property in side bar
+    // Name displayed for property in side bar.
     "label": "Property Name",
 
-    // Type of UI control element
-    // See later sections for all available control types
+    // Type of UI control element.
+    // See later sections for all available control types.
     "control": {
         ...
     }
-    // Kind of data property
+    // Kind of data property.
     // When stored as "styles", the property value is added as css class to the main element.
     // When stored as "inlineStyles", the property value is directly used as inline style.
-    // When stored as 'data", the property is free data (TBD)
+    // When stored as 'data", the property is free data.
     // When stored as a directive (for example, doc-media), the property can be used to modify content data of a directive.
     "dataType": "styles" | "inlineStyles" | "data" | "<directive>:<content-key>",
 
-    // Optional css selector key, it may be used if property should be applied to some nested html element instead of main component element
+    // Optional css selector key, it may be used if property should be applied to some nested html element instead of main component element.
     "selector": "css-selector",
 
     // Name of Enterprise Feature flag that should be present for the property to show up.
@@ -59,7 +59,7 @@ Stores directive data as part of the content object of the component.
 ### `select`
 
 Dropdown with options. Each option has a value that's applied
-to the dataType. One option must have an empty value, which is the default value.
+to the `dataType`. One option must have an empty value, which is the default value.
 
 Example of `select` control:
 ```
@@ -83,7 +83,7 @@ Example of `select` control:
 
 ### `checkbox`
 
-Toggle between applying a value and not. Defaults to not having a value.
+Toggle between applying a value. Defaults to not having a value.
 
 Example of `checkbox` control:
 
@@ -123,7 +123,7 @@ Example of `radio` control:
 
 ### `text`
 
-Allows text input from user. Regular express can be defined to restrict input.
+Allows text input from user. Regular expressions can be defined to restrict input.
 
 Example of `text` control:
 
@@ -155,7 +155,7 @@ Adds [drop cap](https://en.wiktionary.org/wiki/drop_cap) to all text in the comp
 ### `media-properties`
 
 Adds social media or video properties to component. Can only be used with `dataType=doc-media`.
-This property dynamically initializes a sub properties list based on the type of media.
+This property dynamically initializes a subproperties list based on the type of media.
 
 Can only be used with doc-media directives and requires specifying the directive content key in the component properties list separated by a colon.
 

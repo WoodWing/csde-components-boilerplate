@@ -1,13 +1,13 @@
 # Component Sets
 
-A component set is a package of multiple files. It consists of a json file describing the components and properties, templates for renditions and required styling for the html rendition.
+A component set is a package of multiple files. It consists of a json file describing the components and properties, templates for renditions, and required styling for the html rendition.
 
 ## Folder Structure
 The structure of a component set is defined as:
 
 | Path | Purpose |
 | ------------- | ------------- |
-| components-definition.json  | Describes components and properties  |
+| components-definition.json  | Describes components and properties.  |
 | icons/components/* | Icons of components, references from the component definition file. |
 | icons/properties/* | Icons of properties, references from the component definition file. |
 | templates/html/*.html | 	Templates for the HTML rendition of the article. Used in editor and for publishing html.  |
@@ -22,13 +22,13 @@ Contains the configuration for components. For reference, the json schema can be
 The root of this file is defined as:
 ```
 {
-    // Description of this components definition
+    // Description of this components definition.
     "description": "Content Station Digital Editor components",
 
     // Version of model. Used by the validation service.
     "version": "1.0.0",
 
-    // List with definitions of available components
+    // List with definitions of available components.
     "components":[
         ...
     ],
@@ -39,7 +39,7 @@ The root of this file is defined as:
         ...
     ],
 
-    // Definition of available properties for components
+    // Definition of available properties for components.
     "componentProperties": [
         ...
     ],
@@ -49,12 +49,12 @@ The root of this file is defined as:
         ...
     },
 
-    // Default component's name on pressing Enter
+    // Default component's name on pressing Enter.
     defaultComponentOnEnter: 'component-identifier'
 }
 ```
 
-See the following sub sections for details:
+See the following subsections for details:
 
 * [Components](COMPONENTS.md)
 * [Groups](GROUPS.md)
