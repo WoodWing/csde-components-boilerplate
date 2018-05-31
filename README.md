@@ -39,10 +39,10 @@ This quick guide shows the steps to create a new custom component based on the b
    * Edit the html and change the class name body to my_component
 5. Edit **components/styles/design.scss** and add **@import "_my_component.scss";**
 6. Edit **components/components-definition.json** to define the new component
-  * Copy & Paste the body component definition into the components section
-  * Change the name to my_component
-  * Change the label to "my_component" (remove the {{}} this is used for translating default components) 
-  * Scroll to the Groups section and add my_component to one of the groups, for example the text group
+   * Copy & Paste the body component definition into the components section
+   * Change the name to my_component
+   * Change the label to "my_component" (remove the {{}} this is used for translating default components) 
+   * Scroll to the Groups section and add my_component to one of the groups, for example the text group
 7. Run ```npm run build``` from the main dir to build your component set 
 8. Upload the components set found in the dist folder using the Content Station Management Console found under integrations in the Enterprise admin pages
 9. Create a new Digital Article template in Content Station and select your component set in the create dialog
