@@ -17,7 +17,9 @@ gulp.task('default', ['sass'], async () => {
 });
 
 gulp.task('dev', ['validate'], () => {
-    return gulp.watch('components/**/*', ['validate']);
+    const watcher = gulp.watch('components/**/*', ['validate']);
+    watcher.on('ready', () => console.log('Watching for changes in components folder...'));
+    return watcher;
 });
 
 gulp.task('validate', async () => {
