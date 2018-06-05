@@ -72,6 +72,7 @@
             "icon": "icons/components/slideshow.svg",
             "label": "{{ 'DESIGN_COMPONENT_SLIDESHOW_LABEL' | translate }}",
             "properties": [
+                "slides:slideshow",
                 "fitting",
                 "slideshow-inside-caption",
                 "slideshow-play-orientation",
@@ -617,6 +618,14 @@
                 "type": "media-properties"
             },
             "dataType": "doc-media"
+        },
+        {
+            "name": "slides",
+            "label": "Slides",
+            "control": {
+                "type": "slides"
+            },
+            "dataType": "doc-slideshow"
         }
     ],
 
