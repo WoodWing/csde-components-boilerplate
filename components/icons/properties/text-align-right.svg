@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 22.1 15" style="enable-background:new 0 0 22.1 15;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#989898;}
-</style>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 22.1 15" enable-background="new 0 0 22.1 15" xml:space="preserve">
 <g>
-	<rect x="6" y="11.3" class="st0" width="16" height="0.7"/>
-	<rect x="0" y="14.3" class="st0" width="22.1" height="0.7"/>
-	<rect x="1.7" y="8.5" class="st0" width="20.4" height="0.7"/>
-	<rect x="0" y="5.7" class="st0" width="22.1" height="0.7"/>
-	<rect x="7" y="2.8" class="st0" width="15.1" height="0.7"/>
-	<rect x="2.8" y="0" class="st0" width="19.3" height="0.7"/>
+	<rect x="6" y="11.3" fill="#989898" width="16" height="0.7"/>
+	<rect x="0" y="14.3" fill="#989898" width="22.1" height="0.7"/>
+	<rect x="1.7" y="8.5" fill="#989898" width="20.4" height="0.7"/>
+	<rect x="0" y="5.7" fill="#989898" width="22.1" height="0.7"/>
+	<rect x="7" y="2.8" fill="#989898" width="15.1" height="0.7"/>
+	<rect x="2.8" y="0" fill="#989898" width="19.3" height="0.7"/>
 </g>
 </svg>
