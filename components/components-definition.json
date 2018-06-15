@@ -204,7 +204,7 @@
             "label": "{{ 'DESIGN_COMPONENT_SOCIAL_MEDIA_LABEL' | translate }}",
             "selectionMethod": "handle",
             "properties": [
-                "media-properties:media",
+                "media-properties-social:media",
                 "position",
                 "style"
             ]
@@ -215,7 +215,7 @@
             "label": "{{ 'DESIGN_COMPONENT_VIDEO_LABEL' | translate }}",
             "selectionMethod": "handle",
             "properties": [
-                "media-properties:media",
+                "media-properties-video:media",
                 "style"
             ]
         }
@@ -610,10 +610,20 @@
             "dataType": "doc-image"
         },
         {
-            "name": "media-properties",
+            "name": "media-properties-social",
             "label": "Media Properties",
             "control": {
-                "type": "media-properties"
+                "type": "media-properties",
+                "mediaType": "social"
+            },
+            "dataType": "doc-media"
+        },
+        {
+            "name": "media-properties-video",
+            "label": "Media Properties",
+            "control": {
+                "type": "media-properties",
+                "mediaType": "video"
             },
             "dataType": "doc-media"
         }
