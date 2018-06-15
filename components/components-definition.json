@@ -587,8 +587,7 @@
             "name": "disable-fullscreen",
             "label": "{{ 'DESIGN_PROPERTY_DISABLE_FULLSCREEN_LABEL' | translate }}",
             "control": {
-                "type": "disable-fullscreen-checkbox",
-                "value": "_disable-fullscreen"
+                "type": "disable-fullscreen-checkbox"
             },
             "dataType": "styles"
         },
