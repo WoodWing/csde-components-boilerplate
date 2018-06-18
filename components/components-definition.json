@@ -55,7 +55,7 @@
                 "text-align",
                 "letter-spacing",
                 "line-height",
-                "edit-image:image"
+                { "name": "edit-image", "directiveKey": "image" }
             ]
         },
         {
@@ -72,6 +72,8 @@
             "icon": "icons/components/slideshow.svg",
             "label": "{{ 'DESIGN_COMPONENT_SLIDESHOW_LABEL' | translate }}",
             "properties": [
+                { "name": "slides", "directiveKey": "slideshow" },
+                { "control": { "type": "header" }, "label": "Slideshow properties" },
                 "fitting",
                 "slideshow-inside-caption",
                 "slideshow-play-orientation",
@@ -173,7 +175,7 @@
                 "text-align",
                 "letter-spacing",
                 "line-height",
-                "edit-image:image"
+                { "name": "edit-image", "directiveKey": "image" }
             ]
         },
         {
@@ -204,7 +206,7 @@
             "label": "{{ 'DESIGN_COMPONENT_SOCIAL_MEDIA_LABEL' | translate }}",
             "selectionMethod": "handle",
             "properties": [
-                "media-properties-social:media",
+                { "name": "social-media-properties", "directiveKey": "media" },
                 "position",
                 "style"
             ]
@@ -215,7 +217,7 @@
             "label": "{{ 'DESIGN_COMPONENT_VIDEO_LABEL' | translate }}",
             "selectionMethod": "handle",
             "properties": [
-                "media-properties-video:media",
+                { "name": "video-properties", "directiveKey": "media" },
                 "style"
             ]
         }
@@ -610,7 +612,7 @@
             "dataType": "doc-image"
         },
         {
-            "name": "media-properties-social",
+            "name": "social-media-properties",
             "label": "Media Properties",
             "control": {
                 "type": "media-properties",
@@ -619,13 +621,24 @@
             "dataType": "doc-media"
         },
         {
-            "name": "media-properties-video",
+            "name": "video-properties",
             "label": "Media Properties",
             "control": {
                 "type": "media-properties",
                 "mediaType": "video"
             },
             "dataType": "doc-media"
+        },
+        {
+            "name": "slides",
+            "label": "Slides",
+            "control": {
+                "type": "slides",
+                "include": [
+                    "edit-image"
+                ]
+            },
+            "dataType": "doc-slideshow"
         }
     ],
 
