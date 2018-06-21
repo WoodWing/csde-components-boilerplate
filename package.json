@@ -24,5 +24,6 @@
     "gulp-sass": "^4.0.1",
     "gulp-zip": "^4.1.0",
     "yargs": "^11.1.0"
-  }
+  },
+  "devDependencies": {}
 }
