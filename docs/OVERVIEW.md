@@ -49,6 +49,12 @@ The root of this file is defined as:
         ...
     },
 
+    // Javascript files included in the HTML rendition of the article (editor and published html articles).
+    // These scripts provide additional functionality for components (for example the slideshow).
+    "scripts": {
+        "scripts/vendor.js"
+    },
+
     // Default component's name on pressing Enter.
     defaultComponentOnEnter: 'component-identifier'
 }
