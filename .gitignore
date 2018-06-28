@@ -60,6 +60,7 @@ typings/
 # Build results
 dist
 tmp
+components/scripts/vendor.js
 
 # IDEs and editors
 /.idea

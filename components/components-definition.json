@@ -831,5 +831,9 @@
             },
             "product": "auto"
         }
-    }
+    },
+
+    "scripts": [
+        "scripts/vendor.js"
+    ]
 }
