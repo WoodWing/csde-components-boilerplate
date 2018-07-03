@@ -26,6 +26,10 @@ const scriptFiles = [
   path.join(scriptsDir, 'video.js')
 ]
 
+buildScssString = (filename) => {
+    return '@import "' + filename.slice(1, (filename.length-5)) + '";\n';
+}
+
 gulp.task('default', ['sass', 'vendor-script'], async () => {
     const valid = await componentsValidator.validateFolder('./components');
     if (!valid) {
@@ -47,7 +51,7 @@ gulp.task('validate', async () => {
     await componentsValidator.validateFolder('./components');
 });
 
-gulp.task('sass', () => {
+gulp.task('sass', ['design-file'], () => {
     return gulp.src('./components/styles/design.scss')
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./components/styles/'));
@@ -70,4 +74,21 @@ gulp.task('vendor-script', async () => {
         fs.mkdirSync(targetFolder);
     }
     await writeFileAsync(path.join(targetFolder, 'vendor.js'), result.code);
+});
+
+gulp.task('design-file', async () => {
+    let stylesdir = path.join(__dirname, './components/styles')
+    let content = '';
+
+    for (let file of fs.readdirSync(stylesdir) ) {
+        if (file.startsWith('_') ) {
+            if (file !== '_common.scss') {
+                content += buildScssString(file);
+            } else {
+                // Common should always be included at the top of the file since other scss files have dependencies on it.
+                content = buildScssString(file) + content;
+            }
+        }
+    }
+    await writeFileAsync(path.join(stylesdir, 'design.scss'), content);
 });
