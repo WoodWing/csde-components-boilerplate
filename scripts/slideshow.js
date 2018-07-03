@@ -302,13 +302,19 @@
         return slideshowBox.find('figcaption').css('position') !== 'absolute' && slideshowBox.find('figcaption').css('display') !== 'none';
     }
 
+    /**
+     * Get size as a string key to identify if size changed.
+     *
+     * @param {JQuery} slideshowBox - Slideshow component jQuery DOM object
+     * @returns {string}
+     */
     function getSize(slideshowBox) {
         return slideshowBox.width() + 'x' + slideshowBox.height() + 'x' + (slideshowBox.hasClass('_filmstrip') ? 'true' : 'false');
     }
 
     /**
      * Scale slideshow
-     * @param slideshowBox {object} - Slideshow component jQuery DOM object
+     * @param {JQuery} slideshowBox - Slideshow component jQuery DOM object
      * @returns {boolean} - false means that scaling has not been done and needs to be recalled soon
      */
     function reinitSlideshow(slideshowBox) {
