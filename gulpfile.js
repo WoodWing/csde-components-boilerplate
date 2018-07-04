@@ -26,8 +26,10 @@ const scriptFiles = [
   path.join(scriptsDir, 'video.js')
 ]
 
+const scssExt = '.scss';
+
 buildScssString = (filename) => {
-    return '@import "' + filename.slice(1, (filename.length-5)) + '";\n';
+    return '@import "' + filename.slice(1, (filename.length-scssExt.length)) + '";\n';
 }
 
 gulp.task('default', ['sass', 'vendor-script'], async () => {
@@ -81,7 +83,7 @@ gulp.task('design-file', async () => {
     let content = '';
 
     for (let file of fs.readdirSync(stylesdir) ) {
-        if (file.startsWith('_') ) {
+        if (file.startsWith('_') && path.extname(file) === scssExt ) {
             if (file !== '_common.scss') {
                 content += buildScssString(file);
             } else {
@@ -90,5 +92,9 @@ gulp.task('design-file', async () => {
             }
         }
     }
+    content = '/* \n\
+ * This file has been generated while building the components package. \n\
+ * PLEASE DO NOT MODIFY THIS FILE BY HAND. \n\
+ */\n' + content;
     await writeFileAsync(path.join(stylesdir, 'design.scss'), content);
 });
