@@ -258,7 +258,7 @@
             }
 
             // disable moving slides on caption clicks
-            slideshowBox.find('figcaption').attr('nodrag', 'nodrag');
+            containers.find('[doc-editable]').attr('nodrag', 'nodrag');
 
             // Restore active index
             if (activeIndex) {
@@ -267,6 +267,12 @@
         }
     }
 
+    /**
+     * Gets the fitting property value.
+     *
+     * @param {*} slideshowBox
+     * @returns {string}
+     */
     function getFitting(slideshowBox) {
         var fitting = FITTING_CONTENT_TO_FRAME;
         if (slideshowBox.hasClass(CSS_CLASS_FRAME_TO_CONTENT)) {
@@ -277,13 +283,17 @@
         return fitting;
     }
 
+    /**
+     * Update slides container and doc-editable height.
+     * @param {*} slideshowBox
+     */
     function updateCaptions(slideshowBox) {
         var fitting = getFitting(slideshowBox);
         var slideshow = slideshowBox.find('> [doc-slideshow]');
 
         if (isOutsideCaption(slideshowBox) && (fitting === FITTING_CONTENT_TO_FRAME || fitting === FITTING_FRAME_HEIGHT_TO_CONTENT)) {
             // Add extra space for outside caption
-            var maxFigCaptionHeight = Math.max.apply(null, slideshow.find("figcaption").map(function () {
+            var maxFigCaptionHeight = Math.max.apply(null, slideshow.find("[doc-editable]").map(function () {
                 return $(this).outerHeight(true);
             }).get());
             var slidesContainer = slideshow.find('.slides');
@@ -297,15 +307,21 @@
                 // Ensure all captions fill out the space. Otherwise the slide image will
                 // center, causing it to not be aligned with other images and spacing
                 // between the caption.
-                slideshow.find("figcaption").css('min-height', maxFigCaptionHeight);
+                slideshow.find("[doc-editable]").css('min-height', maxFigCaptionHeight);
             }
         }
     }
 
+    /**
+     * Test if captions/doc-editables are placed outside the image.
+     *
+     * @param {*} slideshowBox
+     * @returns {boolean}
+     */
     function isOutsideCaption(slideshowBox) {
         // Inside captions are overlayed on the figure using absolute positioning.
         // Anything else is outside caption.
-        return slideshowBox.find('figcaption').css('position') !== 'absolute' && slideshowBox.find('figcaption').css('display') !== 'none';
+        return slideshowBox.find('[doc-editable]').css('position') !== 'absolute' && slideshowBox.find('[doc-editable]').css('display') !== 'none';
     }
 
     /**
