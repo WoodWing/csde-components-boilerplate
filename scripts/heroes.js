@@ -1,4 +1,4 @@
-/* Heroes */
+/* Adds parallax effect to hero type of components on mobile devices. */
 (function(document, window, navigator, jQuery){
 
     jQuery(document).ready(function($){

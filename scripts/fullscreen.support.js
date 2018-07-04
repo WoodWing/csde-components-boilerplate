@@ -1,3 +1,5 @@
+/* Support script for full screen handling when tapping on an image.
+   Only enabled when in Adobe AEM. */
 (function(document, window, jQuery){
 
     /**
@@ -145,7 +147,7 @@
     function fullscreenEnabled() {
         //  adobeDPSHTMLNative is only set in the Adobe AEM app,
         // in which case full screen is enabled
-        return true; // !!window.adobeDPSHTMLNative;
+        return !!window.adobeDPSHTMLNative;
     }
 
     /* By default, initialize it for all images. Slideshow components are handled in their own file. */

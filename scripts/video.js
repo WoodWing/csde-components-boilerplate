@@ -1,3 +1,5 @@
+/* Support script for .m3u8 videos on non Safari browsers. Adds hls.js script dynamically when
+   .m3u8 videos are detected in the html. */
 (function(document, window, $){
 
     var EVENT_NS = '._video_event';
