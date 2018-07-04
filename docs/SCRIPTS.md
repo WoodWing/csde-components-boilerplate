@@ -15,21 +15,21 @@ Installs a tap handler on components that have `data-tap-fullscreen` set on thei
 
 See the `image` component for an example in the default component set.
 
-## `slideshow.js`
+### `slideshow.js`
 
 Support script for `doc-slideshow` directive.
-Initializes the slideshow using the https://www.jssor.com/.
+Initializes the slideshow using the [Jssor library](https://www.jssor.com/).
 
 The script depends on `data-slideshow-component` attribute being added to the component root element. The component root element is used to read out the following style `dataType` properties:
 
-- `_fit-frame-to-content` and `_fit-frame-height-to-content` change the fitting behavior. `Frame to content` sizes the slideshow to the first image in the slideshow, while `Frame height to content` sizes it to the height of the first image in the slideshow. The default behavior is to fit the images to the frame of the slideshow.
-- `_filmstrip` enables filmstrip. `doc-slideshow` listens for this style dataType property and re-initializes the slideshow when it changes.
-- `_auto-play` toggles autoplaying of slideshow. `doc-slideshow` listens for this style dataType property and re-initializes the slideshow when it changes.
-- `_vertical` toggles direction of slideshow. `doc-slideshow` listens for this style dataType property and re-initializes the slideshow when it changes.
+- `_fit-frame-to-content` and `_fit-frame-height-to-content` change the fitting behavior. `Frame to content` sizes the frame of the slideshow to the first image in the slideshow, while `Frame height to content` sizes it to the height of the first image in the slideshow. The default behavior is to fit the images to the frame of the slideshow.
+- `_filmstrip` enables filmstrip mode. `doc-slideshow` listens for this style dataType property and re-initializes the slideshow when it changes.
+- `_auto-play` toggles autoplaying of the slideshow. `doc-slideshow` listens for this style dataType property and re-initializes the slideshow when it changes.
+- `_vertical` toggles the direction of the slideshow. `doc-slideshow` listens for this style dataType property and re-initializes the slideshow when it changes.
 
-See the `slideshow` component for an example in the default component set.
+See the `slideshow` component for [an example in the default component Jssor library](set).
 
-## `heroes.js`
+### `heroes.js`
 
 Adds parallax effect on mobile devices to "hero" type of components. Applied to any component that has `data-hero-mobile` set on their root html element.
 
