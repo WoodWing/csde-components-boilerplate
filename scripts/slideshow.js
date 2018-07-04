@@ -26,7 +26,7 @@
         // jQuery shortcut
         var $ = jQuery;
         // if the height is not set then wait a bit to initialize the slideshows
-        if (!$('[doc-slideshow] .slides').height()) {
+        if (!$('[doc-slideshow] [u="slides"]').height()) {
             return window.setTimeout(initSlideshows, 50);
         }
         // init slideshows
@@ -251,7 +251,7 @@
 
             switch (fitting) {
                 case FITTING_CONTENT_TO_FRAME:
-                    slideshow.find('.slides').css({
+                    slideshow.find('[u="slides"]').css({
                         marginLeft: marginLeft
                     });
                     break;
@@ -296,7 +296,7 @@
             var maxFigCaptionHeight = Math.max.apply(null, slideshow.find("[doc-editable]").map(function () {
                 return $(this).outerHeight(true);
             }).get());
-            var slidesContainer = slideshow.find('.slides');
+            var slidesContainer = slideshow.find('[u="slides"]');
             slideshow.find('.arrow').css('top', ((slidesContainer.height()  / 2)) + 'px');
             slideshow.height(slideshow.height() + maxFigCaptionHeight);
 
@@ -352,7 +352,7 @@
     window.initSlideshows = initSlideshows;
 
     /* One time initialization of all slideshows */
-    jQuery(document).ready(function(/*$*/){
+    jQuery(document).ready(function(){
         initSlideshows();
     });
 

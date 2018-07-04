@@ -27,7 +27,7 @@ The script depends on `data-slideshow-component` attribute being added to the co
 - `_auto-play` toggles autoplaying of the slideshow. `doc-slideshow` listens for this style dataType property and re-initializes the slideshow when it changes.
 - `_vertical` toggles the direction of the slideshow. `doc-slideshow` listens for this style dataType property and re-initializes the slideshow when it changes.
 
-See the `slideshow` component for [an example in the default component Jssor library](set).
+See the `slideshow` component for an example in the default component set.
 
 ### `heroes.js`
 

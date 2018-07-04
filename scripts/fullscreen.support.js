@@ -54,7 +54,7 @@
 
         // fix slideshow size determining (when slideshow is moved to fullscreen wrapper
         // size of slideshow box is not determined correctly because of different parent element's styles)
-        if (compEl.is('[doc-slideshow]') || compEl.find('[doc-slideshow]').length !== 0) {
+        if (compEl.find('[doc-slideshow]').addBack('[doc-slideshow]').length !== 0) {
             if (wasFullScreenMode) {
                 compEl.css({
                     overflow: ''
@@ -168,7 +168,7 @@
                 continue;
             }
             // Pick url of first found image
-            var url = image.find('[doc-image]').css('background-image');
+            var url = image.find('[doc-image]').addBack('[doc-image]').css('background-image');
             url = url.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
             var tmpl = '<img src="'+url+'" style="max-width: 100%; max-height: 100%;"></img>';
             var fullscreenHelper = new FullscreenSupport.FullScreenCompHelper(image);
