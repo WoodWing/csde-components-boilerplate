@@ -66,3 +66,4 @@ See the following subsections for details:
 * [Groups](GROUPS.md)
 * [Component Properties](PROPERTIES.md)
 * [Conversion Rules](CONVERSION_RULES.md)
+* [Scripts](SCRIPTS.md)

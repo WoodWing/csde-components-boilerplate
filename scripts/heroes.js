@@ -1,17 +1,16 @@
-/* Heroes */
+/* Adds parallax effect to hero type of components on mobile devices. */
 (function(document, window, navigator, jQuery){
 
     jQuery(document).ready(function($){
         var bodyEl = $('body');
         var bgEl = bodyEl.find('> ._hero-bg-box');
 
-        // When article contains heroes with parallex effect, the html is restructured to allow the effect work on mobile.
+        // When article contains heroes with parallax effect, the html is restructured to allow the effect work on mobile.
         // This is applied to all targets, including desktop browser (to avoid inconsistency or having multiple render outputs)
         if (bgEl.length > 0) {
             var htmlEl = $('html');
-            
+
             var articleContainer = bodyEl.find('> .articleContainer');
-            var articleContent = articleContainer.find('.articleContent');
             var bgInfo = [];
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             var isAndroid = userAgent.match(/Android/i);
@@ -24,7 +23,7 @@
             // Link bg items to their corresponding hero items
             var count = 0;
             bgItems = bgEl.find('> ._hero-bg-item');
-            articleContainer.find('> .hero').each(function(){
+            articleContainer.find('> [data-hero-mobile]').each(function(){
                 var el = $(this);
                 if (el.hasClass('_fixed-background')) {
                     return;
@@ -62,7 +61,7 @@
                 var height = bodyEl.height();
                 var bestHero = {};
                 // look for current hero
-                $.each(bgInfo, function(index, item){
+                $.each(bgInfo, function(_index, item){
                     var heroTop = item.heroEl.offset().top - scrollTop;
                     var p = Math.max(0, height - Math.abs(heroTop));
                     if (!bestHero.p || bestHero.p < p) {

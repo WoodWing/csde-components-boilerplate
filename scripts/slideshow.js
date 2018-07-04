@@ -1,3 +1,4 @@
+/* Support script for doc-directive. Adds slideshow functionality using jssor library. */
 (function(document, window, jQuery){
     var INITIATED = '_slideshow_initiated';
     var SLIDER = '_slideshow_slider';
@@ -25,11 +26,11 @@
         // jQuery shortcut
         var $ = jQuery;
         // if the height is not set then wait a bit to initialize the slideshows
-        if (!$('.slideshow .slideshow-container .slides').height()) {
+        if (!$('[doc-slideshow] [u="slides"]').height()) {
             return window.setTimeout(initSlideshows, 50);
         }
         // init slideshows
-        $('.slideshow').each(function(){
+        $('[data-slideshow-component]').each(function(){
             var slideshowBox = $(this);
             if (!slideshowBox.data(INITIATED) && !slideshowBox.hasClass(WAITING)) {
                 slideshowBox.data(INITIATED, true);
@@ -53,7 +54,7 @@
                 if ($('.doc-section').length) {
                     return;
                 }
-                $('.slideshow').each(function(){
+                $('[data-slideshow-component]').each(function(){
                     reinitSlideshow($(this));
                 });
             };
@@ -79,7 +80,7 @@
         // jQuery shortcut
         var $ = jQuery;
 
-        var slideshow = slideshowBox.find('> .slideshow-container');
+        var slideshow = slideshowBox.find('> [doc-slideshow]');
         var size = getSize(slideshowBox);
 
         if (!slideshowBox.hasClass('_initiated')) {
@@ -113,9 +114,14 @@
         // generate and set ID
         var id = 'slideshow_' + (new Date()).getTime() + '_' + Math.round(Math.random() * 1000);
         slideshow.attr('id', id);
-        var slides = $('.image', slideshow);
+        var containers = $('[doc-container]', slideshow);
+        var slides = $('> *', containers);
+
         // run script if there is one slide at least
         if (slides.length) {
+            // These elements css are adjusted based on the fitting property
+            var fittingElementTargets = slides.find('[doc-image]').add(containers);
+
             slideshowBox.addClass('_initiated');
             // Next line is added to provide back compatibility with already created custom styles
             slideshow.addClass('_initiated');
@@ -139,7 +145,7 @@
                     // apply size to the slideshow container
                     slideshow.css(css);
                     // apply size to the slides container
-                    slideshow.find('.slides, .image > div').css(css);
+                    fittingElementTargets.css(css);
 
                     marginLeft = Math.round(-css.width / 2);
                     break;
@@ -151,7 +157,7 @@
                         };
                         slideshow.find('.thumbnavigator').css(css);
                         css.height = css.width * ratio;
-                        slideshow.find('.slides, .image > div').css(css);
+                        fittingElementTargets.css(css);
                     }
                     break;
                 case FITTING_FRAME_HEIGHT_TO_CONTENT:
@@ -165,7 +171,7 @@
 
                     if (isIE) {
                         slideshow.find('.thumbnavigator').css({width: css.width});
-                        slideshow.find('.slides, .image > div').css(css);
+                        fittingElementTargets.css(css);
                     }
                     break;
                 default:
@@ -219,7 +225,7 @@
                     $('<div></div>', { u: 'thumb' }).append(
                         $('<div></div>')
                             .css({
-                                backgroundImage: $('> div', image).css('background-image')
+                                backgroundImage: image.find('[doc-image]').css('background-image')
                             })
                         )
                         .insertAfter(image);
@@ -245,14 +251,14 @@
 
             switch (fitting) {
                 case FITTING_CONTENT_TO_FRAME:
-                    slideshow.find('.slides').css({
+                    slideshow.find('[u="slides"]').css({
                         marginLeft: marginLeft
                     });
                     break;
             }
 
             // disable moving slides on caption clicks
-            slideshowBox.find('figcaption').attr('nodrag', 'nodrag');
+            containers.find('[doc-editable]').attr('nodrag', 'nodrag');
 
             // Restore active index
             if (activeIndex) {
@@ -261,6 +267,12 @@
         }
     }
 
+    /**
+     * Gets the fitting property value.
+     *
+     * @param {*} slideshowBox
+     * @returns {string}
+     */
     function getFitting(slideshowBox) {
         var fitting = FITTING_CONTENT_TO_FRAME;
         if (slideshowBox.hasClass(CSS_CLASS_FRAME_TO_CONTENT)) {
@@ -271,16 +283,20 @@
         return fitting;
     }
 
+    /**
+     * Update slides container and doc-editable height.
+     * @param {*} slideshowBox
+     */
     function updateCaptions(slideshowBox) {
         var fitting = getFitting(slideshowBox);
-        var slideshow = slideshowBox.find('> .slideshow-container');
+        var slideshow = slideshowBox.find('> [doc-slideshow]');
 
         if (isOutsideCaption(slideshowBox) && (fitting === FITTING_CONTENT_TO_FRAME || fitting === FITTING_FRAME_HEIGHT_TO_CONTENT)) {
             // Add extra space for outside caption
-            var maxFigCaptionHeight = Math.max.apply(null, slideshow.find("figcaption").map(function () {
+            var maxFigCaptionHeight = Math.max.apply(null, slideshow.find("[doc-editable]").map(function () {
                 return $(this).outerHeight(true);
             }).get());
-            var slidesContainer = slideshow.find('.slides');
+            var slidesContainer = slideshow.find('[u="slides"]');
             slideshow.find('.arrow').css('top', ((slidesContainer.height()  / 2)) + 'px');
             slideshow.height(slideshow.height() + maxFigCaptionHeight);
 
@@ -291,24 +307,36 @@
                 // Ensure all captions fill out the space. Otherwise the slide image will
                 // center, causing it to not be aligned with other images and spacing
                 // between the caption.
-                slideshow.find("figcaption").css('min-height', maxFigCaptionHeight);
+                slideshow.find("[doc-editable]").css('min-height', maxFigCaptionHeight);
             }
         }
     }
 
+    /**
+     * Test if captions/doc-editables are placed outside the image.
+     *
+     * @param {*} slideshowBox
+     * @returns {boolean}
+     */
     function isOutsideCaption(slideshowBox) {
         // Inside captions are overlayed on the figure using absolute positioning.
         // Anything else is outside caption.
-        return slideshowBox.find('figcaption').css('position') !== 'absolute' && slideshowBox.find('figcaption').css('display') !== 'none';
+        return slideshowBox.find('[doc-editable]').css('position') !== 'absolute' && slideshowBox.find('[doc-editable]').css('display') !== 'none';
     }
 
+    /**
+     * Get size as a string key to identify if size changed.
+     *
+     * @param {JQuery} slideshowBox - Slideshow component jQuery DOM object
+     * @returns {string}
+     */
     function getSize(slideshowBox) {
         return slideshowBox.width() + 'x' + slideshowBox.height() + 'x' + (slideshowBox.hasClass('_filmstrip') ? 'true' : 'false');
     }
 
     /**
      * Scale slideshow
-     * @param slideshowBox {object} - Slideshow component jQuery DOM object
+     * @param {JQuery} slideshowBox - Slideshow component jQuery DOM object
      * @returns {boolean} - false means that scaling has not been done and needs to be recalled soon
      */
     function reinitSlideshow(slideshowBox) {
@@ -320,11 +348,11 @@
         }
     }
 
-    /* Must be global for Inception Editor */
+    /* Must be global for Digital Editor doc-slideshow directive. */
     window.initSlideshows = initSlideshows;
 
     /* One time initialization of all slideshows */
-    jQuery(document).ready(function($){
+    jQuery(document).ready(function(){
         initSlideshows();
     });
 

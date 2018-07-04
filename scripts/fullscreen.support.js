@@ -1,3 +1,5 @@
+/* Support script for full screen handling when tapping on an image.
+   Only enabled when in Adobe AEM. */
 (function(document, window, jQuery){
 
     /**
@@ -29,10 +31,8 @@
     /* Data for full-screen mode */
     var beforeFullscreenData = {};
     var fullscreenWrapper;
-    var beforeFullscreenParent;
     var beforeFullscreenMarker;
     var beforeFullscreenViewportMetaContent;
-    var movedOriginalElement;
 
     /**
      * Toggles fullscreen mode for element.
@@ -46,15 +46,15 @@
         var wasFullScreenMode = compEl.hasClass('full-screen');
         if (!wasFullScreenMode) {
             beforeFullscreenData = {x: $(window).scrollLeft(), y: $(window).scrollTop()};
-            beforeFullscreenParent = compEl.parent();
             beforeFullscreenViewportMetaContent = viewportMeta && viewportMeta.content;
         }
-        
+
         compEl.toggleClass('full-screen');
         this.isFullscreen = !wasFullScreenMode;
 
-        // fix slideshow size determining (when slideshow is moved to fullscreen wrapper size of slideshow box is not determined correctly because of different parent element's styles)
-        if (compEl.is('.slideshow')) {
+        // fix slideshow size determining (when slideshow is moved to fullscreen wrapper
+        // size of slideshow box is not determined correctly because of different parent element's styles)
+        if (compEl.find('[doc-slideshow]').addBack('[doc-slideshow]').length !== 0) {
             if (wasFullScreenMode) {
                 compEl.css({
                     overflow: ''
@@ -67,7 +67,7 @@
         }
 
         if (wasFullScreenMode) {
-            /* Show article again */
+            // Show article again
             articleContainer.show();
             if (viewportMeta) {
                 viewportMeta.content = beforeFullscreenViewportMetaContent;
@@ -84,11 +84,11 @@
             fullscreenWrapper.remove();
             fullscreenWrapper = undefined;
 
-            // Scroll to right position again */
+            // Scroll to right position again
             window.scroll(beforeFullscreenData.x, beforeFullscreenData.y);
         } else {
             // Two modes: either move the original element or create a new element.
-            // For slideshow we move the element, because otherwise we need to initalize jssor again.
+            // For slideshow we move the element, because otherwise we need to initialize jssor again.
             // For images we create a new element to properly center it.
             var fullscreenEl;
             if (fullscreenTmpl) {
@@ -145,7 +145,8 @@
     };
 
     function fullscreenEnabled() {
-        /* Not sure what's the right way to detect this, but adobeDPSHTMLNative is only set in the DPS app, so will do for now. */
+        //  adobeDPSHTMLNative is only set in the Adobe AEM app,
+        // in which case full screen is enabled
         return !!window.adobeDPSHTMLNative;
     }
 
@@ -154,19 +155,20 @@
         if (!fullscreenEnabled()) {
             return;
         }
-        var images = document.getElementsByClassName('image');
+        var images = document.querySelectorAll('[data-tap-fullscreen]');
         for (var i = 0; i < images.length; i++) {
             var image = $(images[i]);
-            
+
             // Skip for images in slideshow component
-            if (image.closest('.slideshow').length !== 0) {
+            if (image.closest('[doc-slideshow]').length !== 0) {
                 continue;
             }
             // Skip individual disabled full-screen components
             if (image.hasClass('_disable-fullscreen')) {
                 continue;
             }
-            var url = image.find('div').css('background-image');
+            // Pick url of first found image
+            var url = image.find('[doc-image]').addBack('[doc-image]').css('background-image');
             url = url.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
             var tmpl = '<img src="'+url+'" style="max-width: 100%; max-height: 100%;"></img>';
             var fullscreenHelper = new FullscreenSupport.FullScreenCompHelper(image);

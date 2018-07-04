@@ -12,17 +12,30 @@ const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);
 
 // Scripts bundled into a single vendor.js
+// You can choose to remove scripts in case they are not needed
+// for your components.
 const scriptsDir = path.join(__dirname, './scripts')
 const scriptFiles = [
+  // Adobe AEM library used by fullscreen.support.js
   path.join(scriptsDir, 'dpsHTMLGestureAPI.min.js'),
+
+  // JQuery libraries used by below support scripts
   path.join(scriptsDir, 'jquery.js'),
   path.join(scriptsDir, 'jquery.mobile.options.js'),
   path.join(scriptsDir, 'jquery.mobile.js'),
+
+  // Adds tap handler for fullscreen image support on Adobe AEM
+  path.join(scriptsDir, 'fullscreen.support.js'),
+
+  // Support scripts for slideshows components
   path.join(scriptsDir, 'jssor.js'),
   path.join(scriptsDir, 'jssor.slider.js'),
-  path.join(scriptsDir, 'fullscreen.support.js'),
   path.join(scriptsDir, 'slideshow.js'),
+
+  // Support script for parallax effect hero components
   path.join(scriptsDir, 'heroes.js'),
+
+  // HLS video support on non Safari browser.
   path.join(scriptsDir, 'video.js')
 ]
 
