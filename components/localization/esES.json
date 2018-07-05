@@ -60,5 +60,6 @@
     "TEMPLATE_AUTHOR_LOCATION_PLACEHOLDER": "Ubicación",
     "TEMPLATE_HEADLINE_SECTION_PLACEHOLDER": "Sección",
     "TEMPLATE_PRODUCT_DESCRIPTION_PLACEHOLDER": "Escriba una breve descripción del producto.",
-    "TEMPLATE_PRODUCT_PRICE_PLACEHOLDER": "Precio del producto"
+    "TEMPLATE_PRODUCT_PRICE_PLACEHOLDER": "Precio del producto",
+    "TEMPLATE_PRODUCT_TITLE_PLACEHOLDER": "Nombre del producto"
 }
