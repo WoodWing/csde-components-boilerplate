@@ -21,11 +21,15 @@ The value of this attribute must match the directive key.
 
 For an example of the usage, see the `author` component in the boilerplate project.
 
-## Hiding the droppable placeholder
+## Altering the droppable placeholder style
 A placeholder overlay is shown while dragging an image and hovering the mouse over the droppable target element of the directive, informing the user an image can be dropped and what type of images are accepted.
 
-For some images this droppable placeholder is too big to display properly inside the editor. You can hide this placeholder by using the attribute `data-placeholder-style`. Currently only accepts the value `hidden`:
+For some images this droppable placeholder is too big to display properly inside the editor. You can hide this placeholder by adding the attribute `data-placeholder-style` to the element with the `doc-image` directive and setting the value to `hidden`:
 
     <div doc-image="image" data-placeholder-style="hidden"></div>
 
-For an example of the usage, see the `author` component in the boilerplate project.
+In other cases the placeholder may overlap with editable text, in which case you can alter the position by setting the value `top-left`:
+
+    <div doc-image="image" data-placeholder-style="top-left"></div>
+
+For an example of the usage, see the `author` and `hero` components in the boilerplate project.
