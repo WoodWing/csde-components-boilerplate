@@ -1,6 +1,6 @@
 # `doc-image`
 
-Binds an image to a html element. For `IMG` tag elements the image url is bound to the `src` attribute:
+Binds an image to an html element. For `IMG` tag elements the image url is bound to the `src` attribute:
 
     <img doc-image="key" src="bound-image-url">
 
@@ -19,13 +19,13 @@ In some cases you may want to change the target html element for the droppable z
 
 The value of this attribute must match the directive key.
 
-For example usage see the `author` component in the boilerplate project.
+For an example of the usage, see the `author` component in the boilerplate project.
 
-## Hiding droppable placeholder
-A placeholder overlay is shown when hovering the mouse of the droppable target element of the directive, informing the user an image can be dropped and what type of images are accepted.
+## Hiding the droppable placeholder
+A placeholder overlay is shown while dragging an image and hovering the mouse over the droppable target element of the directive, informing the user an image can be dropped and what type of images are accepted.
 
 For some images this droppable placeholder is too big to display properly inside the editor. You can hide this placeholder by using the attribute `data-placeholder-style`. Currently only accepts the value `hidden`:
 
     <div doc-image="image" data-placeholder-style="hidden"></div>
 
-For example usage see the `author` component in the boilerplate project.
+For an example of the usage, see the `author` component in the boilerplate project.
