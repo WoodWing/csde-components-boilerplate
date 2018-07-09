@@ -251,7 +251,7 @@
 
             switch (fitting) {
                 case FITTING_CONTENT_TO_FRAME:
-                    slideshow.find('[u="slides"]').css({
+                    containers.css({
                         marginLeft: marginLeft
                     });
                     break;
