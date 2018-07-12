@@ -51,7 +51,7 @@ gulp.task('default', ['sass', 'vendor-script'], async () => {
         throw new Error('Package failed validation. See errors above.');
     }
     const name = require('./components/components-definition.json').name;
-    gulp.src('components/**/*')
+    gulp.src(['components/**/*', '!components/**/tms-timestamp'])
         .pipe(zip(`${name}.zip`))
         .pipe(gulp.dest('dist'));
 });
@@ -92,7 +92,7 @@ gulp.task('vendor-script', async () => {
 });
 
 gulp.task('design-file', async () => {
-    let stylesdir = path.join(__dirname, './components/styles')
+    let stylesdir = path.join(__dirname, './components/styles');
     let content = '';
 
     for (let file of fs.readdirSync(stylesdir) ) {
