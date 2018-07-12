@@ -66,7 +66,7 @@ The full table of available directives is:
 | Directive | Behavior |
 | ------------- | ------------- |
 | doc-editable | Binds editable text to an element |
-| doc-image | Binds image text to an element |
+| [doc-image](directives/IMAGE.md) | Binds image to an element |
 | doc-container | Turns the element into a container, allowing component nesting |
 | doc-html | Replaces content of element with the raw HTML, allowing to embed content |
 | doc-slideshow | Adds slideshow functionality to element |
@@ -75,7 +75,7 @@ The full table of available directives is:
 | doc-interactive | Directive for interactive component feature |
 
 ### Styling
-Each component should also contain one [SCSS](https://sass-lang.com/guide) file as styling. Each file should contain one CSS class for one class named after the component.
+Each component should also contain one [SCSS](https://sass-lang.com/guide) file as styling. Each file should contain one CSS class for one class named after the component. This class should be added to the root html element in the template.
 
 For example, the body component styling may look like:
 ```

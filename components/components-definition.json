@@ -206,7 +206,7 @@
             "label": { "key": "COMPONENT_SOCIAL_MEDIA_LABEL" },
             "selectionMethod": "handle",
             "properties": [
-                { "name": "media-properties", "directiveKey": "media" },
+                { "name": "social-media-properties", "directiveKey": "media" },
                 "position",
                 "style"
             ]
@@ -217,7 +217,7 @@
             "label": { "key": "COMPONENT_VIDEO_LABEL" },
             "selectionMethod": "handle",
             "properties": [
-                { "name": "media-properties", "directiveKey": "media" },
+                { "name": "video-properties", "directiveKey": "media" },
                 "style"
             ]
         }
@@ -612,10 +612,20 @@
             "dataType": "doc-image"
         },
         {
-            "name": "media-properties",
+            "name": "social-media-properties",
             "label": { "key": "PROPERTY_MEDIA_PROPERTIES_LABEL" },
             "control": {
-                "type": "media-properties"
+                "type": "media-properties",
+                "mediaType": "social"
+            },
+            "dataType": "doc-media"
+        },
+        {
+            "name": "video-properties",
+            "label": { "key": "PROPERTY_MEDIA_PROPERTIES_LABEL" },
+            "control": {
+                "type": "media-properties",
+                "mediaType": "video"
             },
             "dataType": "doc-media"
         },
@@ -821,5 +831,9 @@
             },
             "product": "auto"
         }
-    }
+    },
+
+    "scripts": [
+        "scripts/vendor.js"
+    ]
 }

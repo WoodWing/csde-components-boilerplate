@@ -63,6 +63,9 @@ typings/
 # Build results
 dist
 tmp
+components/scripts/vendor.js
+components/styles/design.css
+components/styles/design.scss
 
 # IDEs and editors
 /.idea
