@@ -9,6 +9,7 @@
     "COMPONENT_HERO_LABEL": "Abertura",
     "COMPONENT_IMAGE_LABEL": "Imagem",
     "COMPONENT_INTERACTIVE_LABEL": "Interativo",
+    "COMPONENT_INTRO_LABEL": "Introdução",
     "COMPONENT_PRODUCT_LABEL": "Produto",
     "COMPONENT_QUOTE_LABEL": "Citação",
     "COMPONENT_SEPARATOR_LABEL": "Separador",
@@ -16,6 +17,7 @@
     "COMPONENT_SLIDESHOW_PROPERTIES_HEADER_LABEL": "Slideshow properties",
     "COMPONENT_SOCIAL_MEDIA_LABEL": "Rede Social",
     "COMPONENT_SUBTITLE_LABEL": "Subtítulo",
+    "COMPONENT_TITLE_LABEL": "Título",
     "COMPONENT_VIDEO_LABEL": "Vídeo",
     "GROUP_LAYOUT_LABEL": "Layout",
     "GROUP_MEDIA_LABEL": "Mídia",
@@ -34,10 +36,12 @@
     "PROPERTY_CAPTION_TOP_OPTION": "Legenda superior",
     "PROPERTY_CAPTION_TOP_RIGHT_OPTION": "Legenda superior direita",
     "PROPERTY_DISABLE_FULLSCREEN_LABEL": "Desabilitar modo tela cheia (Adobe AEM)",
+    "PROPERTY_DROP_CAP_LABEL": "Capitular",
     "PROPERTY_EDIT_IMAGE_LABEL": "Edit image",
     "PROPERTY_FITTING_LABEL": "Enquadramento",
     "PROPERTY_FIXED_BACKGROUND_LABEL": "Plano de fundo fixo",
     "PROPERTY_LETTER_SPACING_LABEL": "Espaçamento de caracteres",
+    "PROPERTY_LINE_HEIGHT_LABEL": "Espaçamento entrelinhas",
     "PROPERTY_MEDIA_PROPERTIES_LABEL": "Media properties",
     "PROPERTY_PLAY_ORIENTATION_HORIZONTAL_OPTION": "Horizontal",
     "PROPERTY_PLAY_ORIENTATION_LABEL": "Orientação",
@@ -56,5 +60,6 @@
     "TEMPLATE_AUTHOR_LOCATION_PLACEHOLDER": "Local",
     "TEMPLATE_HEADLINE_SECTION_PLACEHOLDER": "Seção",
     "TEMPLATE_PRODUCT_DESCRIPTION_PLACEHOLDER": "Escreva uma breve descrição do produto.",
-    "TEMPLATE_PRODUCT_PRICE_PLACEHOLDER": "Preço do produto"
+    "TEMPLATE_PRODUCT_PRICE_PLACEHOLDER": "Preço do produto",
+    "TEMPLATE_PRODUCT_TITLE_PLACEHOLDER": "Nome do produto"
 }

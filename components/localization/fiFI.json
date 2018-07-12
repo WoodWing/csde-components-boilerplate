@@ -9,6 +9,7 @@
     "COMPONENT_HERO_LABEL": "Banneri",
     "COMPONENT_IMAGE_LABEL": "Kuva",
     "COMPONENT_INTERACTIVE_LABEL": "Interaktiivinen",
+    "COMPONENT_INTRO_LABEL": "Esittely",
     "COMPONENT_PRODUCT_LABEL": "Tuote",
     "COMPONENT_QUOTE_LABEL": "Lainaus",
     "COMPONENT_SEPARATOR_LABEL": "Erotin",
@@ -16,6 +17,7 @@
     "COMPONENT_SLIDESHOW_PROPERTIES_HEADER_LABEL": "Slideshow properties",
     "COMPONENT_SOCIAL_MEDIA_LABEL": "Sosiaalinen media",
     "COMPONENT_SUBTITLE_LABEL": "Alaotsikko",
+    "COMPONENT_TITLE_LABEL": "Otsikko",
     "COMPONENT_VIDEO_LABEL": "Video",
     "GROUP_LAYOUT_LABEL": "Asettelu",
     "GROUP_MEDIA_LABEL": "Media",
@@ -34,10 +36,12 @@
     "PROPERTY_CAPTION_TOP_OPTION": "Kuvateksti ylhäällä",
     "PROPERTY_CAPTION_TOP_RIGHT_OPTION": "Kuvateksti yläoikealla",
     "PROPERTY_DISABLE_FULLSCREEN_LABEL": "Poista koko ruudun tila käytöstä (Adobe AEM)",
+    "PROPERTY_DROP_CAP_LABEL": "Pudotuskuvateksti",
     "PROPERTY_EDIT_IMAGE_LABEL": "Edit image",
     "PROPERTY_FITTING_LABEL": "Sovitus",
     "PROPERTY_FIXED_BACKGROUND_LABEL": "Kiinteä tausta",
     "PROPERTY_LETTER_SPACING_LABEL": "Merkkien välit",
+    "PROPERTY_LINE_HEIGHT_LABEL": "Rivien välit",
     "PROPERTY_MEDIA_PROPERTIES_LABEL": "Media properties",
     "PROPERTY_PLAY_ORIENTATION_HORIZONTAL_OPTION": "Vaakasuuntainen",
     "PROPERTY_PLAY_ORIENTATION_LABEL": "Suunta",
@@ -56,5 +60,6 @@
     "TEMPLATE_AUTHOR_LOCATION_PLACEHOLDER": "Sijainti",
     "TEMPLATE_HEADLINE_SECTION_PLACEHOLDER": "Osio",
     "TEMPLATE_PRODUCT_DESCRIPTION_PLACEHOLDER": "Kirjoita lyhyt tuotekuvaus.",
-    "TEMPLATE_PRODUCT_PRICE_PLACEHOLDER": "Tuotteen hinta"
+    "TEMPLATE_PRODUCT_PRICE_PLACEHOLDER": "Tuotteen hinta",
+    "TEMPLATE_PRODUCT_TITLE_PLACEHOLDER": "Tuotenimi"
 }
