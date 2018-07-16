@@ -60,6 +60,7 @@
     "TEMPLATE_AUTHOR_LOCATION_PLACEHOLDER": "Местоположение",
     "TEMPLATE_HEADLINE_SECTION_PLACEHOLDER": "Раздел",
     "TEMPLATE_PRODUCT_DESCRIPTION_PLACEHOLDER": "Введите краткое описание продукта.",
+    "TEMPLATE_PRODUCT_LINK_PLACEHOLDER": "www.example.com",
     "TEMPLATE_PRODUCT_PRICE_PLACEHOLDER": "Цена продукта",
     "TEMPLATE_PRODUCT_TITLE_PLACEHOLDER": "Имя продукта"
 }
