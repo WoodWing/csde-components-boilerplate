@@ -6,6 +6,8 @@ Binds text to an html element.
     <p doc-editable="key">*rendered-text-content*</p>
 ```
 
+Inside the editor the element with the doc-editable directive is made editable for the user, allowing to type content.
+
 ## Changing text color on empty image background
 You can change the text color of the editable when the text is on top of a background image using the `data-doc-empty-bg-image-color`:
 

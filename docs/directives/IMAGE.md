@@ -36,6 +36,12 @@ For some images this droppable placeholder is too big to display properly inside
     <div doc-image="image" data-placeholder-style="hidden"></div>
 ```
 
+You can also use a smaller variant by setting the value to `small`. This will only display the component icon to the full size of the element:
+
+```html
+    <div doc-image="image" data-placeholder-style="small"></div>
+```
+
 In other cases the placeholder may overlap with editable text, in which case you can alter the position by setting the value `top-left`:
 
 ```html
