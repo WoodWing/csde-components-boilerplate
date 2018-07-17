@@ -4,7 +4,7 @@ Component properties are displayed in the side bar when a component is selected.
 
 The general definition of a property looks like:
 
-```json
+```javascript
 {
     // Property identifier.
     "name": "property",

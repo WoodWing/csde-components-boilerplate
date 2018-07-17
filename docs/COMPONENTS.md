@@ -4,7 +4,7 @@
 
 Components use the following definition:
 
-```json
+```javascript
 {
     // Unique identifier of component.
     "name": "component-identifier",

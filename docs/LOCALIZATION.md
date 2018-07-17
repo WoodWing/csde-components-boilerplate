@@ -33,12 +33,12 @@ Overview of the languages supported by Enterprise Aurora and their matching tran
 
 The label property simply contains a string which will be shown directly.
 
-```json
+```javascript
 {
     "name": "body",
     "label": "Body",
     "icon": "icons/components/body.svg",
-    ...
+    // ...
 },
 ```
 
@@ -46,22 +46,22 @@ The label property simply contains a string which will be shown directly.
 
 The label property contains an object containing a key property:
 
-```json
+```javascript
 {
     "name": "body",
     "label": { "key": "COMPONENT_BODY_LABEL" },
     "icon": "icons/components/body.svg",
-    ...
+    // ...
 },
 ```
 
 The key points to an translation in for example `enUS.json`:
 
-```json
+```javascript
 {
-    ...
+    // ...
     "COMPONENT_BODY_LABEL": "Body",
-    ...
+    // ...
 }
 ```
 
@@ -71,10 +71,10 @@ Keys for which a translation has not been given will be replaced by the key itse
 
 Translations can contain interpolations that will be substituted by the values provided. The label property will have an object that besides a key property has a values property containing the variable names and replacement values:
 
-```json
+```javascript
 {
 	"name": "style",
-	...
+	// ...
 	"control": {
 		"type": "select",
 		"options": [
@@ -89,7 +89,7 @@ Translations can contain interpolations that will be substituted by the values p
 				"caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "2"} },
 				"value": "_option2"
 			},
-			...
+			// ...
 		]
 	},
 	"dataType": "styles"
@@ -98,11 +98,11 @@ Translations can contain interpolations that will be substituted by the values p
 
 The translation in for example `enUS.json` contains the interpolations:
 
-```json
+```javascript
 {
-    ...
+    // ...
     "PROPERTY_VARIANT_STYLE_OPTION": "Option {{0}}",
-    ...
+    // ...
 }
 ```
 
@@ -116,12 +116,12 @@ In the next sections all fields that can be localized are enumerated.
 
 Used in the component chooser and as title in the properties side bar.
 
-```json
+```javascript
 {
     "name": "title",
     "label": { "key": "COMPONENT_TITLE_LABEL" },
     "icon": "icons/components/title.svg",
-    ...
+    // ...
 },
 ```
 
@@ -129,16 +129,16 @@ Used in the component chooser and as title in the properties side bar.
 
 Used in the properties side bar as intermediate header.
 
-```json
+```javascript
 {
     "name": "slideshow",
-    ...
+    // ...
     "properties": [
-		...
+		// ...
 		{ "control": { "type": "header" }, "label": { "key": "COMPONENT_SLIDESHOW_PROPERTIES_HEADER_LABEL" } },
-		...
+		// ...
     ],
-    ...
+    // ...
 },
 ```
 
@@ -146,12 +146,12 @@ Used in the properties side bar as intermediate header.
 
 Used in the component chooser and properties side bar.
 
-```json
+```javascript
 {
 	"name": "text",
 	"label": { "key": "GROUP_TEXT_LABEL" },
 	"components": [
-		...
+		// ...
 	]
 },
 ```
@@ -160,7 +160,7 @@ Used in the component chooser and properties side bar.
 
 Used as property label in the side bar.
 
-```json
+```javascript
 {
     "name": "position",
     "label": { "key": "PROPERTY_POSITION_LABEL" },
@@ -188,10 +188,10 @@ Used as property label in the side bar.
 
 Used as label for an option in selects and radio controls.
 
-```json
+```javascript
 {
 	"name": "position",
-	...
+	// ...
 	"control": {
 		"type": "select",
 		"options": [
@@ -208,7 +208,7 @@ Used as label for an option in selects and radio controls.
 		    }
 		]
     },
-    ...
+    // ...
 },
 ```
 
@@ -216,15 +216,15 @@ Used as label for an option in selects and radio controls.
 
 Used as label for an option in selects and radio controls.
 
-```json
+```javascript
 {
 	"name": "letter-spacing",
-	...
+	// ...
 	"control": {
-		...
+		// ...
 		"inputPlaceholder": { "key": "PROPERTY_AUTO_NUMBER_PLACEHOLDER" }
 	},
-	...
+	// ...
 },
 
 ```

@@ -23,7 +23,7 @@ Contains the configuration for components. For reference, the json schema can be
 
 The root of this file is defined as:
 
-```json
+```javascript
 {
     // Description of this components definition.
     "description": "Content Station Digital Editor components",
