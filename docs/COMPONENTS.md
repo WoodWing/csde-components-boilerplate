@@ -1,12 +1,14 @@
 # Components
 
 ## Definition
+
 Components use the following definition:
-```
+
+```json
 {
     // Unique identifier of component.
     "name": "component-identifier",
-    // Name shown in UI for component.
+    // Name shown in UI for component. See LOCALIZATION.md to information on how to localize.  
     "label": "Component",
     // Path to icon image. Can be anything that is displayable by the browser.
     // It's recommended to use either SVG, PNG or JPG.
@@ -45,15 +47,16 @@ Components use the following definition:
 The component definitions are complemented by templates used for rendering.
 
 ## HTML template
-HTML templates are used for rendering the editor content, but also for HTML output to publish channels. It's possible to add anything to the HTML template, however interactivity with the editor is provided through a fixed set of directives the integrator can set on HTML elements as attributes. The syntax of such a directive is:
 
-```
+HTML templates are used for rendering the editor content, but also for HTML output to publish channels. It's possible to add anything to the HTML template, however, interactivity with the editor is provided through a fixed set of directives that can be set on HTML elements as attributes. The syntax of such a directive is:
+
+```html
 <TAG doc-<directive-name>=<content-key>>
 ```
 
 For example, the default body component applies the doc-editable directive to make the contents of the element editable:
 
-```
+```html
 <p class="text body" doc-editable="text">
   Body Placeholder Text
 </p>
@@ -75,10 +78,12 @@ The full table of available directives is:
 | doc-interactive | Directive for interactive component feature |
 
 ### Styling
+
 Each component should also contain one [SCSS](https://sass-lang.com/guide) file as styling. Each file should contain one CSS class for one class named after the component. This class should be added to the root html element in the template.
 
 For example, the body component styling may look like:
-```
+
+```css
 /* Body component style */
 .body {
     font-weight: 400;
@@ -91,10 +96,12 @@ For example, the body component styling may look like:
 ```
 
 ## PSV Template
+
 Custom channels support the option to receive the rendered article in [PSV format](http://www.prismstandard.org/specifications/psv/1.0/PSV_specification_1.0.htm). When using this option, you must define a template for each component to have a PSV rendition.
 The component is skipped in the PSV output when it has no matching template.
 
 ## Facebook Instant Articles template
+
 Publishing to Facebook Instant Articles requires an HTML markup template for each component you wish to support.
 You should use the same directives to bind content to the template as used in the HTML template.
 The component is skipped in the Facebook output when it has no matching template.

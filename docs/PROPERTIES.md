@@ -4,12 +4,13 @@ Component properties are displayed in the side bar when a component is selected.
 
 The general definition of a property looks like:
 
-```
+```json
 {
     // Property identifier.
     "name": "property",
 
-    // Name displayed for property in side bar.
+    // Name displayed for property in side bar. See LOCALIZATION.md for information on 
+    // localization of options
     "label": "Property Name",
 
     // Type of UI control element.
@@ -21,10 +22,12 @@ The general definition of a property looks like:
     // When stored as "styles", the property value is added as css class to the main element.
     // When stored as "inlineStyles", the property value is directly used as inline style.
     // When stored as 'data", the property is free data.
-    // When stored as a directive (for example, doc-media), the property can be used to modify content data of a directive.
+    // When stored as a directive (for example, doc-media), the property can be used to modify
+    // content data of a directive.
     "dataType": "styles" | "inlineStyles" | "data" | "<directive>:<content-key>",
 
-    // Optional css selector key, it may be used if property should be applied to some nested html element instead of main component element.
+    // Optional css selector key, it may be used if property should be applied to some nested 
+    // html element instead of main component element.
     "selector": "css-selector",
 
     // Name of Enterprise Feature flag that should be present for the property to show up.
@@ -58,11 +61,12 @@ Stores directive data as part of the content object of the component.
 
 ### `select`
 
-Dropdown with options. Each option has a value that's applied
+Dropdown with options (see [Localization](LOCALIZATION.md) for information on localization of the caption). Each option has a value that's applied
 to the `dataType`. One option must have an empty value, which is the default value.
 
 Example of `select` control:
-```
+
+```json
     "control" {
         "type": "select",
         "options": [
@@ -87,7 +91,7 @@ Toggle between applying a value. Defaults to not having a value.
 
 Example of `checkbox` control:
 
-```
+```json
     "control": {
         "type": "checkbox",
         "value": "_value"
@@ -99,7 +103,8 @@ Example of `checkbox` control:
 Adds radio buttons with options. One option must have an empty value, which is the default value. The radio buttons can be customized with icons.
 
 Example of `radio` control:
-```
+
+```json
     "control": {
         "type": "radio",
         "options": [
@@ -127,7 +132,7 @@ Allows text input from user. Regular expressions can be defined to restrict inpu
 
 Example of `text` control:
 
-```
+```json
     "control": {
         "type": "text",
         "pattern": "^.*$",
