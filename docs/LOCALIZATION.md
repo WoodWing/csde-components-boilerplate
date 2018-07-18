@@ -125,23 +125,6 @@ Used in the component chooser and as title in the properties side bar.
 },
 ```
 
-#### Component properties header
-
-Used in the properties side bar as intermediate header.
-
-```javascript
-{
-    "name": "slideshow",
-    // ...
-    "properties": [
-		// ...
-		{ "control": { "type": "header" }, "label": { "key": "COMPONENT_SLIDESHOW_PROPERTIES_HEADER_LABEL" } },
-		// ...
-    ],
-    // ...
-},
-```
-
 #### Group UI name
 
 Used in the component chooser and properties side bar.
