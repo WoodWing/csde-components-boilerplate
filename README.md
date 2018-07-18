@@ -9,15 +9,15 @@ Install [NodeJS 8](https://nodejs.org/) or higher.
 Next, run in the folder where this README is located:
 
 ```console
-$ npm install
+npm install
 ```
 
 ## Developing a component set
 
-Download, clone or fork this repository. Follow the setup instructions listed in the previous [Setup](#setup) in the new folder, then run:
+Download, clone or fork this repository. Follow the instructions listed in the  [Setup section](#setup) and then, in the new folder, run:
 
 ```console
-$ npm run dev
+npm run dev
 ```
 
 This will watch for any changes in the components folder and run the validation logic.
@@ -29,7 +29,7 @@ Please see the [Documentation Components Model](docs/OVERVIEW.md) for more detai
 To create a component set ready for usage, run:
 
 ```console
-$ npm run build
+npm run build
 ```
 
 This will validate the set and create a zip in the dist folder, which you can upload through the Content Station Management Console.
