@@ -65,7 +65,7 @@ The full table of available directives is:
 
 | Directive | Behavior |
 | ------------- | ------------- |
-| doc-editable | Binds editable text to an element |
+| [doc-editable](directives/EDITABLE.md) | Binds editable text to an element |
 | [doc-image](directives/IMAGE.md) | Binds image to an element |
 | doc-container | Turns the element into a container, allowing component nesting |
 | doc-html | Replaces content of element with the raw HTML, allowing to embed content |
