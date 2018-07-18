@@ -8,7 +8,7 @@ Components use the following definition:
 {
     // Unique identifier of component.
     "name": "component-identifier",
-    // Name shown in UI for component. See LOCALIZATION.md to information on how to localize.  
+    // Name shown in UI for component. See LOCALIZATION.md for information on how to localize.  
     "label": "Component",
     // Path to icon image. Can be anything that is displayable by the browser.
     // It's recommended to use either SVG, PNG or JPG.

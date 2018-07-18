@@ -1,7 +1,9 @@
 # csde-components-boilerplate
+
 Boilerplate project for creating Content Station Digital Editor components.
 
 ## Setup
+
 Install [NodeJS 8](https://nodejs.org/) or higher.
 
 Next, run in the folder where this README is located:
@@ -12,7 +14,7 @@ $ npm install
 
 ## Developing a component set
 
-Download, clone or fork this repository. Follow the setup instructions listed in the previous section in the new folder. The run:
+Download, clone or fork this repository. Follow the setup instructions listed in the previous [Setup](#setup) in the new folder, then run:
 
 ```console
 $ npm run dev

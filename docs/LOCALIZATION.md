@@ -55,7 +55,7 @@ The label property contains an object containing a key property:
 },
 ```
 
-The key points to an translation in for example `enUS.json`:
+The key points to a translation in for example `enUS.json`:
 
 ```javascript
 {
