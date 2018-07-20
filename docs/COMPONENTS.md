@@ -8,7 +8,7 @@ Components use the following definition:
 {
     // Unique identifier of component.
     "name": "component-identifier",
-    // Name shown in UI for component. See LOCALIZATION.md for information on how to localize.  
+    // Name shown in UI for component. See LOCALIZATION.md for information on how to localize.
     "label": "Component",
     // Path to icon image. Can be anything that is displayable by the browser.
     // It's recommended to use either SVG, PNG or JPG.
@@ -72,7 +72,7 @@ The full table of available directives is:
 | [doc-image](directives/IMAGE.md) | Binds image to an element |
 | doc-container | Turns the element into a container, allowing component nesting |
 | doc-html | Replaces content of element with the raw HTML, allowing to embed content |
-| doc-slideshow | Adds slideshow functionality to element |
+| [doc-slideshow](directives/SLIDESHOW.md) | Adds slideshow functionality to element |
 | doc-link | Turns the element into a link. A property must be added to the component to configure the url |
 | doc-media | Allows rendering social media in the element |
 | doc-interactive | Directive for interactive component feature |
