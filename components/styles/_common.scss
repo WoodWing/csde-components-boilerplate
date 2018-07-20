@@ -72,6 +72,14 @@ span[data-text-edit-color] {
     padding: 0;
 }
 
+/* Implements text-align property values. */
+._align-right {
+    text-align: right;
+}
+._align-middle {
+    text-align: center;
+}
+
 /* Full screen wrapper overlay style (e.g. slideshow, images) */
 .fullscreen-wrapper {
     position: fixed;
