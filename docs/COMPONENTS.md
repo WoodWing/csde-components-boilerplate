@@ -12,6 +12,7 @@ Components use the following definition:
     "label": "Component",
     // Path to icon image. Can be anything that is displayable by the browser.
     // It's recommended to use either SVG, PNG or JPG.
+    // The icons should be roughly squared sized (for example 128 by 128 pixels).
     "icon": "path-in-set",
 
     // List of properties available for this component.
