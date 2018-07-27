@@ -175,7 +175,7 @@
             "properties": [
                 "fixed-background",
                 "style",
-                "text-align",
+                { "name": "text-align", "defaultValue": "_align-middle" },
                 "letter-spacing",
                 "line-height",
                 { "name": "edit-image", "directiveKey": "image" }

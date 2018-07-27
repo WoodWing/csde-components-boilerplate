@@ -26,6 +26,12 @@ The general definition of a property looks like:
     // content data of a directive.
     "dataType": "styles" | "inlineStyles" | "data" | "<directive>:<content-key>",
 
+    // Default value upon component creation.
+    // Can only be used with data types "styles", "inlineStyles" and "data".
+    // Only supports the control types "text", "select", "radio" and "checkbox".
+    // The value must match the available values in the control types.
+    "defaultValue": "value",
+
     // Optional css selector key, it may be used if property should be applied to some nested
     // html element instead of main component element.
     "selector": "css-selector",
