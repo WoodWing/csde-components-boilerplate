@@ -45,53 +45,28 @@ buildScssString = (filename) => {
     return '@import "' + filename.slice(1, (filename.length-scssExt.length)) + '";\n';
 }
 
-gulp.task('default', ['sass', 'vendor-script'], async () => {
+/**
+ * Runs component set validation, but throws no error.
+ * Errors are written to stdout.
+ */
+async function validateNoBail() {
+    await componentsValidator.validateFolder('./components');
+}
+
+/**
+ * Runs component set validation and throws error when something is wrong.
+ */
+async function validate() {
     const valid = await componentsValidator.validateFolder('./components');
     if (!valid) {
         throw new Error('Package failed validation. See errors above.');
     }
-    const name = require('./components/components-definition.json').name;
-    gulp.src(['components/**/*', '!components/**/tms-timestamp'])
-        .pipe(zip(`${name}.zip`))
-        .pipe(gulp.dest('dist'));
-});
+}
 
-gulp.task('dev', ['validate', 'vendor-script'], () => {
-    const watcher = gulp.watch('components/**/*', ['validate']);
-    watcher.on('ready', () => console.log('Watching for changes in components folder...'));
-    return watcher;
-});
-
-gulp.task('validate', async () => {
-    await componentsValidator.validateFolder('./components');
-});
-
-gulp.task('sass', ['design-file'], () => {
-    return gulp.src('./components/styles/design.scss')
-      .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./components/styles/'));
-});
-
-gulp.task('vendor-script', async () => {
-    // Concat files
-    let content = '';
-    for (let i = 0; i < scriptFiles.length; i++) {
-        content += (await readFileAsync(scriptFiles[i])).toString() + '\n';
-    }
-    // Uglify result
-    const result = UglifyJS.minify(content);
-    if (result.error) {
-        throw new Error(result.error.message);
-    }
-    // Write to vendor.js script
-    const targetFolder = './components/scripts';
-    if (!fs.existsSync(targetFolder)){
-        fs.mkdirSync(targetFolder);
-    }
-    await writeFileAsync(path.join(targetFolder, 'vendor.js'), result.code);
-});
-
-gulp.task('design-file', async () => {
+/**
+ * Generates design.scss from style files.
+ */
+async function generateDesignFile() {
     let stylesdir = path.join(__dirname, './components/styles');
     let content = '';
 
@@ -110,4 +85,74 @@ gulp.task('design-file', async () => {
  * PLEASE DO NOT MODIFY THIS FILE BY HAND. \n\
  */\n' + content;
     await writeFileAsync(path.join(stylesdir, 'design.scss'), content);
-});
+}
+
+/**
+ * Compiles design.scss.
+ */
+async function compileDesignFile() {
+    await generateDesignFile();
+    return gulp.src('./components/styles/design.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest('./components/styles/'));
+}
+
+/**
+ * Generates vendor script by concatenating and uglifying the result.
+ */
+async function generateVendorScript() {
+    // Concat files
+    let content = '';
+    for (let i = 0; i < scriptFiles.length; i++) {
+        content += (await readFileAsync(scriptFiles[i])).toString() + '\n';
+    }
+    // Uglify result
+    const result = UglifyJS.minify(content);
+    if (result.error) {
+        throw new Error(result.error.message);
+    }
+    // Write to vendor.js script
+    const targetFolder = './components/scripts';
+    if (!fs.existsSync(targetFolder)){
+        fs.mkdirSync(targetFolder);
+    }
+    await writeFileAsync(path.join(targetFolder, 'vendor.js'), result.code);
+}
+
+/**
+ * Creates component set zip.
+ */
+function buildComponentSetZip() {
+    const name = require('./components/components-definition.json').name;
+    return gulp.src(['components/**/*', '!components/**/tms-timestamp'])
+        .pipe(zip(`${name}.zip`))
+        .pipe(gulp.dest('dist'));
+}
+
+/**
+ * Watch for changes and re-run component set validation.
+ */
+function watch() {
+    const watcher = gulp.watch('components/**/*', gulp.series(validateNoBail));
+    watcher.on('ready', () => console.log('Watching for changes in components folder...'));
+    return watcher;
+}
+
+const build = gulp.series(gulp.parallel(compileDesignFile, generateVendorScript), validate, buildComponentSetZip);
+
+const dev = gulp.series(gulp.parallel(compileDesignFile, generateVendorScript), watch);
+
+/*
+ * Validate component set and produce a zip for uploading in the CS Management Console.
+ */
+gulp.task('build', build);
+
+/*
+ * Validate component set when there are changes.
+ */
+gulp.task('dev', dev);
+
+/*
+ * Define default task that can be called by just running `gulp` from cli
+ */
+gulp.task('default', build);
