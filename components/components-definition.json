@@ -1,7 +1,7 @@
 {
     "name": "default-components",
     "description": "Content Station Digital Editor components",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "defaultComponentOnEnter": "body",
 
     "components":[
@@ -57,7 +57,13 @@
                 "line-height",
                 { "name": "edit-image", "directiveKey": "image" },
                 { "name": "hyperlink", "directiveKey": "hyperlink" }
-            ]
+            ],
+            "autofill": {
+                "caption": {
+                    "source": "image",
+                    "metadataField": "ContentMetaData/Description"
+                }
+            }
         },
         {
             "name": "embed",
