@@ -41,6 +41,21 @@ Components use the following definition:
     // directive has an image applied by the user.
     "restrictChildren": {
         "image-comp": { "withContent": "image" }
+    },
+
+    // Optional property which defines directives autofill rules.
+    // It can be used when content should be filled automatically.
+    // For example editable directive can be filled from image directive on adding an image to it
+    // using one of metadata property of Enterprise image object (currently works with Enterprise metadata only)
+    // There is also an ability to set different trigger option. "Once" means that it will be triggered on first
+    // data setting, in case of image directive - when image added first time
+    // Introduced in version 1.1.0
+    "autofill": {
+        "destinationDirectiveKey": {
+            "source": "sourceDirectiveKey",
+            "metadataField": "ContentMetaData/Description", // Enterprise metadata format, case sensitive
+            "trigger": "always"     // "once" | "always", by default it is "once"
+        }
     }
 }
 ```
