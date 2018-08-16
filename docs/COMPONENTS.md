@@ -56,7 +56,13 @@ Components use the following definition:
             "metadataField": "ContentMetaData/Description", // Enterprise metadata format, case sensitive
             "trigger": "always"     // "once" | "always", by default it is "once"
         }
-    }
+    },
+
+    // Optional property which overrides global "defaultComponentOnEnter" property.
+    // For example it can be used to define a special container component where default component, which
+    // is created on pressing enter key, will differ then the default component outside the container.
+    // Introduced in version 1.2.0
+    "defaultComponentOnEnter": "componentName"
 }
 ```
 
