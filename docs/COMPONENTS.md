@@ -57,6 +57,18 @@ Components use the following definition:
             "trigger": "always"     // "once" | "always", by default it is "once"
         }
     }
+
+    // Optional property to configure groups for container directives
+    // This allows overriding the components displayed in the component picker inside a container.
+    // For example, you could design a list type component that only displays a list item component
+    // inside the container.
+    "groups": {
+        "directiveKey": [
+            {
+                // Group definition, see GROUPS.md
+            }
+        ]
+    }
 }
 ```
 
