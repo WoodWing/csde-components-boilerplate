@@ -63,6 +63,21 @@ Components use the following definition:
     // is created on pressing enter key, will differ then the default component outside the container.
     // Introduced in version 1.2.0
     "defaultComponentOnEnter": "componentName"
+
+    // Optional property to configure options per directive in the component
+    "directiveOptions": {
+        "directiveKey": {
+            // Optional property to configure groups for container directives
+            // This allows overriding the components displayed in the component picker inside a container.
+            // For example, you could design a list type component that only displays a list item component
+            // inside the container.
+            "groups": [
+                {
+                    // Group definition, see GROUPS.md
+                }
+            ]
+        }
+    }
 }
 ```
 
