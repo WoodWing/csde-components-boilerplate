@@ -2,7 +2,7 @@
 .product {
     clear: both;
     margin: 30px auto;
-    max-width: 452px;
+    width: 100%;
     /* display-flex and webkit-prefix mixin are defined in the global style file (_common.scss) */
     @include display-flex();
     @include webkit-prefix(flex-direction, column);
@@ -60,28 +60,20 @@
         }
     }
 
-    /* class styles for the position properties of the image component */
-    &._left {
-        float: left;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    &._right {
-        float: right;
-        margin-left: 0;
-        margin-right: 0;
-    }
+    @media only screen and (min-width: $phone-max-width) {
+        max-width: $phone-max-width + 1px;
+        width: auto;
 
-    @media only screen and (max-width: $phone-max-width) {
-        &._right,
+        /* class styles for the position properties of the image component */
         &._left {
-            float: none;
-            clear: both;
-            width: 100%;
-            max-width: none;
+            float: left;
+            margin-left: 0;
+            margin-right: 0;
         }
         &._right {
+            float: right;
             margin-left: 0;
+            margin-right: 0;
         }
     }
 

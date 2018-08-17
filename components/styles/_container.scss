@@ -25,27 +25,47 @@
     &._option3 {
         background-color: #c191d6;
     }
-    * {
+    > * {
         &:first-child {
             margin-top: 0;
+            &._left {
+                + ._right {
+                    margin-top: 0;
+                }
+            }
+            &._right {
+                + ._left {
+                    margin-top: 0;
+                }
+            }
         }
         &:last-child {
             margin-bottom: 0;
         }
+        &._left {
+            + ._right:last-child {
+                margin-bottom: 20px;
+            }
+        }
+        &._right {
+            + ._left:last-child {
+                margin-bottom: 20px;
+            }
+        }
     }
 
     /* media query */
-    @media (min-width: 800px) {
+    @media only screen and (min-width: $phone-max-width) {
         &._left {
             float: left;
             clear: left;
-            width: 40%;
+            width: 50%;
             z-index: 1;
         }
         &._right {
             float: right;
             clear: right;
-            width: 60%;
+            width: 50%;
             z-index: 1;
         }
     }

@@ -48,20 +48,19 @@ blockquote {
     }
 
     /* media query */
-    @media (min-width: 800px) {
+    @media only screen and (min-width: $phone-max-width) {
     /* class styles for the position properties of the image component in the current media query breakpoint */
         &._left {
             float: left;
             clear: left;
-            width: calc(41% - 15px);
+            width: calc(50% - 15px);
             margin-right: 15px;
             z-index: 1;
         }
         &._right {
             float: right;
             clear: right;
-            width: calc(60% - 15px);
-            margin-left: 15px;
+            width: 50%;
             z-index: 1;
         }
     }
