@@ -58,16 +58,19 @@ Components use the following definition:
         }
     }
 
-    // Optional property to configure groups for container directives
-    // This allows overriding the components displayed in the component picker inside a container.
-    // For example, you could design a list type component that only displays a list item component
-    // inside the container.
-    "groups": {
-        "directiveKey": [
-            {
-                // Group definition, see GROUPS.md
-            }
-        ]
+    // Optional property to configure options per directive in the component
+    "directiveOptions": {
+        "directiveKey": {
+            // Optional property to configure groups for container directives
+            // This allows overriding the components displayed in the component picker inside a container.
+            // For example, you could design a list type component that only displays a list item component
+            // inside the container.
+            "groups": [
+                {
+                    // Group definition, see GROUPS.md
+                }
+            ]
+        }
     }
 }
 ```
