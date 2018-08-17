@@ -58,10 +58,12 @@
                 { "name": "edit-image", "directiveKey": "image" },
                 { "name": "hyperlink", "directiveKey": "hyperlink" }
             ],
-            "autofill": {
+            "directiveOptions": {
                 "caption": {
-                    "source": "image",
-                    "metadataField": "ContentMetaData/Description"
+                    "autofill": {
+                        "source": "image",
+                        "metadataField": "ContentMetaData/Description"
+                    }
                 }
             }
         },
