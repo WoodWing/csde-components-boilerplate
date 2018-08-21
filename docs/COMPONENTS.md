@@ -12,7 +12,7 @@ Components use the following definition:
     "label": "Component",
     // Path to icon image. Can be anything that is displayable by the browser.
     // It's recommended to use either SVG, PNG or JPG.
-    // The icons should be roughly squared sized (for example 128 by 128 pixels).
+    // The icons should be roughly square in size (for example 128 by 128 pixels).
     "icon": "path-in-set",
 
     // List of properties available for this component.
@@ -27,25 +27,27 @@ Components use the following definition:
     // This option is useful for components that have non clickable content (such as iframes).
     "selectionMethod": "default" | "handle",
 
-    // Whether or not to count components by default towards article statistics (characters, words, paragraphs).
-    // Defaults to false.
+    // Whether or not the textual content of components should be included in the article statistics (total number of
+    // characters, words, paragraphs).
+    // Default = false.
     "countStatistics": true | false,
 
     // Allows nesting the component in containers.
-    // Defaults to "yes".
+    // Defaults = yes.
     "allowNesting": "yes" | "no" | "one-level",
 
     // Restricts children of this component to the listed ones.
-    // The "withContent" key can be used to filter down on the content of
-    // a directive. For example this can be used to require that a doc-image
-    // directive has an image applied by the user.
+    // The "withContent" key can be used to filter down on the content of a directive. 
+    // For example this can be used to require that a doc-image directive has an image 
+    // applied by the user.
     "restrictChildren": {
         "image-comp": { "withContent": "image" }
     },
 
-    // Optional property which overrides global "defaultComponentOnEnter" property.
-    // For example it can be used to define a special container component where default component, which
-    // is created on pressing enter key, will differ then the default component outside the container.
+    // Optional property which overrides the global "defaultComponentOnEnter" property.
+    // For example it can be used to define a special container component where the default component which
+    // is created when pressing Enter will differ from the default component that is added when pressing
+    // Enter outside the container.
     // Introduced in version 1.1.0
     "defaultComponentOnEnter": "componentName"
 
@@ -53,11 +55,11 @@ Components use the following definition:
     "directiveOptions": {
         "directiveKey": {
             // Optional property which defines directives autofill rules.
-            // It can be used when content should be filled automatically.
-            // For example editable directive can be filled from image directive on adding an image to it
-            // using one of metadata property of Enterprise image object (currently works with Enterprise metadata only)
-            // There is also an ability to set different trigger option. "Once" means that it will be triggered on first
-            // data setting, in case of image directive - when image added first time
+            // It can be used when the content of a component should be filled automatically.
+            // For example the editable directive can be filled from the image directive when an image is added to an article,
+            // using one of metadata properties of the Enterprise image object (it currently works with Enterprise metadata only)
+            // There is also an ability to set different trigger options. "Once" means that it will be triggered on first
+            // data setting, in case of image directive - when image is added for the first time
             // Introduced in version 1.1.0
             "autofill": {
                 "source": "sourceDirectiveKey",
@@ -66,7 +68,7 @@ Components use the following definition:
             },
 
             // Optional property to configure groups for container directives
-            // This allows overriding the components displayed in the component picker inside a container.
+            // This allows overriding the components displayed in the Component window inside a container.
             // For example, you could design a list type component that only displays a list item component
             // inside the container.
             // Introduced in version 1.1.0
