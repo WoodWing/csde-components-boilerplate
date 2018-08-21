@@ -62,7 +62,7 @@ Components use the following definition:
             "autofill": {
                 "source": "sourceDirectiveKey",
                 "metadataField": "ContentMetaData/Description", // Enterprise metadata format, case sensitive
-                "trigger": "always"     // "once" | "always", by default it is "once"
+                "trigger": "always"     // "once" | "always", by default it is "always"
             },
 
             // Optional property to configure groups for container directives
