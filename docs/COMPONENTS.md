@@ -37,8 +37,8 @@ Components use the following definition:
     "allowNesting": "yes" | "no" | "one-level",
 
     // Restricts children of this component to the listed ones.
-    // The "withContent" key can be used to filter down on the content of a directive. 
-    // For example this can be used to require that a doc-image directive has an image 
+    // The "withContent" key can be used to filter down on the content of a directive.
+    // For example this can be used to require that a doc-image directive has an image
     // applied by the user.
     "restrictChildren": {
         "image-comp": { "withContent": "image" }
@@ -61,10 +61,10 @@ Components use the following definition:
             // There is also an ability to set different trigger options. "Once" means that it will be triggered on first
             // data setting, in case of image directive - when image is added for the first time
             // Introduced in version 1.1.0
+            // Version 1.2.0 deprecated the trigger option
             "autofill": {
                 "source": "sourceDirectiveKey",
-                "metadataField": "ContentMetaData/Description", // Enterprise metadata format, case sensitive
-                "trigger": "always"     // "once" | "always", by default it is "always"
+                "metadataField": "ContentMetaData/Description" // Enterprise metadata format, case sensitive
             },
 
             // Optional property to configure groups for container directives
