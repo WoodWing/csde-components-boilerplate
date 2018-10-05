@@ -1,7 +1,7 @@
 {
     "name": "default-components",
     "description": "Content Station Digital Editor components",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "defaultComponentOnEnter": "body",
 
     "components":[
@@ -861,6 +861,19 @@
             "product": "auto"
         }
     },
+
+    "conversionShortcutComponents": [
+        "product",
+        "title",
+        "subtitle",
+        "headline",
+        "hero",
+        "body",
+        "footer",
+        "quote",
+        "crosshead",
+        "image"
+    ],
 
     "scripts": [
         "scripts/vendor.js"
