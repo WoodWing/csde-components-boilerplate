@@ -43,7 +43,6 @@ This quick guide shows the steps to create a new custom component based on the b
 1. Edit `_my_component.scss` to make changes to the default style of your component
 1. Copy `components/templates/html/body.html` to `components/templates/html/my_component.html`
    * Edit the html and change the class name `body` to `my_component`
-1. Edit `components/styles/design.scss` and add `@import "_my_component.scss";`
 1. Edit `components/components-definition.json` to define the new component
    * Copy & Paste the body component definition into the components section
    * Change the name to `my_component`
@@ -54,6 +53,3 @@ This quick guide shows the steps to create a new custom component based on the b
 1. Create a new Digital Article template in Content Station and select your component set in the create dialog
 1. Create a new Digital Article from the template
 1. Add your component using the `+` button
-
-
-
