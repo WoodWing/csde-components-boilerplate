@@ -862,18 +862,20 @@
         }
     },
 
-    "conversionShortcutComponents": [
-        "product",
-        "title",
-        "subtitle",
-        "headline",
-        "hero",
-        "body",
-        "footer",
-        "quote",
-        "crosshead",
-        "image"
-    ],
+    "shortcuts": {
+        "conversionComponents": [
+            "product",
+            "title",
+            "subtitle",
+            "headline",
+            "hero",
+            "body",
+            "footer",
+            "quote",
+            "crosshead",
+            "image"
+        ]
+    },
 
     "scripts": [
         "scripts/vendor.js"
