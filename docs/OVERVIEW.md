@@ -15,7 +15,6 @@ The folder structure of a component set is defined as:
 | `templates/html/*.html` | 	Templates for the HTML rendition of the article. Used in editor and for publishing html.  |
 | `templates/styles/*.scss` | Default styling for this component set used with the html rendition. The customer may override this with custom styling. Styles folder may contain additional assets such as fonts and images. |
 | `templates/psv/*.html` | Templates for PSV rendition of the article. Used for publishing PSV to Custom Channels. |
-| `templates/facebook/*.html` | Templates for Facebook rendition of the article. Used for publishing to Facebook Instant Articles. |
 
 ## components-definition.json
 
