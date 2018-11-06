@@ -51,6 +51,16 @@ The root of this file is defined as:
         ...
     },
 
+    "shortcuts": {
+        // There are shortcuts available to make component converting. The shortcuts are 'ctrl' or 'cmd' + numbers from 0 to 9.
+        // Here is a list of components which should be binded to the shortcuts, maximum is 10 components.
+        "conversionComponents": [
+            "component-identifier-1",   // <- Cmd+0
+            "component-identifier-2",   // <- Cmd+1
+            ...                         // <- etc...
+        ],
+    },
+
     // Javascript files included in the HTML rendition of the article (editor and published html articles).
     // These scripts provide additional functionality for components (for example the slideshow).
     "scripts": {
@@ -58,7 +68,7 @@ The root of this file is defined as:
     },
 
     // Default component's name on pressing Enter.
-    defaultComponentOnEnter: 'component-identifier'
+    "defaultComponentOnEnter": "component-identifier"
 }
 ```
 
