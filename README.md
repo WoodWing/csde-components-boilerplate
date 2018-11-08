@@ -6,7 +6,7 @@ Boilerplate project for creating Content Station Digital Editor component sets.
 
 This section describes how to set up, develop and package component sets out of the boilerplate.
 
-#### *Important: use a release of the boilerplate that is supported by the target Content Station. See the [Releases](/releases) page for an overview.*
+#### *Important: use a release of the boilerplate that is supported by the target Content Station. See the [Releases](/../../releases) page for an overview.*
 
 Download, clone or fork this repository from the desired release tag. 
 
