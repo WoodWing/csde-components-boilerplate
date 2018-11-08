@@ -1,10 +1,18 @@
 # csde-components-boilerplate
 
-Boilerplate project for creating Content Station Digital Editor components.
+Boilerplate project for creating Content Station Digital Editor component sets.
 
-## Setup
+## Creating a component set
 
-Install [NodeJS 8](https://nodejs.org/) or higher.
+This section describes how to set up, develop and package component set out of the boilerplate.
+
+#### *Important: use a release of the boilerplate that is supported by the target Content Station. See the [Releases](/releases) page for an overview.*
+
+Download, clone or fork this repository from the desired release tag. 
+
+### Setup
+
+Make sure to have installed [NodeJS 8](https://nodejs.org/) or higher.
 
 Next, run in the folder where this README is located:
 
@@ -12,9 +20,9 @@ Next, run in the folder where this README is located:
 npm install
 ```
 
-## Developing a component set
+### Develop 
 
-Download, clone or fork this repository. Follow the instructions listed in the  [Setup section](#setup) and then, in the new folder, run:
+Follow the instructions listed in the [Setup section](#setup) and then, in the new folder, run:
 
 ```console
 npm run dev
@@ -22,9 +30,9 @@ npm run dev
 
 This will watch for any changes in the components folder and run the validation logic.
 
-Please see the [Documentation Components Model](docs/OVERVIEW.md) for more details.
+Please see the [Documentation Components Model](docs/OVERVIEW.md) for more details on the expected structure of a component set.
 
-## Package
+### Package
 
 To create a component set ready for usage, run:
 
@@ -32,7 +40,7 @@ To create a component set ready for usage, run:
 npm run build
 ```
 
-This will validate the set and create a zip in the dist folder, which you can upload through the Content Station Management Console.
+This will validate the set and create a zip in the `dist` folder, which you can upload through the Content Station Management Console.
 
 ## Getting started guide
 
