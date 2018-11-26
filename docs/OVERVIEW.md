@@ -52,8 +52,11 @@ The root of this file is defined as:
     },
 
     "shortcuts": {
-        // There are shortcuts available to make component converting. The shortcuts are 'ctrl' or 'cmd' + numbers from 0 to 9.
-        // Here is a list of components which should be binded to the shortcuts, maximum is 10 components.
+        // Define keyboard shortcuts for changing a component to a different type.
+        // A keyboard shortcut consists of the modifier key Cmd (MacOS) or Ctrl (Windows) plus a number from 0 to 9.
+        // The first item in the list will have Cmd+1 or Ctrl+1 assigned, 
+        // the second item in the list will have Cmd+2 or Ctrl+2 assigned, and so on.
+        // A maximum of 10 keyboard shortcuts can be defined.
         "conversionComponents": [
             "component-identifier-1",   // <- Cmd+0
             "component-identifier-2",   // <- Cmd+1
