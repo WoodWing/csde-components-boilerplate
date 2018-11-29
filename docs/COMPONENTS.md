@@ -24,11 +24,10 @@ Components use the following definition:
         ...
     ],
 
-    // Method of moving a component to a different position:
-    // - default: moving a component is done by hold-clicking inside the component.
-    // - handle: moving a component is done by dragging a handle. It is positioned at the top right corner of 
-    //           the component and contains the component name. This option is useful for components that have 
-    //.          non-clickable content such as iframes.
+    // Method of selecting a component:
+    // - default: by clicking inside the component
+    // - handle: adds a handle to the top right corner of the component that can be clicked.
+    //           This option is useful for components that have non-clickable content such as Containers.
     "selectionMethod": "default" | "handle",
 
     // Include textual content of components in the article statistics: total number of characters, words,
@@ -48,17 +47,18 @@ Components use the following definition:
         "image-comp": { "withContent": "image" }
     },
 
-    // Override the default component that is added when pressing Enter (as defined in the global 
+    // (Optional) Override the default component that is added when pressing Enter (as defined in the global 
     // "defaultComponentOnEnter" property).
     // This can be useful for example in a Container when this behavior should be different compared to the main story.
     // Introduced in version 1.1.0.
     "defaultComponentOnEnter": "componentName"
 
-    // Configure options per directive
+    // (Optional) Configure options per directive
     "directiveOptions": {
         "directiveKey": {
             //
             // Autofill
+            // (Introduced in version 1.1.0)
             // (Optional) Define if the content of a component should be filled automatically.
             // For example: automatically fill the caption of an image when an image is added to an article.
             // Currently only works with Enterprise metadata only.
