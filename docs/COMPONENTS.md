@@ -77,7 +77,7 @@ Components use the following definition:
             // (Optional) Configure groups for container directives.
             // This allows overriding the components displayed in the Component window inside a Container.
             // For example, you could design a list-type component that only displays a list item component
-            // inside the Container.
+            // inside its Container.
             // Introduced in version 1.1.0.
             "groups": [
                 {
