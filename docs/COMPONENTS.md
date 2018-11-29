@@ -6,12 +6,15 @@ Components use the following definition:
 
 ```javascript
 {
-    // Unique identifier of component.
+    // Unique identifier for the component.
     "name": "component-identifier",
-    // Name shown in UI for component. See LOCALIZATION.md for information on how to localize.
+    
+    // Name that is shown in the UI for the component. 
+    // See LOCALIZATION.md for information on localization.
     "label": "Component",
-    // Path to icon image. Can be anything that is displayable by the browser.
-    // It's recommended to use either SVG, PNG or JPG.
+    
+    // Path to the icon image for the compoonent. Can be anything that is displayable by the browser.
+    // Recommended formats are SVG, PNG, or JPG.
     // The icons should be roughly square in size (for example 128 by 128 pixels).
     "icon": "path-in-set",
 
@@ -21,57 +24,61 @@ Components use the following definition:
         ...
     ],
 
-    // How this component is selectable.
-    // By "default" the user can click inside the component to select it.
-    // The "handle" option adds a draggable bar with the component name at the right top of the component.
-    // This option is useful for components that have non clickable content (such as iframes).
+    // Method of selecting a component:
+    // - default: by clicking inside the component
+    // - handle: adds a handle to the top right corner of the component that can be clicked.
+    //           This option is useful for components that have non-clickable content such as Containers.
     "selectionMethod": "default" | "handle",
 
-    // Whether or not the textual content of components should be included in the article statistics (total number of
-    // characters, words, paragraphs).
+    // Include textual content of components in the article statistics: total number of characters, words,
+    // and paragraphs.
     // Default = false.
     "countStatistics": true | false,
 
-    // Allows nesting the component in containers.
-    // Defaults = yes.
+    // Allow nesting the component in containers.
+    // Default = yes.
     "allowNesting": "yes" | "no" | "one-level",
 
-    // Restricts children of this component to the listed ones.
-    // The "withContent" key can be used to filter down on the content of a directive.
+    // Define which types of components can be made a child of another component.
+    // Use the "withContent" key to filter down on the content of a directive.
     // For example this can be used to require that a doc-image directive has an image
     // applied by the user.
     "restrictChildren": {
         "image-comp": { "withContent": "image" }
     },
 
-    // Optional property which overrides the global "defaultComponentOnEnter" property.
-    // For example it can be used to define a special container component where the default component which
-    // is created when pressing Enter will differ from the default component that is added when pressing
-    // Enter outside the container.
-    // Introduced in version 1.1.0
+    // (Optional) Override the default component that is added when pressing Enter (as defined in the global 
+    // "defaultComponentOnEnter" property).
+    // This can be useful for example in a Container when this behavior should be different compared to the main story.
+    // Introduced in version 1.1.0.
     "defaultComponentOnEnter": "componentName"
 
-    // Optional property to configure options per directive in the component
+    // (Optional) Configure options per directive
     "directiveOptions": {
         "directiveKey": {
-            // Optional property which defines directives autofill rules.
-            // It can be used when the content of a component should be filled automatically.
-            // For example the editable directive can be filled from the image directive when an image is added to an article,
-            // using one of metadata properties of the Enterprise image object (it currently works with Enterprise metadata only)
-            // There is also an ability to set different trigger options. "Once" means that it will be triggered on first
-            // data setting, in case of image directive - when image is added for the first time
-            // Introduced in version 1.1.0
-            // Version 1.2.0 deprecated the trigger option
+            //
+            // Autofill
+            // (Introduced in version 1.1.0)
+            // (Optional) Define if the content of a component should be filled automatically.
+            // For example: automatically fill the caption of an image when an image is added to an article.
+            // Currently only works with Enterprise metadata only.
+            //
+            // Set different trigger options: 
+            // (Introduced in version 1.1.0, deprecated since version 1.2.0)
+            //   Once - means that it will only be triggered the first time
+            //   (in the case of filling a caption: when the image is added for the first time)
+            // 
             "autofill": {
                 "source": "sourceDirectiveKey",
                 "metadataField": "ContentMetaData/Description" // Enterprise metadata format, case sensitive
             },
 
-            // Optional property to configure groups for container directives
-            // This allows overriding the components displayed in the Component window inside a container.
-            // For example, you could design a list type component that only displays a list item component
-            // inside the container.
-            // Introduced in version 1.1.0
+            // Groups
+            // (Optional) Configure groups for container directives.
+            // This allows overriding the components displayed in the Component window inside a Container.
+            // For example, you could design a list-type component that only displays a list item component
+            // inside its Container.
+            // Introduced in version 1.1.0.
             "groups": [
                 {
                     // Group definition, see GROUPS.md
