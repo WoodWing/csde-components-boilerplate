@@ -39,10 +39,12 @@ const scriptFiles = [
   path.join(scriptsDir, 'video.js')
 ]
 
-const scssExt = '.scss';
+buildScssString = (componentName) => {
+    return `@import "${componentName}";\n`;
+}
 
-buildScssString = (filename) => {
-    return '@import "' + filename.slice(1, (filename.length-scssExt.length)) + '";\n';
+function getComponentDefinition() {
+    return require('./components/components-definition.json');
 }
 
 /**
@@ -67,23 +69,28 @@ async function validate() {
  * Generates design.scss from style files.
  */
 async function generateDesignFile() {
-    let stylesdir = path.join(__dirname, './components/styles');
-    let content = '';
+    let componentNames;
 
-    for (let file of fs.readdirSync(stylesdir) ) {
-        if (file.startsWith('_') && path.extname(file) === scssExt ) {
-            if (file !== '_common.scss') {
-                content += buildScssString(file);
-            } else {
-                // Common should always be included at the top of the file since other scss files have dependencies on it.
-                content = buildScssString(file) + content;
-            }
-        }
+    try {
+        const definition = getComponentDefinition();
+        componentNames = definition.components.map((compDef) => compDef.name);
+    } catch(e) {
+        // Don't fail task, but let the components validator generate the actual error,
+        // in case the component definition is malformed.
+        console.error('Failed to generate design.scss file: \n', e);
+        return;
     }
-    content = '/* \n\
- * This file has been generated while building the components package. \n\
- * PLEASE DO NOT MODIFY THIS FILE BY HAND. \n\
- */\n' + content;
+
+    let stylesdir = path.join(__dirname, './components/styles');
+    let content = `/*
+* This file has been generated while building the components package.
+* PLEASE DO NOT MODIFY THIS FILE BY HAND.
+*/\n${buildScssString('common')}`;
+
+    for (componentName of componentNames) {
+        content += buildScssString(componentName);
+    }
+
     await writeFileAsync(path.join(stylesdir, 'design.scss'), content);
 }
 
@@ -123,7 +130,7 @@ async function generateVendorScript() {
  * Creates component set zip.
  */
 function buildComponentSetZip() {
-    const name = require('./components/components-definition.json').name;
+    const name = getComponentDefinition().name;
     return gulp.src(['components/**/*', '!components/**/tms-timestamp'])
         .pipe(zip(`${name}.zip`))
         .pipe(gulp.dest('dist'));
