@@ -3,8 +3,8 @@ const fs = require('fs');
 const {promisify} = require('util');
 const gulp = require('gulp');
 const zip = require('gulp-zip');
-const sass = require('gulp-sass');
 const UglifyJS = require("uglify-js");
+const sass = require('node-sass');
 
 const componentsValidator = require('@woodwing/csde-components-validator');
 
@@ -14,7 +14,7 @@ const writeFileAsync = promisify(fs.writeFile);
 // Scripts bundled into a single vendor.js
 // You can choose to remove scripts in case they are not needed
 // for your components.
-const scriptsDir = path.join(__dirname, './scripts')
+const scriptsDir = path.join(__dirname, './scripts');
 const scriptFiles = [
   // Adobe AEM library used by fullscreen.support.js
   path.join(scriptsDir, 'dpsHTMLGestureAPI.min.js'),
@@ -37,11 +37,13 @@ const scriptFiles = [
 
   // HLS video support on non Safari browser.
   path.join(scriptsDir, 'video.js')
-]
+];
+const stylesDir = path.join(__dirname, './components/styles');
+
 
 buildScssString = (componentName) => {
     return `@import "${componentName}";\n`;
-}
+};
 
 function getComponentDefinition() {
     return require('./components/components-definition.json');
@@ -81,7 +83,6 @@ async function generateDesignFile() {
         return;
     }
 
-    let stylesdir = path.join(__dirname, './components/styles');
     let content = `/*
 * This file has been generated while building the components package.
 * PLEASE DO NOT MODIFY THIS FILE BY HAND.
@@ -91,7 +92,7 @@ async function generateDesignFile() {
         content += buildScssString(componentName);
     }
 
-    await writeFileAsync(path.join(stylesdir, 'design.scss'), content);
+    await writeFileAsync(path.join(stylesDir, 'design.scss'), content);
 }
 
 /**
@@ -99,9 +100,10 @@ async function generateDesignFile() {
  */
 async function compileDesignFile() {
     await generateDesignFile();
-    return gulp.src('./components/styles/design.scss')
-      .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./components/styles/'));
+    const result = await promisify(sass.render)({
+        file: path.join(stylesDir, 'design.scss'),
+    });
+    await writeFileAsync(path.join(stylesDir, 'design.css'), result.css);
 }
 
 /**

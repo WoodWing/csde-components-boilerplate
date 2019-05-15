@@ -21,8 +21,8 @@
   "dependencies": {
     "@woodwing/csde-components-validator": "^1.5.0",
     "gulp": "^4.0.1",
-    "gulp-sass": "^4.0.2",
     "gulp-zip": "^4.2.0",
+    "node-sass": "~4.12.0",
     "uglify-js": "^3.4.7"
   },
   "devDependencies": {}
