@@ -180,6 +180,7 @@ Enables the fitting option for doc-image directives in the component. These are 
 
 Can only be used with doc-image directives and requires specifying the directive content key in the component properties list separated by a colon.
 
+Accepts default values `_fit-frame-height-to-content` and `_fit-frame-to-content`. If it is not set then `fit content to frame` rule will be applied.
 
 ### `slides`
 

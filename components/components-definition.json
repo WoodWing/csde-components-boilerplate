@@ -47,7 +47,7 @@
             "icon": "icons/components/image.svg",
             "label": { "key": "COMPONENT_IMAGE_LABEL" },
             "properties": [
-                "fitting",
+                { "name": "fitting", "defaultValue": "_fit-frame-height-to-content" },
                 "position",
                 "style",
                 "inside-caption",
