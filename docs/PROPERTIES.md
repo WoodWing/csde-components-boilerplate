@@ -147,9 +147,48 @@ Example of the `text` control type:
     }
 ```
 
+### `textarea`
+
+Allows text input from user in a large field.
+
+Example of the `textarea` control type:
+
+```json
+    "control": {
+        "type": "textarea",
+        "inputPlaceholder": "Placeholder text"
+    }
+```
+
+### `url`
+
+Allows url input from user.
+
+Example of the `url` control type:
+
+```json
+    "control": {
+        "type": "url",
+        "inputPlaceholder": "Placeholder url"
+    }
+```
+
 ### `time`
 
 Allows time input in three number boxes with hours, minutes and seconds. The data is stored as a string in the format `<hours>h<minutes>m<seconds>s`.
+
+### `colorPicker`
+
+Color picker with optional opacity slider. The data is stored as a string in the format `rgba(<red>,<green>,<blue>,<opacity>)`.
+
+Example of the `colorPicker` control type:
+
+```json
+    "control": {
+        "type": "colorPicker",
+        "opacity": true
+    }
+```
 
 ## Specialized UI Controls
 
