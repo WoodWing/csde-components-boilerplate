@@ -170,10 +170,6 @@ This property dynamically initializes a subproperties list based on the type of 
 
 Can only be used with doc-media directives and requires specifying the directive content key in the component properties list separated by a colon.
 
-### `disable-fullscreen-checkbox`
-
-Similar to `checkbox` control type, but is disabled when the component has doc-link directives with data.
-
 ### `fitting`
 
 Enables the fitting option for doc-image directives in the component. These are pre-configured options that change the behavior of an image using inline-styling. Only works for images that use `background-image`.
