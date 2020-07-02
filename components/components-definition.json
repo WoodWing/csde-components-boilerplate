@@ -1,7 +1,7 @@
 {
     "name": "default-components",
     "description": "Content Station Digital Editor components",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "defaultComponentOnEnter": "body",
 
     "components":[
@@ -51,7 +51,6 @@
                 "position",
                 "style",
                 "inside-caption",
-                "disable-fullscreen",
                 "text-align",
                 "letter-spacing",
                 "line-height",
@@ -89,7 +88,6 @@
                 "slideshow-play-orientation",
                 "slideshow-autoplay",
                 "slideshow-filmstrip",
-                "disable-fullscreen",
                 "style",
                 "text-align",
                 "letter-spacing",
@@ -593,14 +591,6 @@
             "control": {
                 "type": "checkbox",
                 "value": "_filmstrip"
-            },
-            "dataType": "styles"
-        },
-        {
-            "name": "disable-fullscreen",
-            "label": { "key": "PROPERTY_DISABLE_FULLSCREEN_LABEL" },
-            "control": {
-                "type": "disable-fullscreen-checkbox"
             },
             "dataType": "styles"
         },
