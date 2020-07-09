@@ -9,12 +9,6 @@ You can also add new scripts directly to the `components/scripts` folder and add
 
 ## Default scripts included
 
-### `fullscreen.support.js`
-
-Installs a tap handler on components that have `data-tap-fullscreen` set on their root html element and are published to an Adobe AEM channel.
-
-See the `image` component for an example in the default component set.
-
 ### `slideshow.js`
 
 Support script for `doc-slideshow` directive.
@@ -38,7 +32,3 @@ Components that have the css class `_fixed-background` applied are skipped (for 
 If you don't want this behavior at all, remove the data attribute `data-hero-mobile` from the component html template. In addition you can also remove the `heroes.js` scripts from being included in `vendor.js` by editing `gulpfile.js`.
 
 See the `hero` component for an example in the default component set.
-
-### `video.js`
-
-Scans for components with `doc-html` directives and checks content of `doc-html` for `.m3u8` urls. On non Safari browsers the script will dynamically add the support script hls.js to allow playing these types of videos.

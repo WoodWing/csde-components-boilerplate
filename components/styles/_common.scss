@@ -80,23 +80,6 @@ span[data-text-edit-color] {
     text-align: center;
 }
 
-/* Full screen wrapper overlay style (e.g. slideshow, images) */
-.fullscreen-wrapper {
-    position: fixed;
-    @include display-flex();
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    overflow: hidden;
-    z-index: 100;
-}
-
 /* media query */
 @media (max-width: $screen-sm-max) {
     .text {
