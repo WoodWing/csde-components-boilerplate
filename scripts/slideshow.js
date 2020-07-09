@@ -242,13 +242,6 @@
             }
             slideshowBox.data(SLIDER, new $JssorSlider$(id, options));
 
-            if (!slideshowBox.hasClass('_disable-fullscreen') && FullscreenSupport.fullscreenEnabled()) {
-                var fullscreenHelper = new FullscreenSupport.FullScreenCompHelper(slideshowBox, function() {
-                    reinitSlideshow(slideshowBox);
-                }, '.arrow');
-                fullscreenHelper.tapFullscreen(slideshowBox.find('figure'));
-            }
-
             switch (fitting) {
                 case FITTING_CONTENT_TO_FRAME:
                     containers.css({
