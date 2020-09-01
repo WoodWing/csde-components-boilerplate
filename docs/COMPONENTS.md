@@ -8,11 +8,11 @@ Components use the following definition:
 {
     // Unique identifier for the component.
     "name": "component-identifier",
-    
-    // Name that is shown in the UI for the component. 
+
+    // Name that is shown in the UI for the component.
     // See LOCALIZATION.md for information on localization.
     "label": "Component",
-    
+
     // Path to the icon image for the compoonent. Can be anything that is displayable by the browser.
     // Recommended formats are SVG, PNG, or JPG.
     // The icons should be roughly square in size (for example 128 by 128 pixels).
@@ -47,7 +47,7 @@ Components use the following definition:
         "image-comp": { "withContent": "image" }
     },
 
-    // (Optional) Override the default component that is added when pressing Enter (as defined in the global 
+    // (Optional) Override the default component that is added when pressing Enter (as defined in the global
     // "defaultComponentOnEnter" property).
     // This can be useful for example in a Container when this behavior should be different compared to the main story.
     // Introduced in version 1.1.0.
@@ -63,11 +63,11 @@ Components use the following definition:
             // For example: automatically fill the caption of an image when an image is added to an article.
             // Currently only works with Enterprise metadata only.
             //
-            // Set different trigger options: 
+            // Set different trigger options:
             // (Introduced in version 1.1.0, deprecated since version 1.2.0)
             //   Once - means that it will only be triggered the first time
             //   (in the case of filling a caption: when the image is added for the first time)
-            // 
+            //
             "autofill": {
                 "source": "sourceDirectiveKey",
                 "metadataField": "ContentMetaData/Description" // Enterprise metadata format, case sensitive
@@ -118,7 +118,7 @@ The full table of available directives is:
 | doc-container | Turns the element into a container, allowing component nesting |
 | doc-html | Replaces content of element with the raw HTML, allowing to embed content |
 | [doc-slideshow](directives/SLIDESHOW.md) | Adds slideshow functionality to element |
-| doc-link | Turns the element into a link. A property must be added to the component to configure the url |
+| [doc-link](directives/LINK.md) | Turns the element into a link. A property must be added to the component to configure the url |
 | doc-media | Allows rendering social media in the element |
 | doc-interactive | Directive for interactive component feature |
 
