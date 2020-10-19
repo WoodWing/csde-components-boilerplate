@@ -61,16 +61,15 @@ Components use the following definition:
             // (Introduced in version 1.1.0)
             // (Optional) Define if the content of a component should be filled automatically.
             // For example: automatically fill the caption of an image when an image is added to an article.
-            // Currently only works with Enterprise metadata only.
+            // Currently only works with Studio server metadata only.
+            // Only Studio server metadata of plain string types are supported. Other types will show
+            // undefined behavior (such as multi lists).
             //
-            // Set different trigger options:
-            // (Introduced in version 1.1.0, deprecated since version 1.2.0)
-            //   Once - means that it will only be triggered the first time
-            //   (in the case of filling a caption: when the image is added for the first time)
+            // From Studio client 11.77 "ExtraMetadata" is supported as well (with the same type restrictions).
             //
             "autofill": {
                 "source": "sourceDirectiveKey",
-                "metadataField": "ContentMetaData/Description" // Enterprise metadata format, case sensitive
+                "metadataField": "ContentMetaData/Description" // Studio server metadata format, case sensitive
             },
 
             // Groups
