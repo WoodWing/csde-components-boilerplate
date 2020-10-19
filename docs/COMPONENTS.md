@@ -66,6 +66,7 @@ Components use the following definition:
             // undefined behavior (such as multi lists).
             //
             // From Studio client 11.77 "ExtraMetadata" is supported as well (with the same type restrictions).
+            // You can refer to an ExtraMetadata custom property in the same way as regular properties, for example "ExtraMetadata/C_MY_CUSTOM_PROPERTY".
             //
             "autofill": {
                 "source": "sourceDirectiveKey",
