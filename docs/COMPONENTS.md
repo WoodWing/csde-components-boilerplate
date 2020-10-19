@@ -65,8 +65,8 @@ Components use the following definition:
             // Only Studio server metadata of plain string types are supported. Other types will show
             // undefined behavior (such as multi lists).
             //
-            // From Studio client 11.77 "ExtraMetadata" is supported as well (with the same type restrictions).
-            // You can refer to an ExtraMetadata custom property in the same way as regular properties, for example "ExtraMetadata/C_MY_CUSTOM_PROPERTY".
+            // From Studio client 11.77 "ExtraMetaData" is supported as well (with the same type restrictions).
+            // You can refer to an ExtraMetaData custom property in the same way as regular properties, for example "ExtraMetaData/C_MY_CUSTOM_PROPERTY".
             //
             "autofill": {
                 "source": "sourceDirectiveKey",
