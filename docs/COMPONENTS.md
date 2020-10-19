@@ -61,7 +61,7 @@ Components use the following definition:
             // (Introduced in version 1.1.0)
             // (Optional) Define if the content of a component should be filled automatically.
             // For example: automatically fill the caption of an image when an image is added to an article.
-            // Currently only works with Studio server metadata only.
+            // Currently only works with Studio server metadata.
             // Only Studio server metadata of plain string types are supported. Other types will show
             // undefined behavior (such as multi lists).
             //
