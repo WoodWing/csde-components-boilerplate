@@ -84,3 +84,9 @@ See the following subsections for details:
 * [Scripts](SCRIPTS.md)
 
 * [Localization](LOCALIZATION.md)
+
+## Limitations
+
+The following limits are in place for component sets:
+* Maximum number of files: 5000.
+* Maximum total file size (uncompressed): 100MB.
