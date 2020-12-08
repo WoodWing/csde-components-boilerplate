@@ -28,6 +28,8 @@ Components use the following definition:
     // - default: by clicking inside the component
     // - handle: adds a handle to the top right corner of the component that can be clicked.
     //           This option is useful for components that have non-clickable content such as Containers.
+    //           The editor may modify the styling of the component to enforce a minimum margin with
+    //           other components and ensure the selection handle can be displayed correctly.
     "selectionMethod": "default" | "handle",
 
     // Include textual content of components in the article statistics: total number of characters, words,
