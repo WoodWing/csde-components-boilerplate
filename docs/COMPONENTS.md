@@ -32,6 +32,11 @@ Components use the following definition:
     //           other components and ensure the selection handle can be displayed correctly.
     "selectionMethod": "default" | "handle",
 
+    // Controls when the component toolbar is shown:
+    // - default: when hovering the mouse on the component
+    // - always: show in all cases
+    "showToolbar": "default" | "always",
+
     // Include textual content of components in the article statistics: total number of characters, words,
     // and paragraphs.
     // Default = false.
