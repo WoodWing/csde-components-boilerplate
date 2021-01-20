@@ -4,7 +4,7 @@ The component set allows you to optionally store files in the `custom` folder. F
 
 ## Custom channel availability
 
-The custom data will be available as a downloadable zip in the [custom channel](https://helpcenter.woodwing.com/hc/en-us/articles/360040134192--Configuring-Studio-for-publishing-to-a-custom-Publish-Channel) (SNS) publish message. The zip contains the entire contents of the `custom` folder. Alongside the url of the zip file, also an eTag is provided. The eTag changes when the zip file is updated, this typically happens when the component set is updated. The eTag can be used to apply caching on the custom data zip in your application logic that processes the custom channel message.
+The custom data will be available as a downloadable zip in the [custom channel](https://helpcenter.woodwing.com/hc/en-us/articles/360040134192--Configuring-Studio-for-publishing-to-a-custom-Publish-Channel) (SNS) publish message. The zip contains the contents of the `custom` folder. Alongside the url of the zip file, an eTag is provided. The eTag changes when the zip file is updated, which typically happens when the component set is updated. The eTag can be used to apply caching on the custom data zip in your application logic that processes the custom channel message.
 
 Example of a partial publish message with custom data:
 
