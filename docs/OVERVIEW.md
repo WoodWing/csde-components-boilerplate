@@ -9,7 +9,7 @@ The folder structure of a component set is defined as:
 | Path | Purpose |
 | ------------- | ------------- |
 | `components-definition.json`  | Describes components and properties.  |
-| `custom/*` | Custom data folder. Typically used to store information on how to post-process articles for custom channels. |
+| `custom/*` | Custom data folder. Typically used to store information on how to post-process articles to Custom Channels. |
 | `icons/components/*` | Icons of components, references from the component definition file. |
 | `icons/properties/*` | Icons of properties, references from the component definition file. |
 | `localization/*.json` | Translations of the keys used in the component definition and templates. |
