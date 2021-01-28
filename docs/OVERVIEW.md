@@ -9,10 +9,11 @@ The folder structure of a component set is defined as:
 | Path | Purpose |
 | ------------- | ------------- |
 | `components-definition.json`  | Describes components and properties.  |
+| `custom/*` | Custom data folder. Typically used to store information on how to post-process articles to Custom Channels. |
 | `icons/components/*` | Icons of components, references from the component definition file. |
 | `icons/properties/*` | Icons of properties, references from the component definition file. |
 | `localization/*.json` | Translations of the keys used in the component definition and templates. |
-| `templates/html/*.html` | 	Templates for the HTML rendition of the article. Used in editor and for publishing html.  |
+| `templates/html/*.html` | Templates for the HTML rendition of the article. Used in editor and for publishing html.  |
 | `templates/styles/*.scss` | Default styling for this component set used with the html rendition. The customer may override this with custom styling. Styles folder may contain additional assets such as fonts and images. |
 | `templates/psv/*.html` | Templates for PSV rendition of the article. Used for publishing PSV to Custom Channels. |
 
@@ -82,8 +83,8 @@ See the following subsections for details:
 * [Component Properties](PROPERTIES.md)
 * [Conversion Rules](CONVERSION_RULES.md)
 * [Scripts](SCRIPTS.md)
-
 * [Localization](LOCALIZATION.md)
+* [Custom Data](CUSTOM_DATA.md)
 
 ## Limitations
 
