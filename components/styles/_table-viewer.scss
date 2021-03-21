@@ -1,0 +1,13 @@
+
+/* Table viewer component style */
+.table-viewer { 
+    padding: 0;
+    min-height: 100px;
+
+    th {            
+        background: #eee;
+        position: sticky;
+        top: 0;  
+        vertical-align: text-top;          
+    }
+}

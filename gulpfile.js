@@ -20,6 +20,9 @@ const scriptFiles = [
   // JQuery libraries used by below support scripts
   path.join(scriptsDir, 'jquery.js'),
 
+  // For table viewer to load xlsx files
+  path.join(scriptsDir, '../node_modules/xlsx/dist/xlsx.full.min.js'),
+
   // Support scripts for slideshows components
   path.join(scriptsDir, 'jssor.js'),
   path.join(scriptsDir, 'jssor.slider.js'),
@@ -27,6 +30,9 @@ const scriptFiles = [
 
   // Support script for parallax effect hero components
   path.join(scriptsDir, 'heroes.js'),
+
+  // Factory function for doc-custom directive to init sdk code
+  path.join(scriptsDir, 'custom-directive-factory.js'),
 
 ];
 const stylesDir = path.join(__dirname, './components/styles');

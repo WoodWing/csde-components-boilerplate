@@ -229,6 +229,16 @@
                 { "name": "video-properties", "directiveKey": "media" },
                 "style"
             ]
+        },
+
+        {
+            "name": "table-viewer",
+            "icon": "icons/components/table-viewer.svg",
+            "label": "Table Viewer",
+            "selectionMethod": "handle",
+            "properties": [
+                "sheet-id"
+            ]
         }
     ],
 
@@ -265,7 +275,8 @@
                 "embed",
                 "product",
                 "social-media",
-                "video"
+                "video",
+                "table-viewer"
             ]
         },
         {
@@ -658,6 +669,15 @@
                 "inputPlaceholder": { "key": "PROPERTY_HYPERLINK_PLACEHOLDER" }
             },
             "dataType": "doc-link"
+        },
+        {
+            "name": "sheet-id",
+            "label": "Sheet Id",
+            "control": {
+                "type": "text",
+                "inputPlaceholder": "Sheet ID"
+            },
+            "dataType": "data"
         }
     ],
 
