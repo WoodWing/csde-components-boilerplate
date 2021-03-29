@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/WoodWing/csde-components-boilerplate#readme",
   "dependencies": {
-    "@woodwing/csde-components-validator": "^1.10.0",
+    "@woodwing/studio-component-set-tools": "~1.11.0",
     "gulp": "^4.0.2",
     "gulp-zip": "^5.0.0",
     "node-sass": "^4.14.0",

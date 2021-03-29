@@ -6,7 +6,7 @@ const zip = require('gulp-zip');
 const UglifyJS = require("uglify-js");
 const sass = require('node-sass');
 
-const componentsValidator = require('@woodwing/csde-components-validator');
+const componentsValidator = require('@woodwing/studio-component-set-tools/dist/validate');
 
 const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);

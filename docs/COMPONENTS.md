@@ -73,7 +73,8 @@ Components use the following definition:
             // undefined behavior (such as multi lists).
             //
             // From Studio client 11.77 "ExtraMetaData" is supported as well (with the same type restrictions).
-            // You can refer to an ExtraMetaData custom property in the same way as regular properties, for example "ExtraMetaData/C_MY_CUSTOM_PROPERTY".
+            // You can refer to an ExtraMetaData custom property in the same way as regular properties, for 
+            // example "ExtraMetaData/C_MY_CUSTOM_PROPERTY".
             //
             "autofill": {
                 "source": "sourceDirectiveKey",
@@ -90,7 +91,11 @@ Components use the following definition:
                 {
                     // Group definition, see GROUPS.md
                 }
-            ]
+            ],
+            
+            // Strip styling on paste
+            // (Optional) When enabled strips all styling from the pasted text/html resulting in plain text being pasted     
+            "stripStylingOnPaste": true,    
         }
     }
 }
