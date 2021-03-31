@@ -190,6 +190,22 @@ Example of the `colorPicker` control type:
     }
 ```
 
+### `slider`
+
+Allows for the selection of a value from a range via mouse. A default value within the slider range must be provided. The data is stored as a number. 
+
+Example of the `slider` control type:
+
+```json
+    "defaultValue": 4,
+    "control": {
+        "type": "slider",
+        "minValue": -2,
+        "maxValue": 10,
+        "stepSize": 0.5
+    }
+```
+
 ## Specialized UI Controls
 
 ### `image-editor`
