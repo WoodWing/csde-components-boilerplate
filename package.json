@@ -1,6 +1,6 @@
 {
   "name": "csde-components-boilerplate",
-  "version": "1.4.0",
+  "version": "1.7.0",
   "description": "Boilerplate project for creating Content Station Digital Editor components.",
   "main": "index.js",
   "scripts": {
