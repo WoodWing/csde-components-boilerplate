@@ -9,7 +9,7 @@ blockquote {
     float: none;
     clear: both;
     .quotation-mark::before {
-        content: "“";
+        content: '“';
         font-size: 5.77778rem;
         line-height: 33px;
         float: left;
@@ -49,7 +49,7 @@ blockquote {
 
     /* media query */
     @media only screen and (min-width: $phone-max-width) {
-    /* class styles for the position properties of the image component in the current media query breakpoint */
+        /* class styles for the position properties of the image component in the current media query breakpoint */
         &._left {
             float: left;
             clear: left;
@@ -64,5 +64,4 @@ blockquote {
             z-index: 1;
         }
     }
-
 }

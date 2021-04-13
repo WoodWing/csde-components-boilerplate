@@ -20,7 +20,7 @@
                 margin: 0 auto;
                 max-width: $max-width;
                 &::after {
-                    content: " ";
+                    content: ' ';
                     display: block;
                     clear: both;
                 }

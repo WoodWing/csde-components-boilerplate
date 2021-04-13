@@ -8,7 +8,7 @@ An example of a completely custom group definition looks like:
 
 ```javascript
 {
-    // Name of group displayed in Component Chooser. See LOCALIZATION.md for information on 
+    // Name of group displayed in Component Chooser. See LOCALIZATION.md for information on
     // how to localize group names
     "label": "MyComponents",
 

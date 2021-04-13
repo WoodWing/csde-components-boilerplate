@@ -73,7 +73,7 @@ Components use the following definition:
             // undefined behavior (such as multi lists).
             //
             // From Studio client 11.77 "ExtraMetaData" is supported as well (with the same type restrictions).
-            // You can refer to an ExtraMetaData custom property in the same way as regular properties, for 
+            // You can refer to an ExtraMetaData custom property in the same way as regular properties, for
             // example "ExtraMetaData/C_MY_CUSTOM_PROPERTY".
             //
             "autofill": {
@@ -92,10 +92,10 @@ Components use the following definition:
                     // Group definition, see GROUPS.md
                 }
             ],
-            
+
             // Strip styling on paste
-            // (Optional) When enabled strips all styling from the pasted text/html resulting in plain text being pasted     
-            "stripStylingOnPaste": true,    
+            // (Optional) When enabled strips all styling from the pasted text/html resulting in plain text being pasted
+            "stripStylingOnPaste": true,
         }
     }
 }
@@ -108,31 +108,29 @@ The component definitions are complemented by templates used for rendering.
 HTML templates are used for rendering the editor content, but also for HTML output to publish channels. It's possible to add anything to the HTML template, however, interactivity with the editor is provided through a fixed set of directives that can be set on HTML elements as attributes. The syntax of such a directive is:
 
 ```html
-<TAG doc-<directive-name>=<content-key>>
+<TAG doc-<directive-name>=<content-key>></content-key></TAG>
 ```
 
 For example, the default body component applies the doc-editable directive to make the contents of the element editable:
 
 ```html
-<p class="text body" doc-editable="text">
-  Body Placeholder Text
-</p>
+<p class="text body" doc-editable="text">Body Placeholder Text</p>
 ```
 
 The content-key is used as key in the digital article format. It's also used in the conversion rules to automatically map text fields from one to another.
 
 The full table of available directives is:
 
-| Directive | Behavior |
-| ------------- | ------------- |
-| [doc-editable](directives/EDITABLE.md) | Binds editable text to an element |
-| [doc-image](directives/IMAGE.md) | Binds image to an element |
-| doc-container | Turns the element into a container, allowing component nesting |
-| doc-html | Replaces content of element with the raw HTML, allowing to embed content |
-| [doc-slideshow](directives/SLIDESHOW.md) | Adds slideshow functionality to element |
-| [doc-link](directives/LINK.md) | Turns the element into a link. A property must be added to the component to configure the url |
-| doc-media | Allows rendering social media in the element |
-| doc-interactive | Directive for interactive component feature |
+| Directive                                | Behavior                                                                                      |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [doc-editable](directives/EDITABLE.md)   | Binds editable text to an element                                                             |
+| [doc-image](directives/IMAGE.md)         | Binds image to an element                                                                     |
+| doc-container                            | Turns the element into a container, allowing component nesting                                |
+| doc-html                                 | Replaces content of element with the raw HTML, allowing to embed content                      |
+| [doc-slideshow](directives/SLIDESHOW.md) | Adds slideshow functionality to element                                                       |
+| [doc-link](directives/LINK.md)           | Turns the element into a link. A property must be added to the component to configure the url |
+| doc-media                                | Allows rendering social media in the element                                                  |
+| doc-interactive                          | Directive for interactive component feature                                                   |
 
 ### Styling
 

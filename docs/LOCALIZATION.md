@@ -10,22 +10,22 @@ Localization is based on the use of string keys instead of hardcoded values for 
 
 Overview of the languages supported by Enterprise Aurora and their matching translation file names.
 
-| Language | Filename |
-| ------------- | ------------- |
-| Czech  | `csCZ.json` |
-| German  | `deDE.json` |
-| English  | `enUS.json` |
-| Spanish  | `esES.json` |
-| Finnish  | `fiFI.json` |
-| French  | `frFR.json` |
-| Italian  | `jaJP.json` |
-| Korean  | `koKR.json` |
-| Dutch  | `nlNL.json` |
-| Polish  | `plPL.json` |
-| Portuguese  | `ptBR.json` |
-| Russian  | `ruRU.json` |
+| Language            | Filename    |
+| ------------------- | ----------- |
+| Czech               | `csCZ.json` |
+| German              | `deDE.json` |
+| English             | `enUS.json` |
+| Spanish             | `esES.json` |
+| Finnish             | `fiFI.json` |
+| French              | `frFR.json` |
+| Italian             | `jaJP.json` |
+| Korean              | `koKR.json` |
+| Dutch               | `nlNL.json` |
+| Polish              | `plPL.json` |
+| Portuguese          | `ptBR.json` |
+| Russian             | `ruRU.json` |
 | Simplified Chinese  | `zhCN.json` |
-| Traditional Chinese  | `zhTW.json` |
+| Traditional Chinese | `zhTW.json` |
 
 ## Localization of `components-definition.json`
 
@@ -219,9 +219,7 @@ HTML templates can be localized by using interpolations containing a string key 
 Example taken from `body.html`:
 
 ```html
-<p class="text body" doc-editable="text">
-  {{ COMPONENT_BODY_LABEL }}
-</p>
+<p class="text body" doc-editable="text">{{ COMPONENT_BODY_LABEL }}</p>
 ```
 
 Example taken from `embed.html`:
@@ -231,4 +229,3 @@ Example taken from `embed.html`:
     <div doc-html="html"></div>
 </div>
 ```
-
