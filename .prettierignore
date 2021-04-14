@@ -1,0 +1,40 @@
+## Ignore everything but a few: https://stackoverflow.com/a/987162/2725711
+# Ignore all
+*
+
+# Except for directories
+!*/
+
+# and except for specific file types
+!*.css
+!*.js
+!*.json
+!*.md
+!*.scss
+!*.ts
+!*.yaml
+!*.yml
+!*.html
+
+###
+
+coverage
+package.json
+package-lock.json
+
+## IDE directories
+.idea/
+.vscode/
+
+## Imported source
+node_modules/
+**/node_modules/
+
+## Output directories
+dist/
+.Ds_Store
+
+## Specific files and directories
+scripts
+components/styles/design.scss
+components/styles/design.css

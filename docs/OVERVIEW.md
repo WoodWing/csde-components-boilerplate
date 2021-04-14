@@ -6,16 +6,16 @@ A component set is a package of multiple files. It consists of a json file descr
 
 The folder structure of a component set is defined as:
 
-| Path | Purpose |
-| ------------- | ------------- |
-| `components-definition.json`  | Describes components and properties.  |
-| `custom/*` | Custom data folder. Typically used to store information on how to post-process articles to Custom Channels. |
-| `icons/components/*` | Icons of components, references from the component definition file. |
-| `icons/properties/*` | Icons of properties, references from the component definition file. |
-| `localization/*.json` | Translations of the keys used in the component definition and templates. |
-| `templates/html/*.html` | Templates for the HTML rendition of the article. Used in editor and for publishing html.  |
-| `templates/styles/*.scss` | Default styling for this component set used with the html rendition. The customer may override this with custom styling. Styles folder may contain additional assets such as fonts and images. |
-| `templates/psv/*.html` | Templates for PSV rendition of the article. Used for publishing PSV to Custom Channels. |
+| Path                         | Purpose                                                                                                                                                                                        |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `components-definition.json` | Describes components and properties.                                                                                                                                                           |
+| `custom/*`                   | Custom data folder. Typically used to store information on how to post-process articles to Custom Channels.                                                                                    |
+| `icons/components/*`         | Icons of components, references from the component definition file.                                                                                                                            |
+| `icons/properties/*`         | Icons of properties, references from the component definition file.                                                                                                                            |
+| `localization/*.json`        | Translations of the keys used in the component definition and templates.                                                                                                                       |
+| `templates/html/*.html`      | Templates for the HTML rendition of the article. Used in editor and for publishing html.                                                                                                       |
+| `templates/styles/*.scss`    | Default styling for this component set used with the html rendition. The customer may override this with custom styling. Styles folder may contain additional assets such as fonts and images. |
+| `templates/psv/*.html`       | Templates for PSV rendition of the article. Used for publishing PSV to Custom Channels.                                                                                                        |
 
 ## components-definition.json
 
@@ -55,7 +55,7 @@ The root of this file is defined as:
     "shortcuts": {
         // Define keyboard shortcuts for changing a component to a different type.
         // A keyboard shortcut consists of the modifier key Cmd (MacOS) or Ctrl (Windows) plus a number from 0 to 9.
-        // The first item in the list will have Cmd+1 or Ctrl+1 assigned, 
+        // The first item in the list will have Cmd+1 or Ctrl+1 assigned,
         // the second item in the list will have Cmd+2 or Ctrl+2 assigned, and so on.
         // A maximum of 10 keyboard shortcuts can be defined.
         "conversionComponents": [
@@ -78,16 +78,17 @@ The root of this file is defined as:
 
 See the following subsections for details:
 
-* [Components](COMPONENTS.md)
-* [Groups](GROUPS.md)
-* [Component Properties](PROPERTIES.md)
-* [Conversion Rules](CONVERSION_RULES.md)
-* [Scripts](SCRIPTS.md)
-* [Localization](LOCALIZATION.md)
-* [Custom Data](CUSTOM_DATA.md)
+-   [Components](COMPONENTS.md)
+-   [Groups](GROUPS.md)
+-   [Component Properties](PROPERTIES.md)
+-   [Conversion Rules](CONVERSION_RULES.md)
+-   [Scripts](SCRIPTS.md)
+-   [Localization](LOCALIZATION.md)
+-   [Custom Data](CUSTOM_DATA.md)
 
 ## Limitations
 
 The following limits are in place for component sets:
-* Maximum number of files: 5000.
-* Maximum total file size (uncompressed): 100MB.
+
+-   Maximum number of files: 5000.
+-   Maximum total file size (uncompressed): 100MB.

@@ -1,7 +1,7 @@
 /* Constants */
 $bodyBackground: #ffffff;
 $textColor: #000000;
-$fontName: "Lato";
+$fontName: 'Lato';
 $defaultFontSize: 14px;
 $defaultFontWeight: 300;
 $screen-sm-max: 991px;
@@ -49,7 +49,7 @@ body {
     margin-right: auto;
     overflow-x: hidden;
     &::after {
-        content: " ";
+        content: ' ';
         display: block;
         clear: both;
     }
@@ -140,7 +140,7 @@ span[data-text-edit-color] {
                 margin-right: auto;
                 overflow-x: hidden;
                 &::after {
-                    content: " ";
+                    content: ' ';
                     display: block;
                     clear: both;
                 }
@@ -168,13 +168,13 @@ span[data-text-edit-color] {
 // Keyframes, see mixin triple-blinking-spans()
 @keyframes kf-triple-blinking-spans {
     0% {
-        opacity: .2;
+        opacity: 0.2;
     }
     20% {
         opacity: 1;
     }
     100% {
-        opacity: .2;
+        opacity: 0.2;
     }
 }
 
@@ -195,24 +195,24 @@ span[data-text-edit-color] {
         animation-fill-mode: both;
     }
     span:nth-child(2) {
-        animation-delay: .2s;
+        animation-delay: 0.2s;
     }
     span:nth-child(3) {
-        animation-delay: .4s;
+        animation-delay: 0.4s;
     }
 }
-
 
 /**
  Additional styles for .social and .video components
  */
 @mixin media-component-states() {
-    &.loading, &.error {
+    &.loading,
+    &.error {
         font-weight: 300;
         font-size: $defaultFontSize;
         font-style: italic;
         line-height: 1.6;
-        padding: .5em;
+        padding: 0.5em;
     }
     &.loading {
         color: #888888;
@@ -221,7 +221,7 @@ span[data-text-edit-color] {
 
         @include triple-blinking-spans();
         span {
-            padding-left: .2em;
+            padding-left: 0.2em;
             font-weight: bold;
             color: #666666;
         }

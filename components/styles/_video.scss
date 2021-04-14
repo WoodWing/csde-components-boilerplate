@@ -8,7 +8,10 @@
         padding-bottom: 56.25%; /* default: 16:9 -> (9/16 = 0.5625 or 56.25%) */
         overflow: hidden;
     }
-    iframe, embed, object, video {
+    iframe,
+    embed,
+    object,
+    video {
         position: absolute;
         top: 0;
         bottom: 0;

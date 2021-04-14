@@ -10,10 +10,10 @@ Example of a partial publish message with custom data:
 
 ```json
 {
-   "customData": {
-    "eTag": "\"d66341b18e411576ae3ec9fde350e0c3\"",
-    "url": "https://aws-url/custom-data.zip?AWSAccessKeyId=[keyId]&Expires=[timestamp]&Signature=[signature]"
-  }
+    "customData": {
+        "eTag": "\"d66341b18e411576ae3ec9fde350e0c3\"",
+        "url": "https://aws-url/custom-data.zip?AWSAccessKeyId=[keyId]&Expires=[timestamp]&Signature=[signature]"
+    }
 }
 ```
 
@@ -21,6 +21,7 @@ Note: There is no `customData` property available in the publish message when th
 
 ## Limitations
 
-The data inside the `custom` folder is not restricted to certain file types or sub-folders, you can store anything in any structure. There are also two limitations though: 
-* Maximum number of files: 1000.
-* Maximum total file size (uncompressed): 10MB.
+The data inside the `custom` folder is not restricted to certain file types or sub-folders, you can store anything in any structure. There are also two limitations though:
+
+-   Maximum number of files: 1000.
+-   Maximum total file size (uncompressed): 10MB.

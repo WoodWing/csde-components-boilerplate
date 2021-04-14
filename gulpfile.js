@@ -1,9 +1,9 @@
 const path = require('path');
 const fs = require('fs');
-const {promisify} = require('util');
+const { promisify } = require('util');
 const gulp = require('gulp');
 const zip = require('gulp-zip');
-const UglifyJS = require("uglify-js");
+const UglifyJS = require('uglify-js');
 const sass = require('node-sass');
 
 const componentsValidator = require('@woodwing/studio-component-set-tools/dist/validate');
@@ -16,21 +16,18 @@ const writeFileAsync = promisify(fs.writeFile);
 // for your components.
 const scriptsDir = path.join(__dirname, './scripts');
 const scriptFiles = [
+    // JQuery libraries used by below support scripts
+    path.join(scriptsDir, 'jquery.js'),
 
-  // JQuery libraries used by below support scripts
-  path.join(scriptsDir, 'jquery.js'),
+    // Support scripts for slideshows components
+    path.join(scriptsDir, 'jssor.js'),
+    path.join(scriptsDir, 'jssor.slider.js'),
+    path.join(scriptsDir, 'slideshow.js'),
 
-  // Support scripts for slideshows components
-  path.join(scriptsDir, 'jssor.js'),
-  path.join(scriptsDir, 'jssor.slider.js'),
-  path.join(scriptsDir, 'slideshow.js'),
-
-  // Support script for parallax effect hero components
-  path.join(scriptsDir, 'heroes.js'),
-
+    // Support script for parallax effect hero components
+    path.join(scriptsDir, 'heroes.js'),
 ];
 const stylesDir = path.join(__dirname, './components/styles');
-
 
 buildScssString = (componentName) => {
     return `@import "${componentName}";\n`;
@@ -67,7 +64,7 @@ async function generateDesignFile() {
     try {
         const definition = getComponentDefinition();
         componentNames = definition.components.map((compDef) => compDef.name);
-    } catch(e) {
+    } catch (e) {
         // Don't fail task, but let the components validator generate the actual error,
         // in case the component definition is malformed.
         console.error('Failed to generate design.scss file: \n', e);
@@ -113,7 +110,7 @@ async function generateVendorScript() {
     }
     // Write to vendor.js script
     const targetFolder = './components/scripts';
-    if (!fs.existsSync(targetFolder)){
+    if (!fs.existsSync(targetFolder)) {
         fs.mkdirSync(targetFolder);
     }
     await writeFileAsync(path.join(targetFolder, 'vendor.js'), result.code);
@@ -124,7 +121,8 @@ async function generateVendorScript() {
  */
 function buildComponentSetZip() {
     const name = getComponentDefinition().name;
-    return gulp.src(['components/**/*', '!components/**/tms-timestamp'])
+    return gulp
+        .src(['components/**/*', '!components/**/tms-timestamp'])
         .pipe(zip(`${name}.zip`))
         .pipe(gulp.dest('dist'));
 }

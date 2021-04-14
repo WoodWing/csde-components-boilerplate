@@ -9,7 +9,10 @@
         overflow: hidden;
     }
 
-    iframe, embed, object, video {
+    iframe,
+    embed,
+    object,
+    video {
         position: absolute;
         top: 0;
         bottom: 0;

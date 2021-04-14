@@ -4,18 +4,12 @@
     "version": "1.6.0",
     "defaultComponentOnEnter": "body",
 
-    "components":[
+    "components": [
         {
             "name": "body",
             "label": { "key": "COMPONENT_BODY_LABEL" },
             "icon": "icons/components/body.svg",
-            "properties":[
-                "drop-capital",
-                "style",
-                "text-align",
-                "letter-spacing",
-                "line-height"
-            ],
+            "properties": ["drop-capital", "style", "text-align", "letter-spacing", "line-height"],
             "countStatistics": true
         },
         {
@@ -24,23 +18,13 @@
             "selectionMethod": "handle",
             "allowNesting": "one-level",
             "label": { "key": "COMPONENT_CONTAINER_LABEL" },
-            "properties": [
-                "style",
-                "position",
-                "background-color"
-            ]
+            "properties": ["style", "position", "background-color"]
         },
         {
             "name": "product",
             "icon": "icons/components/product.svg",
             "label": { "key": "COMPONENT_PRODUCT_LABEL" },
-            "properties": [
-                "position",
-                "style",
-                "text-align",
-                "letter-spacing",
-                "line-height"
-            ]
+            "properties": ["position", "style", "text-align", "letter-spacing", "line-height"]
         },
         {
             "name": "image",
@@ -71,10 +55,7 @@
             "icon": "icons/components/embed.svg",
             "selectionMethod": "handle",
             "label": { "key": "COMPONENT_EMBED_LABEL" },
-            "properties": [
-                "style",
-                { "name": "embed-code", "directiveKey": "html" }
-            ]
+            "properties": ["style", { "name": "embed-code", "directiveKey": "html" }]
         },
         {
             "name": "slideshow",
@@ -113,65 +94,37 @@
             "name": "crosshead",
             "icon": "icons/components/crosshead.svg",
             "label": { "key": "COMPONENT_CROSSHEAD_LABEL" },
-            "properties": [
-                "style",
-                "text-align",
-                "letter-spacing",
-                "line-height"
-            ]
+            "properties": ["style", "text-align", "letter-spacing", "line-height"]
         },
         {
             "name": "footer",
             "icon": "icons/components/footer.svg",
             "label": { "key": "COMPONENT_FOOTER_LABEL" },
-            "properties": [
-                "style",
-                "text-align",
-                "letter-spacing",
-                "line-height"
-            ]
+            "properties": ["style", "text-align", "letter-spacing", "line-height"]
         },
         {
             "name": "intro",
             "icon": "icons/components/intro.svg",
             "label": { "key": "COMPONENT_INTRO_LABEL" },
-            "properties": [
-                "style",
-                "text-align",
-                "letter-spacing",
-                "line-height"
-            ]
+            "properties": ["style", "text-align", "letter-spacing", "line-height"]
         },
         {
             "name": "quote",
             "icon": "icons/components/quote.svg",
             "label": { "key": "COMPONENT_QUOTE_LABEL" },
-            "properties": [
-                "position",
-                "style",
-                "text-align",
-                "letter-spacing",
-                "line-height"
-            ]
+            "properties": ["position", "style", "text-align", "letter-spacing", "line-height"]
         },
         {
             "name": "headline",
             "icon": "icons/components/headline.svg",
             "label": { "key": "COMPONENT_HEADLINE_LABEL" },
-            "properties": [
-                "style",
-                "text-align",
-                "letter-spacing",
-                "line-height"
-            ]
+            "properties": ["style", "text-align", "letter-spacing", "line-height"]
         },
         {
             "name": "separator",
             "icon": "icons/components/separator.svg",
             "label": { "key": "COMPONENT_SEPARATOR_LABEL" },
-            "properties": [
-                "style"
-            ]
+            "properties": ["style"]
         },
         {
             "name": "hero",
@@ -191,44 +144,27 @@
             "name": "subtitle",
             "icon": "icons/components/subtitle.svg",
             "label": { "key": "COMPONENT_SUBTITLE_LABEL" },
-            "properties": [
-                "style",
-                "text-align",
-                "letter-spacing",
-                "line-height"
-            ]
+            "properties": ["style", "text-align", "letter-spacing", "line-height"]
         },
         {
             "name": "title",
             "icon": "icons/components/title.svg",
             "label": { "key": "COMPONENT_TITLE_LABEL" },
-            "properties": [
-                "style",
-                "text-align",
-                "letter-spacing",
-                "line-height"
-            ]
+            "properties": ["style", "text-align", "letter-spacing", "line-height"]
         },
         {
             "name": "social-media",
             "icon": "icons/components/social-media.svg",
             "label": { "key": "COMPONENT_SOCIAL_MEDIA_LABEL" },
             "selectionMethod": "handle",
-            "properties": [
-                { "name": "social-media-properties", "directiveKey": "media" },
-                "position",
-                "style"
-            ]
+            "properties": [{ "name": "social-media-properties", "directiveKey": "media" }, "position", "style"]
         },
         {
             "name": "video",
             "icon": "icons/components/video.svg",
             "label": { "key": "COMPONENT_VIDEO_LABEL" },
             "selectionMethod": "handle",
-            "properties": [
-                { "name": "video-properties", "directiveKey": "media" },
-                "style"
-            ]
+            "properties": [{ "name": "video-properties", "directiveKey": "media" }, "style"]
         }
     ],
 
@@ -236,44 +172,22 @@
         {
             "label": { "key": "GROUP_TITLE_LABEL" },
             "name": "title",
-            "components": [
-                "title",
-                "subtitle",
-                "headline",
-                "hero"
-            ]
+            "components": ["title", "subtitle", "headline", "hero"]
         },
         {
             "label": { "key": "GROUP_TEXT_LABEL" },
             "name": "text",
-            "components": [
-                "intro",
-                "body",
-                "footer",
-                "quote",
-                "separator",
-                "crosshead",
-                "author"
-            ]
+            "components": ["intro", "body", "footer", "quote", "separator", "crosshead", "author"]
         },
         {
             "label": { "key": "GROUP_MEDIA_LABEL" },
             "name": "media",
-            "components": [
-                "slideshow",
-                "image",
-                "embed",
-                "product",
-                "social-media",
-                "video"
-            ]
+            "components": ["slideshow", "image", "embed", "product", "social-media", "video"]
         },
         {
             "label": { "key": "GROUP_LAYOUT_LABEL" },
             "name": "layout",
-            "components": [
-                "container"
-            ]
+            "components": ["container"]
         }
     ],
 
@@ -427,83 +341,83 @@
                         "caption": { "key": "PROPERTY_STYLE_DEFAULT_OPTION" }
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "1"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "1" } },
                         "value": "_option1"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "2"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "2" } },
                         "value": "_option2"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "3"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "3" } },
                         "value": "_option3"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "4"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "4" } },
                         "value": "_option4"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "5"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "5" } },
                         "value": "_option5"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "6"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "6" } },
                         "value": "_option6"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "7"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "7" } },
                         "value": "_option7"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "8"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "8" } },
                         "value": "_option8"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "9"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "9" } },
                         "value": "_option9"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "10"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "10" } },
                         "value": "_option10"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "11"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "11" } },
                         "value": "_option11"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "12"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "12" } },
                         "value": "_option12"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "13"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "13" } },
                         "value": "_option13"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "14"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "14" } },
                         "value": "_option14"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "15"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "15" } },
                         "value": "_option15"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "16"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "16" } },
                         "value": "_option16"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "17"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "17" } },
                         "value": "_option17"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "18"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "18" } },
                         "value": "_option18"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "19"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "19" } },
                         "value": "_option19"
                     },
                     {
-                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "20"} },
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0": "20" } },
                         "value": "_option20"
                     }
                 ]
@@ -561,7 +475,7 @@
         },
         {
             "name": "slideshow-play-orientation",
-            "label": { "key": "PROPERTY_PLAY_ORIENTATION_LABEL"},
+            "label": { "key": "PROPERTY_PLAY_ORIENTATION_LABEL" },
             "control": {
                 "type": "select",
                 "options": [
@@ -569,7 +483,7 @@
                         "caption": { "key": "PROPERTY_PLAY_ORIENTATION_HORIZONTAL_OPTION" }
                     },
                     {
-                      "caption": { "key": "PROPERTY_PLAY_ORIENTATION_VERTICAL_OPTION" },
+                        "caption": { "key": "PROPERTY_PLAY_ORIENTATION_VERTICAL_OPTION" },
                         "value": "_vertical"
                     }
                 ]
@@ -635,9 +549,7 @@
             "label": { "key": "PROPERTY_SLIDES_LABEL" },
             "control": {
                 "type": "slides",
-                "include": [
-                    "edit-image"
-                ]
+                "include": ["edit-image"]
             },
             "dataType": "doc-slideshow"
         },
@@ -867,7 +779,5 @@
         ]
     },
 
-    "scripts": [
-        "scripts/vendor.js"
-    ]
+    "scripts": ["scripts/vendor.js"]
 }
