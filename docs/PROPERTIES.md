@@ -258,7 +258,7 @@ Example of the `slides` control type:
 
 Conditional child properties provides the ability to present to the user a set of properties (child properties) depending on the value of another property (parent property)
 
-The `childProperties` property is a list of items that combine a condition with a list of properties. If the given condition matches the value of the parent property, the given list of properties are displayed as child properties.
+The `childProperties` property is a list of items that combine a condition with a list of properties. If the given condition matches the value of the parent property, the given list of properties are displayed as child properties. Child properties can be added to parent properties that have the property control type `select`, `checkbox`, `radio`, `text`, `textarea`, `url`, `time`, `colorPicker` or `slider`.
 
 ```json
 {
