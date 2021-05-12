@@ -38,7 +38,10 @@ The general definition of a property looks like:
 
     // Name of Enterprise Feature flag that should be present for the property to show up.
     // Always show if not specified.
-    "featureFlag": "..."
+    "featureFlag": "...",
+
+    // Optional conditional child properties. The properties are shown when the condition is met.
+    "childProperties": [...]
 }
 ```
 
@@ -73,7 +76,7 @@ to the `dataType`. One option must have an empty value, which is the default val
 Example of the `select` control type:
 
 ```json
-    "control" {
+    "control": {
         "type": "select",
         "options": [
             {
@@ -249,4 +252,108 @@ Example of the `slides` control type:
             "edit-image"
         ]
     }
+```
+
+## Conditional child properties
+
+Conditional child properties provides to the ability to present to the user a set of properties (child properties) depending on the value of another property (parent property)
+
+The `childProperties` property is a list of combinations of a condition and a list of properties. If the given condition matches the value of the parent property, the given list of properties are displayed as child properties.
+
+```json
+{
+    "childProperties": [
+        {
+            // How the condition should be matched with the value of the parent property.
+            // Currently only "exact-value" is supported which matches using the '===' operator
+            "matchType": "exact-value",
+
+            // The expression used to match the value to the parent property
+            "matchExpression": "value",
+
+            // List of child properties available for this component.
+            // Refers to the identifiers in the componentProperties section. Identifiers need to be unique: they cannot
+            // be used in the parent property.
+            "properties": [...]
+        }
+    ]
+}
+```
+
+Example of a property with child properties:
+
+```json
+"componentProperties: [
+    {
+        "name": "conditionalProperty",
+        "label": "Conditional property sample",
+        "control": {
+            "type": "select",
+            "options": [
+                {
+                    // Option has no value ('undefined') and without a 'defaultValue' set for the component, this will be the default
+                    "caption": "No value"
+                },
+                {
+                    "caption": "Value 1",
+                    "value": "value1"
+                },
+                {
+                    "caption": "Value 2",
+                    "value": "value2"
+                }
+            ]
+        },
+        "dataType": "data",
+        "childProperties": [
+            {
+                // A matchType 'exact-value' without a matchExpression will match a value of 'undefined', in this example
+                // the option in the parent select without a value
+                "matchType": "exact-value",
+                "properties": ["childSelectProperty"]
+            },
+            {
+                "matchType": "exact-value",
+                "matchExpression": "value1",
+                "properties": ["childCheckboxProperty"]
+            },
+            {
+                "matchType": "exact-value",
+                "matchExpression": "value2",
+                // The same properties can be referenced from multiple childProperties entries
+                "properties": ["childSelectProperty", "childCheckboxProperty"]
+            }
+        ]
+    },
+    {
+        "name": "childSelectProperty",
+        "label": "Select property sample",
+        "control": {
+            "type": "select",
+            "options": [
+                {
+                    "caption": "Default"
+                },
+                {
+                    "caption": "Option 1",
+                    "value": "_option1"
+                },
+                {
+                    "caption": "Option 2",
+                    "value": "_option2"
+                }
+            ]
+        },
+        "dataType": "styles"
+    },
+    {
+        "name": "childCheckboxProperty",
+        "label": "Checkbox property sample",
+        "control": {
+            "type": "checkbox",
+            "value": "_valueWhenOn"
+        },
+        "dataType": "styles"
+    },
+]
 ```
