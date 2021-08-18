@@ -94,6 +94,28 @@ Example of the `select` control type:
     }
 ```
 
+Optionally set the `dynamicCaptions` property. With that property set to true, the captions of the options can be changed through the Look and Feel panel in the editor. Caption changes are made and stored per combination of component type and look and feel style. In other words, if the captions of the `style` component property (see below) are changed for the body component of the look and feel style named `First`, the captions of the intro component in that same `First` look and feel style will still be the default captions. The captions of the body component in the look and feel style `Second` will also be the default ones.
+
+```json
+{
+    "name": "style",
+    "label": { "key": "PROPERTY_VARIANT_LABEL" },
+    "control": {
+        "type": "select",
+        "dynamicCaptions": true,
+        "options": [
+            {
+                "caption": "Default option"
+            },
+            {
+                "caption": "Option Label 1",
+                "value": "_value1"
+            }
+        ]
+    }
+}
+```
+
 ### `checkbox`
 
 Toggle between applying a value. Defaults to not having a value.
