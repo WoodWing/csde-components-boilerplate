@@ -94,11 +94,11 @@ Example of the `select` control type:
     }
 ```
 
-Optionally set the `dynamicCaptions` property. With that property set to true, the captions of the options can be changed through the Look and Feel panel in the editor. 
+Optionally set the `dynamicCaptions` property. With that property set to true, the captions of the options can be changed through the Look and Feel panel in the editor.
 
 Caption changes are made and stored per combination of component type and look and feel style. In other words, if the captions of the `style` component property (see below) are changed for the body component of the look and feel style named `First`, the captions of the intro component in that same `First` look and feel style will still be the default captions. The captions of the body component in the look and feel style `Second` will also be the default ones.
 
-Once one of the captions of the options of a component property has been changed, only the options with a changed caption will be displayed in the component properties section of the Digital Editor UI. A side effect of this behavior is that when a component property has been set to a certain value and that value does not have a dynamic caption in another component (after converting the component) or look and feel style (after switching the style), the display value in the component properties section would be empty. Instead, the value `Unknown` is displayed.        
+Once one of the captions of the options of a component property has been changed, only the options with a changed caption will be displayed in the component properties section of the Digital Editor UI. A side effect of this behavior is that when a component property has been set to a certain value and that value does not have a dynamic caption in another component (after converting the component) or look and feel style (after switching the style), the display value in the component properties section would be empty. Instead, the value `Unknown` is displayed.
 
 ```json
 {
