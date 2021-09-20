@@ -12,7 +12,7 @@ Download, clone or fork this repository from the desired release tag.
 
 ### Setup
 
-Make sure to have installed [NodeJS 8](https://nodejs.org/) or higher.
+Make sure to have installed the latest [NodeJS LTS](https://nodejs.org/) or higher.
 
 Next, run in the folder where this README is located:
 
