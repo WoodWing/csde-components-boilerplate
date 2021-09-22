@@ -71,6 +71,16 @@ The root of this file is defined as:
         "scripts/vendor.js"
     },
 
+    // Custom publish channel specific styles
+    "customStyles": [
+        {
+            "type": "JSON",
+            "label": "Apple News",
+            "key": "apple-news",
+            "default": "custom/apple-news/styles.json"
+        }
+    ]
+
     // Default component's name on pressing Enter.
     "defaultComponentOnEnter": "component-identifier"
 }
@@ -85,6 +95,7 @@ See the following subsections for details:
 -   [Scripts](SCRIPTS.md)
 -   [Localization](LOCALIZATION.md)
 -   [Custom Data](CUSTOM_DATA.md)
+-   [Custom Styles](CUSTOM_STYLES.md)
 
 ## Limitations
 
