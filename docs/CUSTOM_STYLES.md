@@ -17,8 +17,8 @@ The component set can be configured to provide the Digital Editor user the capab
 
             // Optional. Style content provided by the component set that will be shown by default in the
             // Look and Feel panel when editing the custom style and which will be sent in the publish as content
-            // by default when publishing the article.
-            "default": "custom/apple-news/styles.json"
+            // by default when publishing the article. The path can point to anywhere in the component set.
+            "default": "custom-styles/apple-news/styles.json"
         }
     ]
 }

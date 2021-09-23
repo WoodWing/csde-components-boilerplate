@@ -77,7 +77,7 @@ The root of this file is defined as:
             "type": "JSON",
             "label": "Apple News",
             "key": "apple-news",
-            "default": "custom/apple-news/styles.json"
+            "default": "custom-styles/apple-news/styles.json"
         }
     ]
 
