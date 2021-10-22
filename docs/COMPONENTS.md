@@ -74,7 +74,8 @@ Components use the following definition:
             //
             // From Studio client 11.77 "ExtraMetaData" is supported as well (with the same type restrictions).
             // You can refer to an ExtraMetaData custom property in the same way as regular properties, for
-            // example "ExtraMetaData/C_MY_CUSTOM_PROPERTY".
+            // example "ExtraMetaData/C_MY_CUSTOM_PROPERTY". Note that custom metadata fields are prefixed
+            // with "C_". See the Studio server integrations guide for more information.
             //
             "autofill": {
                 "source": "sourceDirectiveKey",
