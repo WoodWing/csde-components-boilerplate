@@ -44,13 +44,13 @@ async function buildComponentSet(componentSetPath) {
  * Runs component set validation and throws error when something is wrong.
  * @param {string} componentSetPath
  */
- export async function validateComponentSet(componentSetPath) {
+export async function validateComponentSet(componentSetPath) {
     console.log(`Validating component set "${componentSetPath}"`);
     const valid = await validateFolder(componentSetPath);
     if (!valid) {
         throw new Error(`Package failed validation: "${componentSetPath}". See errors above.`);
     } else {
-        console.log(`Component set "${componentSetPath}" is valid!`)
+        console.log(`Component set "${componentSetPath}" is valid!`);
     }
 }
 
