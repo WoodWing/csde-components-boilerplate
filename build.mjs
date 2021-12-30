@@ -8,56 +8,16 @@ import { validateFolder } from '@woodwing/studio-component-set-tools/dist/valida
 
 const componentSetsDirectory = 'component-sets';
 
-export async function watchComponentSets() {
-    // Watch does not rebuild vendor.js and design.css
-    await buildComponentSets();
-
-    for (const componentSetPath of await listComponentSetPaths(componentSetsDirectory)) {
-        await watchComponentSet(componentSetPath);
-    }
-}
-
-export async function watchComponentSet(componentSetPath) {
-    let dirty = false;
-    let activePromise = null;
-
-    const doValidateComponentSet = () => {
-        dirty = false;
-        activePromise = validateComponentSet(componentSetPath)
-            .catch((err) => {
-                console.error(err);
-            })
-            .finally(() => {
-                activePromise = undefined;
-
-                if (dirty) {
-                    doValidateComponentSet();
-                }
-            });
-    };
-
-    fsCallback.watch(componentSetPath, { recursive: true }, (eventType, filename) => {
-        console.log(`\nThe file "${filename}" was modified!`);
-        console.log('The type of change was:', eventType);
-
-        if (activePromise) {
-            dirty = true;
-        } else {
-            doValidateComponentSet();
-        }
-    });
-}
-
 /**
  * Walk through all folders in componentSetsDirectory and build them.
  */
 export async function buildComponentSets() {
-    for (const componentSetPath of await listComponentSetPaths(componentSetsDirectory)) {
+    for (const componentSetPath of await listComponentSetPaths()) {
         await buildComponentSet(componentSetPath);
     }
 }
 
-async function listComponentSetPaths() {
+export async function listComponentSetPaths() {
     let componentSetPaths = [];
     for (const fileName of await fs.readdir(componentSetsDirectory)) {
         const componentSetPath = path.join(componentSetsDirectory, fileName);
@@ -84,7 +44,7 @@ async function buildComponentSet(componentSetPath) {
  * Runs component set validation and throws error when something is wrong.
  * @param {string} componentSetPath
  */
-async function validateComponentSet(componentSetPath) {
+ export async function validateComponentSet(componentSetPath) {
     console.log(`Validating component set "${componentSetPath}"`);
     const valid = await validateFolder(componentSetPath);
     if (!valid) {

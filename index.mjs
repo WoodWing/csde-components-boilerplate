@@ -1,6 +1,7 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { buildComponentSets, watchComponentSets } from './build.mjs';
+import { buildComponentSets } from './build.mjs';
+import { watchComponentSets } from './watch.mjs';
 
 const argv = yargs(hideBin(process.argv))
     .command(
