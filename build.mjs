@@ -8,20 +8,68 @@ import { validateFolder } from '@woodwing/studio-component-set-tools/dist/valida
 
 const componentSetsDirectory = 'component-sets';
 
+export async function watchComponentSets() {
+    // Watch does not rebuild vendor.js and design.css
+    await buildComponentSets();
+
+    for (const componentSetPath of await listComponentSetPaths(componentSetsDirectory)) {
+        await watchComponentSet(componentSetPath);
+    }
+}
+
+export async function watchComponentSet(componentSetPath) {
+    let dirty = false;
+    let activePromise = null;
+
+    const doValidateComponentSet = () => {
+        dirty = false;
+        activePromise = validateComponentSet(componentSetPath)
+            .catch((err) => {
+                console.error(err);
+            })
+            .finally(() => {
+                activePromise = undefined;
+
+                if (dirty) {
+                    doValidateComponentSet();
+                }
+            });
+    };
+
+    fsCallback.watch(componentSetPath, { recursive: true }, (eventType, filename) => {
+        console.log(`\nThe file "${filename}" was modified!`);
+        console.log('The type of change was:', eventType);
+
+        if (activePromise) {
+            dirty = true;
+        } else {
+            doValidateComponentSet();
+        }
+    });
+}
+
 /**
  * Walk through all folders in componentSetsDirectory and build them.
  */
-async function buildComponentSets() {
-    for (const fileName of await fs.readdir(componentSetsDirectory)) {
-        const componentSetPath = path.join(componentSetsDirectory, fileName);
-        if (!(await fs.stat(componentSetPath)).isDirectory()) continue;
+export async function buildComponentSets() {
+    for (const componentSetPath of await listComponentSetPaths(componentSetsDirectory)) {
         await buildComponentSet(componentSetPath);
     }
 }
 
+async function listComponentSetPaths() {
+    let componentSetPaths = [];
+    for (const fileName of await fs.readdir(componentSetsDirectory)) {
+        const componentSetPath = path.join(componentSetsDirectory, fileName);
+        if (!(await fs.stat(componentSetPath)).isDirectory()) continue;
+        componentSetPaths.push(componentSetPath);
+    }
+    return componentSetPaths;
+}
+
 /**
  * Build a component set zip for path.
- * @param {string} componentSetPath 
+ * @param {string} componentSetPath
  */
 async function buildComponentSet(componentSetPath) {
     console.log(`Building component set "${componentSetPath}"`);
@@ -34,21 +82,23 @@ async function buildComponentSet(componentSetPath) {
 
 /**
  * Runs component set validation and throws error when something is wrong.
- * @param {string} componentSetPath 
+ * @param {string} componentSetPath
  */
- async function validateComponentSet(componentSetPath) {
+async function validateComponentSet(componentSetPath) {
     console.log(`Validating component set "${componentSetPath}"`);
     const valid = await validateFolder(componentSetPath);
     if (!valid) {
         throw new Error(`Package failed validation: "${componentSetPath}". See errors above.`);
+    } else {
+        console.log(`Component set "${componentSetPath}" is valid!`)
     }
 }
 
 /**
  * Generates design.scss from style files.
- * @param {string} componentSetPath 
+ * @param {string} componentSetPath
  */
- async function generateDesignFile(componentSetPath) {
+async function generateDesignFile(componentSetPath) {
     console.log(`Generating design.scss for component set "${componentSetPath}"`);
     try {
         const definition = await getComponentDefinition(componentSetPath);
@@ -58,11 +108,11 @@ async function buildComponentSet(componentSetPath) {
 * This file has been generated while building the components package.
 * PLEASE DO NOT MODIFY THIS FILE BY HAND.
 */\n${buildScssString('common')}`;
-        
+
         for (const componentName of componentNames) {
             content += buildScssString(componentName);
         }
-    
+
         await fs.writeFile(path.join(componentSetPath, 'styles/design.scss'), content);
     } catch (e) {
         // Don't fail task, but let the components validator generate the actual error,
@@ -72,14 +122,14 @@ async function buildComponentSet(componentSetPath) {
     }
 }
 /**
- * @param {string} componentSetPath 
+ * @param {string} componentSetPath
  */
 async function getComponentDefinition(componentSetPath) {
     return JSON.parse(await fs.readFile(path.join(componentSetPath, 'components-definition.json'), 'utf8'));
 }
 
 /**
- * @param {string} componentName 
+ * @param {string} componentName
  * @returns {string}
  */
 function buildScssString(componentName) {
@@ -88,9 +138,9 @@ function buildScssString(componentName) {
 
 /**
  * Compiles design.scss.
- * @param {string} componentSetPath 
+ * @param {string} componentSetPath
  */
- async function compileDesignFile(componentSetPath) {
+async function compileDesignFile(componentSetPath) {
     console.log(`Compiling design.scss for component set "${componentSetPath}"`);
     const result = sass.compile(path.join(componentSetPath, 'styles/design.scss'));
     await fs.writeFile(path.join(componentSetPath, 'styles/design.css'), result.css);
@@ -98,9 +148,9 @@ function buildScssString(componentName) {
 
 /**
  * Generates vendor script by concatenating and uglifying the result.
- * @param {string} componentSetPath 
+ * @param {string} componentSetPath
  */
- async function generateVendorScript(componentSetPath) {
+async function generateVendorScript(componentSetPath) {
     console.log(`Generating vendor.js for component set "${componentSetPath}"`);
 
     // Scripts bundled into a single vendor.js
@@ -138,7 +188,7 @@ function buildScssString(componentName) {
 
 /**
  * Creates component set zip.
- * @param {string} componentSetPath 
+ * @param {string} componentSetPath
  */
 async function buildComponentSetZip(componentSetPath) {
     const outputPath = path.join('dist', `${path.basename(componentSetPath)}.zip`);
@@ -148,21 +198,22 @@ async function buildComponentSetZip(componentSetPath) {
 
     const output = fsCallback.createWriteStream(outputPath);
     const archive = archiver('zip', {
-        zlib: { level: 9 } // Sets the compression level.
+        zlib: { level: 9 }, // Sets the compression level.
     });
     archive.pipe(output);
     archive.directory(componentSetPath, false);
     await archive.finalize();
 }
 
+/**
+ * @param {string} dirPath
+ */
 async function mkdirIfNotExists(dirPath) {
     try {
-        await fs.mkdir(dirPath);;
-    } catch(err) {
-        if( err.code != 'EEXIST' ) {
+        await fs.mkdir(dirPath);
+    } catch (err) {
+        if (err.code != 'EEXIST') {
             throw err;
         }
     }
 }
-
-await buildComponentSets();

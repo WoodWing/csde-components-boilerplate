@@ -8,6 +8,7 @@
 # and except for specific file types
 !*.css
 !*.js
+!*.mjs
 !*.json
 !*.md
 !*.scss
