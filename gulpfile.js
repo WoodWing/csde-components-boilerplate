@@ -4,7 +4,7 @@ const { promisify } = require('util');
 const gulp = require('gulp');
 const zip = require('gulp-zip');
 const UglifyJS = require('uglify-js');
-const sass = require('node-sass');
+const sass = require('sass');
 
 const componentsValidator = require('@woodwing/studio-component-set-tools/dist/validate');
 
@@ -88,9 +88,7 @@ async function generateDesignFile() {
  */
 async function compileDesignFile() {
     await generateDesignFile();
-    const result = await promisify(sass.render)({
-        file: path.join(stylesDir, 'design.scss'),
-    });
+    const result = sass.compile(path.join(stylesDir, 'design.scss'));
     await writeFileAsync(path.join(stylesDir, 'design.css'), result.css);
 }
 
