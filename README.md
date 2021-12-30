@@ -1,4 +1,4 @@
-# csde-components-boilerplate
+# Studio sample component sets
 
 Boilerplate project for creating Studio Digital Editor component sets.
 
@@ -46,12 +46,12 @@ This will validate the set and create a zip in the `dist` folder, which you can 
 
 This quick guide shows the steps to create a new custom component based on the body component
 
-1. Copy `components/styles/_body.scss` to `components/styles/_my_component.scss`
+1. Copy `component-sets/default-components/styles/_body.scss` to `component-sets/default-components/styles/_my_component.scss`
     - Edit the `scss` and change `.body` to `.my_component`
 1. Edit `_my_component.scss` to make changes to the default style of your component
-1. Copy `components/templates/html/body.html` to `components/templates/html/my_component.html`
+1. Copy `component-sets/default-components/templates/html/body.html` to `component-sets/default-components/templates/html/my_component.html`
     - Edit the html and change the class name `body` to `my_component`
-1. Edit `components/components-definition.json` to define the new component
+1. Edit `component-sets/default-components/components-definition.json` to define the new component
     - Copy & Paste the body component definition into the components section
     - Change the name to `my_component`
     - Change the label to `"my_component"`.
