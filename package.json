@@ -24,7 +24,7 @@
     "@woodwing/studio-component-set-tools": "^1.16.6",
     "gulp": "^4.0.2",
     "gulp-zip": "^5.0.0",
-    "node-sass": "^6.0.1",
+    "sass": "^1.45.1",
     "uglify-js": "^3.6.0"
   },
   "devDependencies": {
