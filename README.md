@@ -28,7 +28,7 @@ Follow the instructions listed in the [Setup section](#setup) and then, in the n
 npm run dev
 ```
 
-This will watch for any changes in the `component-sets` folder and run the validation logic.
+This will watch for any changes in the `component-sets` folder and run the validation logic. Watch mode does not rebuild vendor.js and design.css.
 
 Please see the [Documentation Components Model](docs/OVERVIEW.md) for more details on the expected structure of a component set.
 
