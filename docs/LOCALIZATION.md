@@ -1,6 +1,6 @@
 # Localization
 
-The components in the boilerplate are fully localized for all languages supported by Enterprise Aurora. As such, all property labels, dropdown options, placeholders, etc. show up in the editor in the same language as the rest of the application. This chapter describes how localization in the component set has been implemented and how new custom components can leverage that same mechanism.
+The components in the boilerplate are fully localized for all languages supported by Studio. As such, all property labels, dropdown options, placeholders, etc. show up in the editor in the same language as the rest of the application. This chapter describes how localization in the component set has been implemented and how new custom components can leverage that same mechanism.
 
 ## Basics
 
@@ -8,7 +8,7 @@ Localization is based on the use of string keys instead of hardcoded values for 
 
 ## Supported languages
 
-Overview of the languages supported by Enterprise Aurora and their matching translation file names.
+Overview of the languages supported by Studio and their matching translation file names.
 
 | Language            | Filename    |
 | ------------------- | ----------- |
