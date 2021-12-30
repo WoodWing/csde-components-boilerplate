@@ -26,7 +26,7 @@ The root of this file is defined as:
 ```javascript
 {
     // Description of this components definition.
-    "description": "Content Station Digital Editor components",
+    "description": "Studio Digital Editor components",
 
     // Version of model. Used by the validation service.
     "version": "1.0.0",
