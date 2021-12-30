@@ -2,7 +2,8 @@
   "name": "csde-components-boilerplate",
   "version": "1.8.0",
   "description": "Boilerplate project for creating Studio Digital Editor components.",
-  "main": "index.js",
+  "type": "module",
+  "main": "build.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.mjs",
