@@ -1,7 +1,7 @@
 {
   "name": "csde-components-boilerplate",
   "version": "1.8.0",
-  "description": "Boilerplate project for creating Content Station Digital Editor components.",
+  "description": "Boilerplate project for creating Studio Digital Editor components.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

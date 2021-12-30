@@ -1,12 +1,12 @@
 # csde-components-boilerplate
 
-Boilerplate project for creating Content Station Digital Editor component sets.
+Boilerplate project for creating Studio Digital Editor component sets.
 
 ## Creating component sets
 
 This section describes how to set up, develop and package component sets out of the boilerplate.
 
-#### _Important: use a release of the boilerplate that is supported by the target Content Station. See the [Releases](/../../releases) page for an overview._
+#### _Important: use a release of the boilerplate that is supported by the target Studio application. See the [Releases](/../../releases) page for an overview._
 
 Download, clone or fork this repository from the desired release tag.
 
@@ -40,7 +40,7 @@ To create a component set ready for usage, run:
 npm run build
 ```
 
-This will validate the set and create a zip in the `dist` folder, which you can upload through the Content Station Management Console.
+This will validate the set and create a zip in the `dist` folder, which you can upload through the Studio Management Console.
 
 ## Getting started guide
 
@@ -57,7 +57,7 @@ This quick guide shows the steps to create a new custom component based on the b
     - Change the label to `"my_component"`.
     - Scroll to the Groups section and add `my_component` to one of the groups, for example the text group
 1. Run `npm run build` from the main dir to build your component set
-1. Upload the component set zip file found in the `dist` folder using the _Component sets_ page in the the Content Station Management Console. The Console can be found in the _Integrations_ section of the Enterprise admin pages
-1. Create a new Digital Article template in Content Station and select your component set in the create dialog
+1. Upload the component set zip file found in the `dist` folder using the _Component sets_ page in the the Studio Management Console. The Console can be found in the _Integrations_ section of the Enterprise admin pages
+1. Create a new Digital Article template in Studio and select your component set in the create dialog
 1. Create a new Digital Article from the template
 1. Add your component using the `+` button
