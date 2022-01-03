@@ -66,7 +66,7 @@ async function generateDesignFile(componentSetPath) {
 
         let content = `/*
 * This file has been generated while building the components package.
-* PLEASE DO NOT MODIFY THIS FILE BY HAND.
+* PLEASE DO NOT ADJUST THIS FILE MANUALLY.
 */\n${buildScssString('common')}`;
 
         for (const componentName of componentNames) {
