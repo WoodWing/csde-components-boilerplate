@@ -81,6 +81,12 @@ The root of this file is defined as:
         }
     ]
 
+    // Character styles part of the default look and feel of this component set
+    "characterStyles": [
+        { "id": "cs-1", "label": "Character Style 1" },
+        { "id": "cs-2", "label": "Character Style 2" }
+    ],
+
     // Default component's name on pressing Enter.
     "defaultComponentOnEnter": "component-identifier"
 }
