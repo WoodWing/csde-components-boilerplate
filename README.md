@@ -57,7 +57,7 @@ This quick guide shows the steps to create a new custom component based on the b
     - Change the label to `"my_component"`.
     - Scroll to the Groups section and add `my_component` to one of the groups, for example the text group
 1. Run `npm run build` from the main dir to build your component set
-1. Upload the component set zip file found in the `dist` folder using the _Component sets_ page in the the Studio Management Console. The Console can be found in the _Integrations_ section of the Enterprise admin pages
+1. Upload the component set zip file found in the `dist` folder using the _Component sets_ page in the the Studio Management Console. The Console can be found in the _Integrations_ section of the Studio server admin pages
 1. Create a new Digital Article template in Studio and select your component set in the create dialog
 1. Create a new Digital Article from the template
 1. Add your component using the `+` button

@@ -36,7 +36,7 @@ The general definition of a property looks like:
     // html element instead of main component element.
     "selector": "css-selector",
 
-    // Name of Enterprise Feature flag that should be present for the property to show up.
+    // Name of Studio server Feature flag that should be present for the property to show up.
     // Always show if not specified.
     "featureFlag": "...",
 
