@@ -8,6 +8,7 @@
 # and except for specific file types
 !*.css
 !*.js
+!*.mjs
 !*.json
 !*.md
 !*.scss
@@ -36,5 +37,5 @@ dist/
 
 ## Specific files and directories
 scripts
-components/styles/design.scss
-components/styles/design.css
+component-sets/*/styles/design.scss
+component-sets/*/styles/design.css
