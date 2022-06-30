@@ -30,7 +30,7 @@ export async function watchComponentSet(componentSetPath) {
     };
 
     fsCallback.watch(componentSetPath, { recursive: true }, (eventType, filename) => {
-        console.log(`\nThe file "${filename}" was modified!`);
+        console.log(`\n${new Date().toLocaleString()}\nThe file "${filename}" was modified!`);
         console.log('The type of change was:', eventType);
 
         if (activePromise) {
