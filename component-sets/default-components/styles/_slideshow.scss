@@ -30,7 +30,7 @@ $slideshowThumbNavigatorMaxHeight: 100px;
             position: absolute;
             top: 0;
             left: 50%;
-            margin-left: -($slideshowMaxWidth / 2);
+            margin-left: -($slideshowMaxWidth * 0.5);
             width: $slideshowMaxWidth;
             height: $slideshowMaxHeight;
             overflow: hidden;
