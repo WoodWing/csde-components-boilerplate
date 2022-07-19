@@ -15,13 +15,13 @@ const argv = yargs(hideBin(process.argv))
     .option('watch', {
         alias: 'w',
         type: 'boolean',
-        description: 'Run in watch mode',
+        description: 'Run in watch mode, does not rebuild vendor.js and design.css',
     })
     .parse();
 
 if (argv.watch) {
     console.log('Running in watch mode: ');
-    watchComponentSets();
+    await watchComponentSets();
 } else {
     await buildComponentSets();
 }
