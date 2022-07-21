@@ -72,6 +72,11 @@ span[data-text-edit-color] {
     padding: 0;
 }
 
+/* Render all white space in text fields. */
+[doc-editable] {
+    white-space: break-spaces;
+}
+
 /* Implements text-align property values. */
 ._align-right {
     text-align: right;
