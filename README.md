@@ -10,11 +10,18 @@ This section describes how to set up, develop and package component sets out of 
 
 Download, clone or fork this repository from the desired release tag.
 
+### Requirements
+
+NodeJS 16 and NPM 8: [Node](https://nodejs.org/en/)
+
+Consider using NVM to manage multiple versions of NodeJS and NPM, as sometimes projects may require different versions:
+
+-   [Node Version Manager for Mac/Linux](https://github.com/nvm-sh/nvm)
+-   [Node Version Manager for Windows](https://github.com/coreybutler/nvm-windows)
+
 ### Setup
 
-Make sure to have installed the latest [NodeJS LTS](https://nodejs.org/) or higher.
-
-Next, run in the folder where this README is located:
+Run in the folder where this README is located:
 
 ```console
 npm install
