@@ -576,7 +576,12 @@
     "conversionRules": {
         "body": {
             "title": "auto",
-            "subtitle": "auto",
+            "subtitle": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
             "headline": {
                 "type": "simple",
                 "map": {
@@ -593,8 +598,18 @@
             "footer": "auto",
             "quote": "auto",
             "crosshead": "auto",
-            "author": "auto",
-            "image": "auto",
+            "author": {
+                "type": "simple",
+                "map": {
+                    "name": "text"
+                }
+            },
+            "image": {
+                "type": "simple",
+                "map": {
+                    "caption": "text"
+                }
+            },
             "product": {
                 "type": "simple",
                 "map": {
@@ -603,7 +618,12 @@
             }
         },
         "title": {
-            "subtitle": "auto",
+            "subtitle": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
             "headline": {
                 "type": "simple",
                 "map": {
@@ -621,7 +641,18 @@
             "footer": "auto",
             "quote": "auto",
             "crosshead": "auto",
-            "image": "auto",
+            "author": {
+                "type": "simple",
+                "map": {
+                    "name": "text"
+                }
+            },
+            "image": {
+                "type": "simple",
+                "map": {
+                    "caption": "text"
+                }
+            },
             "product": {
                 "type": "simple",
                 "map": {
@@ -630,7 +661,12 @@
             }
         },
         "subtitle": {
-            "title": "auto",
+            "title": {
+                "type": "simple",
+                "map": {
+                    "text": "title"
+                }
+            },
             "headline": {
                 "type": "simple",
                 "map": {
@@ -643,12 +679,48 @@
                     "subtitle": "title"
                 }
             },
-            "intro": "auto",
-            "body": "auto",
-            "footer": "auto",
-            "quote": "auto",
-            "crosshead": "auto",
-            "image": "auto",
+            "intro": {
+                "type": "simple",
+                "map": {
+                    "text": "title"
+                }
+            },
+            "body": {
+                "type": "simple",
+                "map": {
+                    "text": "title"
+                }
+            },
+            "footer": {
+                "type": "simple",
+                "map": {
+                    "text": "title"
+                }
+            },
+            "quote": {
+                "type": "simple",
+                "map": {
+                    "text": "title"
+                }
+            },
+            "crosshead": {
+                "type": "simple",
+                "map": {
+                    "text": "title"
+                }
+            },
+            "author": {
+                "type": "simple",
+                "map": {
+                    "name": "title"
+                }
+            },
+            "image": {
+                "type": "simple",
+                "map": {
+                    "caption": "title"
+                }
+            },
             "product": {
                 "type": "simple",
                 "map": {
@@ -668,7 +740,12 @@
         },
         "intro": {
             "title": "auto",
-            "subtitle": "auto",
+            "subtitle": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
             "headline": {
                 "type": "simple",
                 "map": {
@@ -685,7 +762,18 @@
             "footer": "auto",
             "quote": "auto",
             "crosshead": "auto",
-            "image": "auto",
+            "author": {
+                "type": "simple",
+                "map": {
+                    "name": "text"
+                }
+            },
+            "image": {
+                "type": "simple",
+                "map": {
+                    "caption": "text"
+                }
+            },
             "product": {
                 "type": "simple",
                 "map": {
@@ -695,7 +783,12 @@
         },
         "footer": {
             "title": "auto",
-            "subtitle": "auto",
+            "subtitle": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
             "headline": {
                 "type": "simple",
                 "map": {
@@ -712,7 +805,18 @@
             "body": "auto",
             "quote": "auto",
             "crosshead": "auto",
-            "image": "auto",
+            "author": {
+                "type": "simple",
+                "map": {
+                    "name": "text"
+                }
+            },
+            "image": {
+                "type": "simple",
+                "map": {
+                    "caption": "text"
+                }
+            },
             "product": {
                 "type": "simple",
                 "map": {
@@ -722,7 +826,12 @@
         },
         "crosshead": {
             "title": "auto",
-            "subtitle": "auto",
+            "subtitle": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
             "headline": {
                 "type": "simple",
                 "map": {
@@ -739,7 +848,18 @@
             "body": "auto",
             "footer": "auto",
             "quote": "auto",
-            "image": "auto",
+            "author": {
+                "type": "simple",
+                "map": {
+                    "name": "text"
+                }
+            },
+            "image": {
+                "type": "simple",
+                "map": {
+                    "caption": "text"
+                }
+            },
             "product": {
                 "type": "simple",
                 "map": {
@@ -754,13 +874,31 @@
             }
         },
         "image": {
-            "hero": "auto",
-            "author": "auto",
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "image": "image",
+                    "title": "caption"
+                }
+            },
+            "author": {
+                "type": "simple",
+                "map": {
+                    "image": "image",
+                    "name": "caption"
+                }
+            },
             "slideshow": {
                 "type": "to-container",
                 "container": "slideshow"
             },
-            "product": "auto"
+            "product": {
+                "type": "simple",
+                "map": {
+                    "image": "image",
+                    "product_title": "caption"
+                }
+            }
         }
     },
 
