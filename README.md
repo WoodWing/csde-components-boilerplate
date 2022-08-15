@@ -68,3 +68,11 @@ This quick guide shows the steps to create a new custom component based on the b
 1. Create a new Digital Article template in Studio and select your component set in the create dialog
 1. Create a new Digital Article from the template
 1. Add your component using the `+` button
+
+## Creating a new package release
+
+To create a new stable release:
+
+1. Update version in package.json & run `npm install`
+1. Create Pull Request and merge to master
+1. Create a new GitHub release
