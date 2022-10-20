@@ -280,6 +280,14 @@ Example of the `slides` control type:
     }
 ```
 
+## Experimental specialized UI Controls
+
+DISCLAIMER: The UI controls in this section are marked experimental. The behavior of these controls might change in upcoming component set updates or Studio versions.
+
+### `anchor`
+
+Enables anchoring to the given component. The anchor option will be enabled in the Digital Editor text-toolbar when there is at least one component in the component set that uses the `anchor` property. Users can create an anchor by selecting text in a component with editable text, selecting the anchor tool in the toolbar and then selecting the destination component to anchor to.
+
 ## Conditional child properties
 
 Conditional child properties provides the ability to present to the user a set of properties (child properties) depending on the value of another property (parent property)
