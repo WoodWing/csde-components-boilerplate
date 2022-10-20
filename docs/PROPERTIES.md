@@ -286,7 +286,7 @@ DISCLAIMER: The UI controls in this section are marked experimental. The behavio
 
 ### `anchor`
 
-Enables anchoring to the given component. The text anchor toolbar option will be enabled in the Digital Editor when there is at least one component in the component set that uses the `anchor` property. Users can create an anchor by selecting text in a text based component, select the anchor tool in the toolbar and then select the destination component to anchor to.
+Enables anchoring to the given component. The anchor option will be enabled in the Digital Editor text-toolbar when there is at least one component in the component set that uses the `anchor` property. Users can create an anchor by selecting text in a component with editable text, selecting the anchor tool in the toolbar and then selecting the destination component to anchor to.
 
 ## Conditional child properties
 
