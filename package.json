@@ -1,6 +1,6 @@
 {
   "name": "csde-components-boilerplate",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "description": "Boilerplate project for creating Studio Digital Editor components.",
   "type": "module",
   "main": "index.mjs",
