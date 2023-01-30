@@ -62,7 +62,7 @@ Data applied as inline styles to the HTML of the component.
 
 Free style data. Data properties do not affect the HTML rendition of the article.
 
-In the PSV rendition, data properties are added as attributes to the component tag. This is supported for the controls specified in the [generic UI controls](#generic-ui-controls) section. Attributes are prefixed with `data-prop-`. For example, a property named `country` with value `Netherlands`, would result in attribute:
+In the PSV rendition, data properties are added as attributes to the component tag. This is supported for a specific set of property control types: select, checkbox, radio, text, textarea, url, time, colorPicker and slider. Attributes are prefixed with `data-prop-`. For example, a property named `country` with value `Netherlands`, would result in attribute:
 
 ```
 data-prop-country="Netherlands"
