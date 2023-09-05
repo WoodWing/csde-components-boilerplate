@@ -60,7 +60,13 @@ Data applied as inline styles to the HTML of the component.
 
 ### `data`
 
-Free style data. Does not affect the rendering of the article in the editor.
+Free style data. Data properties do not affect the HTML rendition of the article.
+
+In the PSV rendition, data properties are added as attributes to the component tag. This is supported for a specific set of property control types: select, checkbox, radio, text, textarea, url, time, colorPicker and slider. Attributes are prefixed with `data-prop-`. For example, a property named `country` with value `Netherlands`, would result in attribute:
+
+```
+data-prop-country="Netherlands"
+```
 
 ### `doc-<directive>`
 
