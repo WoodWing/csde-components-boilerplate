@@ -32,7 +32,18 @@
             "label": {
                 "key": "COMPONENT_CHART_LABEL"
             },
-            "properties": ["position", "style", "inside-caption", "letter-spacing", "line-height", "text-align"]
+            "properties": [
+                {
+                    "name": "chart",
+                    "directiveKey": "chart"
+                },
+                "position",
+                "style",
+                "inside-caption",
+                "letter-spacing",
+                "line-height",
+                "text-align"
+            ]
         },
         {
             "name": "image",
@@ -209,6 +220,16 @@
     ],
 
     "componentProperties": [
+        {
+            "name": "chart",
+            "label": {
+                "key": "PROPERTY_CHART_LABEL"
+            },
+            "control": {
+                "type": "chart"
+            },
+            "dataType": "doc-chart"
+        },
         {
             "name": "position",
             "label": { "key": "PROPERTY_POSITION_LABEL" },
