@@ -27,6 +27,14 @@
             "properties": ["position", "style", "text-align", "letter-spacing", "line-height"]
         },
         {
+            "name": "chart",
+            "icon": "icons/components/chart.svg",
+            "label": {
+                "key": "COMPONENT_CHART_LABEL"
+            },
+            "properties": ["position", "style", "inside-caption", "letter-spacing" ,"line-height", "text-align"]
+        },
+        {
             "name": "image",
             "icon": "icons/components/image.svg",
             "label": { "key": "COMPONENT_IMAGE_LABEL" },
@@ -180,6 +188,15 @@
             "components": ["intro", "body", "footer", "quote", "separator", "crosshead", "author"]
         },
         {
+            "name": "data",
+            "label": { "key": "GROUP_DATA_LABEL" },
+            "logo": {
+                "icon": "icons/group-logos/data.svg",
+                "link": "https://infogram.com/"
+            },
+            "components": ["chart"]
+        },
+        {
             "label": { "key": "GROUP_MEDIA_LABEL" },
             "name": "media",
             "components": ["slideshow", "image", "embed", "product", "social-media", "video"]
@@ -188,15 +205,6 @@
             "label": { "key": "GROUP_LAYOUT_LABEL" },
             "name": "layout",
             "components": ["container"]
-        },
-        {
-            "name": "data",
-            "label": { "key": "GROUP_DATA_LABEL" },
-            "logo": {
-                "icon": "icons/group-logos/data.svg",
-                "link": "https://infogram.com/"
-            },
-            "components": []
         }
     ],
 
