@@ -1,7 +1,7 @@
 {
     "COMPONENT_AUTHOR_LABEL": "Author",
     "COMPONENT_BODY_LABEL": "Body",
-    "COMPONENT_CHART_LABEL": "Chart",
+    "COMPONENT_CHART_LABEL": "Infogram",
     "COMPONENT_CONTAINER_LABEL": "Container",
     "COMPONENT_CROSSHEAD_LABEL": "Crosshead",
     "COMPONENT_EMBED_LABEL": "Embed",
@@ -37,6 +37,7 @@
     "PROPERTY_CAPTION_TOP_LEFT_OPTION": "Top-left caption",
     "PROPERTY_CAPTION_TOP_OPTION": "Top-caption",
     "PROPERTY_CAPTION_TOP_RIGHT_OPTION": "Top-right caption",
+    "PROPERTY_CHART_LABEL": "Edit data visualization",
     "PROPERTY_DISABLE_FULLSCREEN_LABEL": "Disable fullscreen (Adobe AEM)",
     "PROPERTY_DROP_CAP_LABEL": "Drop cap",
     "PROPERTY_EDIT_IMAGE_LABEL": "Edit image",
