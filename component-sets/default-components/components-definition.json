@@ -32,7 +32,7 @@
             "label": {
                 "key": "COMPONENT_CHART_LABEL"
             },
-            "properties": ["position", "style", "inside-caption", "letter-spacing" ,"line-height", "text-align"]
+            "properties": ["position", "style", "inside-caption", "letter-spacing", "line-height", "text-align"]
         },
         {
             "name": "image",
