@@ -188,6 +188,15 @@
             "label": { "key": "GROUP_LAYOUT_LABEL" },
             "name": "layout",
             "components": ["container"]
+        },
+        {
+            "name": "data",
+            "label": { "key": "GROUP_DATA_LABEL" },
+            "logo": {
+                "icon": "icons/group-logos/data.svg",
+                "link": "https://infogram.com/"
+            },
+            "components": []
         }
     ],
 
