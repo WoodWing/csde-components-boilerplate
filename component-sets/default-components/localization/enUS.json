@@ -1,6 +1,7 @@
 {
     "COMPONENT_AUTHOR_LABEL": "Author",
     "COMPONENT_BODY_LABEL": "Body",
+    "COMPONENT_CHART_LABEL": "Chart",
     "COMPONENT_CONTAINER_LABEL": "Container",
     "COMPONENT_CROSSHEAD_LABEL": "Crosshead",
     "COMPONENT_EMBED_LABEL": "Embed",
