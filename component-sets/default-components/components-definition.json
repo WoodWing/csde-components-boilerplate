@@ -202,7 +202,7 @@
             "name": "data",
             "label": { "key": "GROUP_DATA_LABEL" },
             "logo": {
-                "icon": "icons/group-logos/data.svg",
+                "icon": "icons/groups/data.svg",
                 "link": "https://infogram.com/"
             },
             "components": ["chart"]
