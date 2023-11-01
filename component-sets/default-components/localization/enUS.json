@@ -62,6 +62,7 @@
     "PROPERTY_STYLE_DEFAULT_OPTION": "Default",
     "PROPERTY_TEXT_ALIGN_LABEL": "Text alignment",
     "PROPERTY_VARIANT_LABEL": "Style variant",
+    "CHART_HEIGHT__LABEL": "Chart height",
     "PROPERTY_VARIANT_STYLE_OPTION": "Option {{0}}",
     "TEMPLATE_AUTHOR_LINK_PLACEHOLDER": "@twitter",
     "TEMPLATE_AUTHOR_LOCATION_PLACEHOLDER": "Location",

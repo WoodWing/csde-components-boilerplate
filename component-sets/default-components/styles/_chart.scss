@@ -17,6 +17,13 @@
             right: 0;
             left: 0;
         }
+        
+        iframe {
+            position: absolute;
+            border: none;
+            height: 100%;
+            width: 100%;
+        }
     }
 
     &._option1 div {
