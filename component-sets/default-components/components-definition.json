@@ -282,7 +282,7 @@
         },
         {
             "name": "chart-height",
-            "label": { "key": "CHART_HEIGHT__LABEL" },
+            "label": { "key": "CHART_HEIGHT_LABEL" },
             "control": {
                 "type": "text",
                 "pattern": "^([0-9]{1,3}([.][0-9]{1,})?|auto)$",
