@@ -1,5 +1,5 @@
 /* Adds module to use chart provider API functions */
-((window)=>{
+(function(window){
 
     async function loadChartProviderModule() {
         try {
