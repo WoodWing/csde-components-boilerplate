@@ -1,6 +1,5 @@
 /* Adds module to use chart provider API functions */
-
-(async function(window) {
+(function(window) {
     async function loadChartProviderModule() {
         try {
             const infogramModule = await import('https://cdn.jifo.co/embeddable-editor/plugin.js');
