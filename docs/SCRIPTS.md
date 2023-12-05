@@ -36,5 +36,3 @@ See the `hero` component for an example in the default component set.
 ### `chart.js`
 
 Loads script for chart provider.
-
-
