@@ -1,9 +1,10 @@
+/* Adds module to use chart provider API functions */
+
 (async function(window) {
     async function loadChartProviderModule() {
         try {
             const infogramModule = await import('https://cdn.jifo.co/embeddable-editor/plugin.js');
 
-            // Return the functions instead of assigning them to window
             return {
                 createChart: infogramModule.createInfogramProject,
                 editChart: infogramModule.editInfogramProject,
@@ -15,7 +16,7 @@
         }
     }
 
-    // Provide function in window to load module
+    // Provide function in window to load module manually
     window.parent.loadCharProviderModule = loadChartProviderModule;
 
 })(window);
