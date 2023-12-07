@@ -17,6 +17,6 @@
     }
 
     // Provide function in window to load module manually
-    window.parent.loadCharProviderModule = loadChartProviderModule;
+    window.parent.loadChartProviderModule = loadChartProviderModule;
 
 })(window);
