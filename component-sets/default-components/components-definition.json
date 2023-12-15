@@ -227,7 +227,8 @@
                 "key": "PROPERTY_CHART_LABEL"
             },
             "control": {
-                "type": "chart"
+                "type": "chart",
+                "chartType": "infogram"
             },
             "dataType": "doc-chart"
         },
