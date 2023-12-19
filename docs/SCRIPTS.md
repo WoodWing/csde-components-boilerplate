@@ -33,6 +33,6 @@ If you don't want this behavior at all, remove the data attribute `data-hero-mob
 
 See the `hero` component for an example in the default component set.
 
-### `chart.js`
+### `infogram.js`
 
-Loads script for chart provider.
+Loads script for infogram.
