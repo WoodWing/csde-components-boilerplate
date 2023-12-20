@@ -3,7 +3,7 @@
 A number of Javascript files are included in the boilerplate to provide additional functionality to components. These scripts are loaded in the editor and bundled when publishing the html rendition of an article.
 
 The root `scripts` folder contains scripts that are concatenated into `components/scripts/vendor.js` by
-`gulpfile.js`. You will need to modify `gulpfile.js` in case you want to add additional scripts or remove scripts you don't need.
+`build.mjs`. You will need to modify `build.mjs` in case you want to add additional scripts or remove scripts you don't need.
 
 You can also add new scripts directly to the `components/scripts` folder and add the new script entry to `components-definition.json`.
 
@@ -29,6 +29,10 @@ Adds parallax effect on mobile devices to "hero" type of components. Applied to 
 
 On publishing the article html output will be restructured to support the parallax effect.
 Components that have the css class `_fixed-background` applied are skipped (for example through a style property).
-If you don't want this behavior at all, remove the data attribute `data-hero-mobile` from the component html template. In addition you can also remove the `heroes.js` scripts from being included in `vendor.js` by editing `gulpfile.js`.
+If you don't want this behavior at all, remove the data attribute `data-hero-mobile` from the component html template. In addition you can also remove the `heroes.js` scripts from being included in `vendor.js` by editing `build.mjs`.
 
 See the `hero` component for an example in the default component set.
+
+### `infogram.js`
+
+Loads script for infogram.

@@ -128,6 +128,9 @@ async function generateVendorScript(componentSetPath) {
 
         // Support script for parallax effect hero components
         path.join(scriptsDir, 'heroes.js'),
+
+        // Support script for chart provider (Infogram) integration in chart components
+        path.join(scriptsDir, 'infogram.js'),
     ];
 
     // Concat files
