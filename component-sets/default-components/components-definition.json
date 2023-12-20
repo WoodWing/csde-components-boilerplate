@@ -286,7 +286,7 @@
             "label": { "key": "CHART_PADDING_BOTTOM_LABEL" },
             "control": {
                 "type": "text",
-                "pattern": "^[1-9][0-9]?$|^500$",
+                "pattern": "^[1-4][0-9][0-9]?$|^500$",
                 "defaultValue": "56",
                 "unit": "%",
                 "inputPlaceholder": { "key": "PROPERTY_HEIGHT_PLACEHOLDER" }
