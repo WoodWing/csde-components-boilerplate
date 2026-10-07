@@ -21,6 +21,9 @@
     "url": "https://github.com/WoodWing/csde-components-boilerplate/issues"
   },
   "homepage": "https://github.com/WoodWing/csde-components-boilerplate#readme",
+  "engines": {
+    "node": ">=24"
+  },
   "dependencies": {
     "@woodwing/studio-component-set-tools": "^1.22.8",
     "archiver": "^7.0.1",

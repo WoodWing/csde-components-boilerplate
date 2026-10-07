@@ -12,7 +12,7 @@ Download, clone or fork this repository from the desired release tag.
 
 ### Requirements
 
-NodeJS 16 and NPM 8: [Node](https://nodejs.org/en/)
+NodeJS 24 and NPM 11: [Node](https://nodejs.org/en/)
 
 Consider using NVM to manage multiple versions of NodeJS and NPM, as sometimes projects may require different versions:
 
