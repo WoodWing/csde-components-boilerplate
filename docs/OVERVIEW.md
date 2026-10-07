@@ -94,18 +94,18 @@ The root of this file is defined as:
 
 See the following subsections for details:
 
--   [Components](COMPONENTS.md)
--   [Groups](GROUPS.md)
--   [Component Properties](PROPERTIES.md)
--   [Conversion Rules](CONVERSION_RULES.md)
--   [Scripts](SCRIPTS.md)
--   [Localization](LOCALIZATION.md)
--   [Custom Data](CUSTOM_DATA.md)
--   [Custom Styles](CUSTOM_STYLES.md)
+- [Components](COMPONENTS.md)
+- [Groups](GROUPS.md)
+- [Component Properties](PROPERTIES.md)
+- [Conversion Rules](CONVERSION_RULES.md)
+- [Scripts](SCRIPTS.md)
+- [Localization](LOCALIZATION.md)
+- [Custom Data](CUSTOM_DATA.md)
+- [Custom Styles](CUSTOM_STYLES.md)
 
 ## Limitations
 
 The following limits are in place for component sets:
 
--   Maximum number of files: 5000.
--   Maximum total file size (uncompressed): 100MB.
+- Maximum number of files: 5000.
+- Maximum total file size (uncompressed): 100MB.

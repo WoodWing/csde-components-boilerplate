@@ -4,5 +4,8 @@
     "arrowParens": "always",
     "trailingComma": "all",
     "tabWidth": 4,
-    "htmlWhitespaceSensitivity": "strict"
+    "htmlWhitespaceSensitivity": "strict",
+    "plugins": [
+        "prettier-plugin-organize-imports"
+    ]
 }

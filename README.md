@@ -16,8 +16,8 @@ NodeJS 24 and NPM 11: [Node](https://nodejs.org/en/)
 
 Consider using NVM to manage multiple versions of NodeJS and NPM, as sometimes projects may require different versions:
 
--   [Node Version Manager for Mac/Linux](https://github.com/nvm-sh/nvm)
--   [Node Version Manager for Windows](https://github.com/coreybutler/nvm-windows)
+- [Node Version Manager for Mac/Linux](https://github.com/nvm-sh/nvm)
+- [Node Version Manager for Windows](https://github.com/coreybutler/nvm-windows)
 
 ### Setup
 
