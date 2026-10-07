@@ -1,0 +1,16 @@
+version: 2
+
+updates:
+    # Keeps the SHA-pinned `uses:` refs current. Dependabot rewrites both the
+    # SHA and the trailing `# vX.Y.Z` comment, so the pins stay readable.
+    - package-ecosystem: github-actions
+      directory: '/'
+      schedule:
+          interval: weekly
+      # One PR for the whole batch instead of one per action.
+      groups:
+          github-actions:
+              patterns:
+                  - '*'
+      commit-message:
+          prefix: chore
