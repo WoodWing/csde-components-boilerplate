@@ -3,7 +3,7 @@ import fsCallback from 'node:fs';
 import path from 'path';
 import * as sass from 'sass';
 import UglifyJS from 'uglify-js';
-import archiver from 'archiver';
+import { ZipArchive } from 'archiver';
 import { validateFolder } from '@woodwing/studio-component-set-tools/dist/validate.js';
 
 const componentSetsDirectory = 'component-sets';
@@ -160,7 +160,7 @@ async function buildComponentSetZip(componentSetPath) {
     await mkdirIfNotExists('dist');
 
     const output = fsCallback.createWriteStream(outputPath);
-    const archive = archiver('zip', {
+    const archive = new ZipArchive({
         zlib: { level: 9 }, // Sets the compression level.
     });
     archive.pipe(output);
