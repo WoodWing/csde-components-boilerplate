@@ -69,6 +69,30 @@ This quick guide shows the steps to create a new custom component based on the b
 1. Create a new Digital Article from the template
 1. Add your component using the `+` button
 
+## Updating the translations
+
+WoodWing maintains the translations of the default component set in Lokalise. Updating them is only possible for WoodWing developers: it uses the private `@woodwing/lokalise-download` package from GitHub Packages. That package is an optional dependency, so `npm install` skips it without access.
+
+To install it, authenticate npm to GitHub Packages (`//npm.pkg.github.com/:_authToken=<token>` in your user `~/.npmrc`) and run `npm install`. To upgrade it, run:
+
+```console
+npm install --save-optional @woodwing/lokalise-download@latest --@woodwing:registry=https://npm.pkg.github.com
+```
+
+To download the translations into `component-sets/default-components/localization`, copy `.env.default` to `.env` (ignored by git) in the main dir and fill in:
+
+- `LOKALISE_API_KEY`: Lokalise API token
+- `LOKALISE_PROJECT_ID`: Lokalise project ID
+- `LOKALISE_TAGS`: comma-separated Lokalise key tags
+
+Then run:
+
+```console
+npm run update-translations
+```
+
+The variables can also be set in the shell environment instead.
+
 ## Creating a new package release
 
 To create a new stable release:

@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node index.mjs",
     "dev": "node index.mjs --watch",
+    "update-translations": "node --env-file-if-exists=.env tools/update-translations.mjs && prettier --write component-sets/default-components/localization",
     "format:write": "prettier --write '**/*'",
     "format:check": "prettier -l '**/*'"
   },
@@ -38,5 +39,8 @@
   },
   "allowScripts": {
     "@parcel/watcher": false
+  },
+  "optionalDependencies": {
+    "@woodwing/lokalise-download": "^1.2.0"
   }
 }
