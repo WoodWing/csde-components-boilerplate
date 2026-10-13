@@ -1,10 +1,10 @@
-import fs from 'node:fs/promises';
+import { validateFolder } from '@woodwing/studio-component-set-tools/dist/validate.js';
+import { ZipArchive } from 'archiver';
 import fsCallback from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'path';
 import * as sass from 'sass';
 import UglifyJS from 'uglify-js';
-import { ZipArchive } from 'archiver';
-import { validateFolder } from '@woodwing/studio-component-set-tools/dist/validate.js';
 
 const componentSetsDirectory = 'component-sets';
 

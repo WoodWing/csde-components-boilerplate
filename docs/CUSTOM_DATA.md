@@ -23,5 +23,5 @@ Note: There is no `customData` property available in the publish message when th
 
 The data inside the `custom` folder is not restricted to certain file types or sub-folders, you can store anything in any structure. There are also two limitations though:
 
--   Maximum number of files: 1000.
--   Maximum total file size (uncompressed): 10MB.
+- Maximum number of files: 1000.
+- Maximum total file size (uncompressed): 10MB.
