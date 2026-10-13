@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import fsCallback from 'node:fs';
 import path from 'path';
-import sass from 'sass';
+import * as sass from 'sass';
 import UglifyJS from 'uglify-js';
 import archiver from 'archiver';
 import { validateFolder } from '@woodwing/studio-component-set-tools/dist/validate.js';
@@ -93,7 +93,7 @@ async function getComponentDefinition(componentSetPath) {
  * @returns {string}
  */
 function buildScssString(componentName) {
-    return `@import "${componentName}";\n`;
+    return `@use "${componentName}";\n`;
 }
 
 /**
