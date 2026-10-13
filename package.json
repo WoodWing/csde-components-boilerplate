@@ -21,12 +21,15 @@
     "url": "https://github.com/WoodWing/csde-components-boilerplate/issues"
   },
   "homepage": "https://github.com/WoodWing/csde-components-boilerplate#readme",
+  "engines": {
+    "node": ">=24"
+  },
   "dependencies": {
     "@woodwing/studio-component-set-tools": "^1.22.8",
     "archiver": "^7.0.1",
     "sass": "^1.105.1",
     "uglify-js": "^3.19.3",
-    "yargs": "^17.7.3"
+    "yargs": "^18.2.0"
   },
   "devDependencies": {
     "prettier": "~2.8.8"
